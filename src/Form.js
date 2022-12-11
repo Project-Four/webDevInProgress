@@ -21,7 +21,8 @@ const Form = () => {
         
     })
     .then((res) => {
-        setData(res.data.results)
+        // setData(res.data.results)
+        console.log(res);
     })
 }, [])
     
