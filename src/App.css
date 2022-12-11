@@ -2,4 +2,16 @@
   text-align: center;
 }
 
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1920px;
+}
 
+.previewSection {
+    border: 2px solid black;
+}
+
+.backgroundContainer {
+    overflow: hidden;
+}

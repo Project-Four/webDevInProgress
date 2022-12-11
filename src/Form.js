@@ -3,10 +3,11 @@ import { useEffect, useState } from 'react';
 
 const Form = ({userBackground, setUserBackground}) => {
 
-    const [data, setData] = useState( [] );
+    
+    const [userSearch, setUserSearch] = useState('')
+    
+    const [userSearchResults, setUserSearchResults] = useState( [] );
 
-    
-    
     useEffect(() => {
         const apiKey = 'd_goQdbVz1S8P2CqrowdnFHXq8pF0xt7O6Py6INsoAs'
         
@@ -16,7 +17,7 @@ const Form = ({userBackground, setUserBackground}) => {
             dataResponse: 'json',
             params: {
                 client_id: apiKey,
-                query: 'background',
+                query: userSearch,
                 per_page: 6,
                 content_filter: 'high',
                 orientation: 'landscape',
@@ -25,31 +26,56 @@ const Form = ({userBackground, setUserBackground}) => {
             
         })
         .then((res) => {
-            setData(res.data.results)
+            setUserSearchResults(res.data.results)
         })
     }, [])
-
-    console.log(data)
+    
+    console.log(userSearchResults)
 
     const handleChange = (e) => {
-        setUserBackground(e.target.value)
+        const {name, value} = e.target
+
+        setUserBackground((prev) => {
+            return {...prev, [name]: value}
+        })
+
+        setUserSearch(e.target.value)
+
     }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+
+    }
+
+    const background = userBackground.backgroundSelection
+    const altText = userBackground.alt
 
     return (
         <div>
             <form>
 
+                <label htmlFor=""></label>
+                <input 
+                    placeholder='Search for a background image!'
+                    type="text" 
+                    value={userSearch}
+                    onChange={handleChange}
+                    onSubmit={handleSubmit}
+                />
+
                 {/* Background Images */}
-                <label htmlFor="backgroundSelection">Background Image</label>
+                {/* <label htmlFor="backgroundSelection">Background Image</label>
                 <select 
                     onChange={handleChange}
                     name="backgroundSelection"
                     id="backgroundSelection"
-                    value={userBackground}
-                    >
-                        <option disabled>Select One</option>
+                    value={background}
+                    > */}
+                        {/* <option value="" disabled>Select One</option> */}
                         {/* Mapping through background images from unsplash to create select options */}
-                        {data.map((img) => {
+                        {/* {data.map((img) => {
                             return (
                                 <option 
                                     value={img.urls.full}
@@ -59,12 +85,20 @@ const Form = ({userBackground, setUserBackground}) => {
                                 </option>
                             )
                         })}
-                    </select>
+                </select> */}
 
 
                 {/* Background Colours */}
                 <label htmlFor="backgroundSelection">Background Colour</label>
                 
+                <input 
+                    onChange={handleChange}
+                    type="radio" id='white' 
+                    name="backgroundSelection" 
+                    value='https://www.colorbook.io/imagecreator.php?hex=FFFFFF&width=1920&height=1080'
+                />
+                <label htmlFor="red"><img src="https://i.imgur.com/tpJaVIY.png" alt="a white square" /></label>
+
                 <input 
                     onChange={handleChange}
                     type="radio" id='red' 
