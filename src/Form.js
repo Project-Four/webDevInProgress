@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 
 const Form = ({userBackground, setUserBackground}) => {
 
@@ -7,6 +7,7 @@ const Form = ({userBackground, setUserBackground}) => {
     const [userSearch, setUserSearch] = useState('')
     
     const [userSearchResults, setUserSearchResults] = useState( [] );
+
 
     useEffect(() => {
         const apiKey = 'd_goQdbVz1S8P2CqrowdnFHXq8pF0xt7O6Py6INsoAs'
@@ -35,35 +36,67 @@ const Form = ({userBackground, setUserBackground}) => {
     const handleChange = (e) => {
         const {name, value} = e.target
 
-        setUserBackground((prev) => {
-            return {...prev, [name]: value}
+        
+        setUserBackground(() => {
+            return {[name]: value}
         })
-
+        
+        
         setUserSearch(e.target.value)
-
     }
-
+    
     const handleSubmit = (e) => {
         e.preventDefault();
-        
-
+        // setUserSearch()
     }
 
-    const background = userBackground.backgroundSelection
-    const altText = userBackground.alt
+    console.log("user search", userSearch)
+    console.log("results", userSearchResults)
+
+    // const background = userBackground.backgroundSelection
+    // const altText = userBackground.alt
 
     return (
         <div>
-            <form>
+            {/* Form to search Unsplash API for photos */}
+            <form onSubmit={handleSubmit}>
 
-                <label htmlFor=""></label>
+                <label htmlFor="userAPISearch"></label>
                 <input 
                     placeholder='Search for a background image!'
                     type="text" 
+                    name="userAPISearch"
                     value={userSearch}
                     onChange={handleChange}
-                    onSubmit={handleSubmit}
                 />
+                <button type='submit'>Submit</button>
+            </form>
+
+            <form>
+                {userSearchResults.map((result) => {
+                    return (
+                        <Fragment>
+                            
+                            <input
+                                onChange={handleChange}
+                                name='backgroundSelection'
+                                type= 'radio'
+                                value={`${result.urls.full}, ${result.blur_hash}`}
+                            ></input>
+
+                            <label 
+                                htmlFor="backgroundSelection"
+                                key={result.blur_hash} 
+                            >
+                                <img src={result.urls.thumb} alt={result.alt_description}></img>
+                            </label>
+
+                        </Fragment>
+                    )
+                })}
+
+
+
 
                 {/* Background Images */}
                 {/* <label htmlFor="backgroundSelection">Background Image</label>
@@ -89,7 +122,7 @@ const Form = ({userBackground, setUserBackground}) => {
 
 
                 {/* Background Colours */}
-                <label htmlFor="backgroundSelection">Background Colour</label>
+                {/* <label htmlFor="backgroundSelection">Background Colour</label>
                 
                 <input 
                     onChange={handleChange}
@@ -114,7 +147,7 @@ const Form = ({userBackground, setUserBackground}) => {
                     name="backgroundSelection" 
                     value='https://www.colorbook.io/imagecreator.php?hex=0000FF&width=1920&height=1080'
                 />
-                <label htmlFor="blue"><img src="https://i.imgur.com/Hx1Qo6e.png" alt="a blue square" /></label>
+                <label htmlFor="blue"><img src="https://i.imgur.com/Hx1Qo6e.png" alt="a blue square" /></label> */}
 
             </form>
         </div>
