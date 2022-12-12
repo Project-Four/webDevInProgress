@@ -22,12 +22,23 @@ const Form = ({userBackground, setUserBackground}) => {
                 per_page: 6,
                 content_filter: 'high',
                 orientation: 'landscape',
-                alt_description: true
             }
             
         })
         .then((res) => {
-            setUserSearchResults(res.data.results)
+            const data = res.data.results
+            const apiData = data.map((items) => {
+                const background = {}
+                background.key = items.id
+                background.alt = items.alt_description 
+                background.img = items.urls.full
+                background.thumb = items.urls.thumb
+            
+                return background
+
+                
+            })
+            setUserSearchResults(apiData)
         })
     }, [])
     
@@ -50,8 +61,8 @@ const Form = ({userBackground, setUserBackground}) => {
         // setUserSearch()
     }
 
-    console.log("user search", userSearch)
-    console.log("results", userSearchResults)
+    // console.log("user search", userSearch)
+    // console.log("results", userSearchResults)
 
     // const background = userBackground.backgroundSelection
     // const altText = userBackground.alt
@@ -77,7 +88,7 @@ const Form = ({userBackground, setUserBackground}) => {
                     return (
                         <Fragment>
                             
-                            <input
+                            {/* <input
                                 onChange={handleChange}
                                 name='backgroundSelection'
                                 type= 'radio'
@@ -89,7 +100,7 @@ const Form = ({userBackground, setUserBackground}) => {
                                 key={result.blur_hash} 
                             >
                                 <img src={result.urls.thumb} alt={result.alt_description}></img>
-                            </label>
+                            </label> */}
 
                         </Fragment>
                     )
