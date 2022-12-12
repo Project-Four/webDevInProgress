@@ -20,9 +20,9 @@ const Main = () => {
                 userBackground={userBackground}
                 setUserBackground={setUserBackground}
             />
-            <Preview
+            {/* <Preview
                 userBackground={userBackground}
-            />
+            /> */}
         </Fragment>
     )
     
