@@ -23,7 +23,7 @@ const Form = () => {
         
     })
     .then((res) => {
-        setData(res.data.results)
+        // setData(res.data.results)
     })
 }, [])
 
@@ -54,11 +54,18 @@ const addFields = () => {
   setInputFields([...inputFields,newField])
 }
 
-// input data into fields
+// add info into fields
 const submit = (event) => {
   event.preventDefault();
 }
 
+// create a button to remove fields if we don't need them.
+const removeFields = (index) => {
+  let userData = [...inputFields];
+  userData.splice(index, 1)
+  setInputFields(userData)
+
+ }
 
 return(
     <div>
@@ -78,6 +85,7 @@ return(
                   value = {input.age}
                   onChange = {event => handleFormChange (index, event)}
                 />
+                <button onClick={() => removeFields(index)}>Delete</button>
              </div>
           )
        } )}
@@ -91,4 +99,4 @@ return(
 
 }
 
-export default Form
+export default Form;
