@@ -26,28 +26,14 @@ const Form = ({userBackground, setUserBackground}) => {
             
         })
         .then((res) => {
-            const data = res.data.results
-            const apiData = data.map((items) => {
-                const background = {}
-                background.key = items.id
-                background.alt = items.alt_description 
-                background.img = items.urls.full
-                background.thumb = items.urls.thumb
-            
-                return background
-
-                
-            })
-            setUserSearchResults(apiData)
+            setUserSearchResults(res.data.results)
         })
     }, [])
     
-    console.log(userSearchResults)
 
     const handleChange = (e) => {
         const {name, value} = e.target
 
-        
         setUserBackground(() => {
             return {[name]: value}
         })
@@ -63,9 +49,6 @@ const Form = ({userBackground, setUserBackground}) => {
 
     // console.log("user search", userSearch)
     // console.log("results", userSearchResults)
-
-    // const background = userBackground.backgroundSelection
-    // const altText = userBackground.alt
 
     return (
         <div>
@@ -88,7 +71,7 @@ const Form = ({userBackground, setUserBackground}) => {
                     return (
                         <Fragment>
                             
-                            {/* <input
+                            <input
                                 onChange={handleChange}
                                 name='backgroundSelection'
                                 type= 'radio'
@@ -100,7 +83,7 @@ const Form = ({userBackground, setUserBackground}) => {
                                 key={result.blur_hash} 
                             >
                                 <img src={result.urls.thumb} alt={result.alt_description}></img>
-                            </label> */}
+                            </label>
 
                         </Fragment>
                     )
