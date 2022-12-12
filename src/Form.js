@@ -48,12 +48,21 @@ const handleFormChange = (index , event) => {
 
 // allow the user to add more fields.
 const addFields = () => {
+  let newField = { name: '', age: '' }
 
+  // set newField into state.
+  setInputFields([...inputFields,newField])
 }
+
+// input data into fields
+const submit = (event) => {
+  event.preventDefault();
+}
+
 
 return(
     <div>
-      <form>
+      <form onSubmit= {submit}>
         {inputFields.map((input, index) => {
           return (
              <div key = {index}>
@@ -75,6 +84,7 @@ return(
       </form>
 
       <button onClick = {addFields}>Add</button>
+      <button onClick={submit}>Submit</button>
     </div>
 );
   
