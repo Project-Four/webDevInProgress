@@ -1,19 +1,31 @@
 import axios from 'axios';
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useState } from 'react';
+import Preview from './Preview';
 
 const Form = ({userBackground, setUserBackground}) => {
 
     
     const [userSearch, setUserSearch] = useState('')
-    
-    const [userSearchResults, setUserSearchResults] = useState( [] );
+    const [userSearchResults, setUserSearchResults] = useState( [] )
+    // const [userBackgroundSelect, setUserBackgroundSelect] = useState( [] )
+
+    const [titlePreview, setTitlePreview] = useState('')
+    const [subtitlePreview, setSubtitlePreview] = useState('')
+    const [linkedinUrl, setLinkedinUrl] = useState('')
+    const [githubUrl, setGithubUrl] = useState('')
+
+    // const [inputPreview, setInputPreview] = useState({
+    //     title: '',
+    //     subtitle: ''
+    // })
 
 
-    useEffect(() => {
-        const apiKey = 'd_goQdbVz1S8P2CqrowdnFHXq8pF0xt7O6Py6INsoAs'
+
+    const getImages = () => {
+        const apiKey = 'hBNNU3fausksBX8Iir21vcSOZhnQmtoEut-59TPJj7Q'
         
         axios({
-            url: 'https://api.unsplash.com/search/photos',
+            url: `https://api.unsplash.com/search/photos/`,
             method: 'GET',
             dataResponse: 'json',
             params: {
@@ -26,29 +38,61 @@ const Form = ({userBackground, setUserBackground}) => {
             
         })
         .then((res) => {
+            console.log(res.data.results)
             setUserSearchResults(res.data.results)
         })
-    }, [])
+    }
     
-
+    // Background image search functions
     const handleChange = (e) => {
-        const {name, value} = e.target
-
-        setUserBackground(() => {
-            return {[name]: value}
-        })
-        
-        
         setUserSearch(e.target.value)
     }
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        // setUserSearch()
+        getImages();
     }
 
-    // console.log("user search", userSearch)
-    // console.log("results", userSearchResults)
+    const backgroundHandleChange = (e) => {
+        const backgroundSplit = e.target.value.split(",")
+        setUserBackground(backgroundSplit)
+        // setUserBackgroundSelect(backgroundSplit)
+        
+        // const backgroundObject = {}
+        
+        // backgroundSplit.forEach((elem, i) => {
+            //     backgroundObject[i] = elem
+            // });
+            
+            // console.log(backgroundObject)
+            // setUserBackground(backgroundObject)
+        }
+        
+    // const backgroundHandleSubmit = (e) => {
+    //     e.preventDefault();
+    //     setUserBackground(userBackgroundSelect)
+    // }
+
+
+
+    // Title preview function
+    const titlePreviewHandleChange = (e) => {
+        setTitlePreview(e.target.value)
+    }
+
+    // Subtitle preview function
+    const subtitlePreviewHandleChange = (e) => {
+        setSubtitlePreview(e.target.value)
+    }
+
+    const linkedinUrlHandleChange = (e) => {
+        setLinkedinUrl(e.target.value)
+    }
+
+    const githubUrlHandleChange = (e) => {
+        setGithubUrl(e.target.value)
+    }
+
 
     return (
         <div>
@@ -60,26 +104,28 @@ const Form = ({userBackground, setUserBackground}) => {
                     placeholder='Search for a background image!'
                     type="text" 
                     name="userAPISearch"
-                    value={userSearch}
                     onChange={handleChange}
                 />
                 <button type='submit'>Submit</button>
             </form>
 
-            <form>
+            <form 
+            // onSubmit={backgroundHandleSubmit}
+            >
                 {userSearchResults.map((result) => {
                     return (
-                        <Fragment>
+                        <Fragment key={result.id}>
                             
                             <input
-                                onChange={handleChange}
-                                name='backgroundSelection'
+                                onChange={backgroundHandleChange}
+                                name='url'
                                 type= 'radio'
-                                value={`${result.urls.full}, ${result.blur_hash}`}
+                                // value='{"url": "result.urls.full", "alt": "result.alt_description"}'
+                                value={`${result.urls.full}, ${result.alt_description}`}
                             ></input>
 
                             <label 
-                                htmlFor="backgroundSelection"
+                                htmlFor="url"
                                 key={result.blur_hash} 
                             >
                                 <img src={result.urls.thumb} alt={result.alt_description}></img>
@@ -89,65 +135,97 @@ const Form = ({userBackground, setUserBackground}) => {
                     )
                 })}
 
-
-
-
-                {/* Background Images */}
-                {/* <label htmlFor="backgroundSelection">Background Image</label>
-                <select 
-                    onChange={handleChange}
-                    name="backgroundSelection"
-                    id="backgroundSelection"
-                    value={background}
-                    > */}
-                        {/* <option value="" disabled>Select One</option> */}
-                        {/* Mapping through background images from unsplash to create select options */}
-                        {/* {data.map((img) => {
-                            return (
-                                <option 
-                                    value={img.urls.full}
-                                    key={img.blur_hash}    
-                                >                            
-                                    {img.alt_description} Background
-                                </option>
-                            )
-                        })}
-                </select> */}
-
-
-                {/* Background Colours */}
-                {/* <label htmlFor="backgroundSelection">Background Colour</label>
+                 {/* Background Colours */}
+                 <label htmlFor="url">Background Colour</label>
                 
-                <input 
-                    onChange={handleChange}
-                    type="radio" id='white' 
-                    name="backgroundSelection" 
-                    value='https://www.colorbook.io/imagecreator.php?hex=FFFFFF&width=1920&height=1080'
-                />
-                <label htmlFor="red"><img src="https://i.imgur.com/tpJaVIY.png" alt="a white square" /></label>
-
-                <input 
-                    onChange={handleChange}
-                    type="radio" id='red' 
-                    name="backgroundSelection" 
-                    value='https://www.colorbook.io/imagecreator.php?hex=FF0000&width=1920&height=1080'
-                />
-                <label htmlFor="red"><img src="https://i.imgur.com/7QOkRzF.png" alt="a red square" /></label>
+                 <input 
+                    onChange={backgroundHandleChange}
+                    type="radio" 
+                    id='white' 
+                    name="url" 
+                    value='https://www.colorbook.io/imagecreator.php?hex=FFFFFF&width=1920&height=1080, white'
+                 />
+                 <label htmlFor="red"><img src="https://i.imgur.com/tpJaVIY.png" alt="a white square" /></label>
                 
-                <input 
-                    onChange={handleChange}
+                 <input 
+                    onChange={backgroundHandleChange}
+                    type="radio" 
+                    id='red' 
+                    name="url" 
+                    value='https://www.colorbook.io/imagecreator.php?hex=FF0000&width=1920&height=1080, red'
+                 />
+                 <label htmlFor="red"><img src="https://i.imgur.com/7QOkRzF.png" alt="a red square" /></label>
+                
+                 <input 
+                    onChange={backgroundHandleChange}
                     type="radio" 
                     id='blue' 
-                    name="backgroundSelection" 
-                    value='https://www.colorbook.io/imagecreator.php?hex=0000FF&width=1920&height=1080'
+                    name="url" 
+                    value='https://www.colorbook.io/imagecreator.php?hex=0000FF&width=1920&height=1080, blue'
+                 />
+                 <label htmlFor="blue"><img src="https://i.imgur.com/Hx1Qo6e.png" alt="a blue square" /></label>
+{/* 
+                 <button type='submit'>Update Background</button> */}
+            </form>
+
+
+
+
+
+
+
+
+
+            <form className='sideBar' action="">
+                <label htmlFor="">Name</label>
+                <input 
+                type="text" 
+                name="name"
+                value={titlePreview}
+                onChange={titlePreviewHandleChange}
                 />
-                <label htmlFor="blue"><img src="https://i.imgur.com/Hx1Qo6e.png" alt="a blue square" /></label> */}
+
+                <label htmlFor="">Subtitle</label>
+                <input 
+                type="text" 
+                name="subtitle"
+                value={subtitlePreview}
+                onChange={subtitlePreviewHandleChange}
+                />
+
+                <label htmlFor="">Linkedin</label>
+                <input 
+                type="text" 
+                name="linkedin"
+                value={linkedinUrl}
+                onChange={linkedinUrlHandleChange}
+                />
+
+                <label htmlFor="">Github</label>
+                <input 
+                type="text" 
+                name="github"
+                value={githubUrl}
+                onChange={githubUrlHandleChange}
+                />
 
             </form>
+
+            <Preview 
+                titlePreview={titlePreview}
+                subtitlePreview={subtitlePreview}
+                linkedinUrl={linkedinUrl}
+                githubUrl={githubUrl}
+            />
         </div>
 
 
+
+
+
+
     )
+
 
 
     

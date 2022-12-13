@@ -5,10 +5,7 @@ import { useState } from 'react'
 
 const Main = () => {
 
-    const [userBackground, setUserBackground] = useState ({
-        backgroundSelection: '',
-        alt: ''
-    });
+    const [userBackground, setUserBackground] = useState ([]);
 
     
 
