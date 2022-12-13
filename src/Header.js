@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 const Header = () => {
   
 
@@ -9,7 +9,7 @@ const Header = () => {
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt voluptatibus enim similique dolore laborum nisi odit temporibus consequuntur amet. Perspiciatis nemo tempora fugit, facere, eius sapiente, ut inventore ullam corporis consequuntur alias debitis. Odio, assumenda optio. Molestiae esse rerum earum autem eveniet quisquam excepturi voluptate quos error? Cum, ipsum atque?</p>
 
-                <button>Get Started</button>
+                <Link to="main" className='routerLink'>Get Started</Link>
 
             </div>
             

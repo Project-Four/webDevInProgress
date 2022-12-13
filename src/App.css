@@ -38,13 +38,21 @@ p {
     font-size: 20px;
 }
 
-button {
+.routerLink, button {
     font-family: 'Fjalla One', sans-serif;
     font-size: 30px;
     border: none;
     padding: 10px;
     background-color: #E7605C;
     cursor: pointer;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active { 
+  text-decoration: none; 
+  color: black;
 }
 
 .previewSection {
