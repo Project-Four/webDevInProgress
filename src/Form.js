@@ -118,18 +118,28 @@ const Form = ({userBackground, setUserBackground}) => {
                     return (
                         <Fragment key={result.id}>
                             
+                            {/* <input
+                                onChange={backgroundHandleChange}
+                                name='url'
+                                type= 'radio'
+                                // value='{"url": "result.urls.full", "alt": "result.alt_description"}'
+                                value={`${result.urls.full}, ${result.alt_description}`}
+                            ></input> */}
+
+                            <label 
+                                className='searchImage'
+                                htmlFor="url"
+                                key={result.blur_hash} 
+                            >
+
                             <input
                                 onChange={backgroundHandleChange}
                                 name='url'
                                 type= 'radio'
                                 // value='{"url": "result.urls.full", "alt": "result.alt_description"}'
                                 value={`${result.urls.full}, ${result.alt_description}`}
-                            ></input>
+                            />
 
-                            <label 
-                                htmlFor="url"
-                                key={result.blur_hash} 
-                            >
                                 <img src={result.urls.thumb} alt={result.alt_description}></img>
                             </label>
 
@@ -215,12 +225,12 @@ const Form = ({userBackground, setUserBackground}) => {
 
             </form>
 
-            <Preview 
+            {/* <Preview 
                 titlePreview={titlePreview}
                 subtitlePreview={subtitlePreview}
                 linkedinUrl={linkedinUrl}
                 githubUrl={githubUrl}
-            />
+            /> */}
         </section>
 
         </Fragment>

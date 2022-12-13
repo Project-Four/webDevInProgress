@@ -55,12 +55,14 @@ a:active {
   color: black;
 }
 
-.previewSection {
-    border: 2px solid black;
-}
+
 
 .backgroundContainer {
     overflow: hidden;
+}
+
+.backgroundContainer img {
+    height: 200px;
 }
 
 .sideBar {
@@ -76,7 +78,46 @@ a:active {
 
 main {
     height: 100vh;
-    /* display: flex; */
+    display: flex;
+    flex-flow: row wrap;
     
+}
+
+.backgroundForm {
+    order: 2;
+    width: 80%;
+    height: 20%;
+    margin-left: 20%;
+    text-align: center;
+}
+
+.searchImage img {
+    width: 80px;
+}
+
+input[type=radio] {
+    position: fixed;
+    opacity: 0;
+    width: 80px;
+    height: 55px;
+    cursor: pointer;
+    
+}
+
+
+.textForm {
+    order: 1;
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    
+}
+
+.previewSection {
+    border: 2px solid black;
+    order: 3;
+    width: 80%;
+    height: 80%;
+    margin-left: 20%;
 }
 
