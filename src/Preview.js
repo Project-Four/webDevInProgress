@@ -1,6 +1,10 @@
 const Preview = ({userBackground, titlePreview, subtitlePreview, linkedinUrl, githubUrl}) => {
-    // console.log(userBackground)
+
+    console.log(userBackground)
+
     return (
+        
+        
         <section className="previewSection">
             <div className="wrapper">
 
@@ -10,7 +14,7 @@ const Preview = ({userBackground, titlePreview, subtitlePreview, linkedinUrl, gi
                     <a href={linkedinUrl}>Linkedin</a>/ 
                     <a href={githubUrl}>Github</a>
                     <div className="backgroundContainer">
-                        <img src="" alt="" />   
+                    <img src={userBackground} alt={userBackground} />
                     </div>
                 </div>
             </div>

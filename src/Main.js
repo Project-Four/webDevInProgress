@@ -5,10 +5,7 @@ import { useState } from 'react'
 
 const Main = () => {
 
-    const [userBackground, setUserBackground] = useState ({
-        backgroundSelection: '',
-        alt: ''
-    });
+    const [userBackground, setUserBackground] = useState ([]);
 
     
 
@@ -20,9 +17,9 @@ const Main = () => {
                 userBackground={userBackground}
                 setUserBackground={setUserBackground}
             />
-            {/* <Preview
+            <Preview
                 userBackground={userBackground}
-            /> */}
+            />
         </Fragment>
     )
     
