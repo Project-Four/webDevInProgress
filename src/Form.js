@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Fragment, useState } from 'react';
 import Preview from './Preview';
+import { Link } from 'react-router-dom';
 
 const Form = ({userBackground, setUserBackground}) => {
 
@@ -95,7 +96,8 @@ const Form = ({userBackground, setUserBackground}) => {
 
 
     return (
-        <div>
+        <Fragment>
+        <section className='backgroundForm'>
             {/* Form to search Unsplash API for photos */}
             <form onSubmit={handleSubmit}>
 
@@ -168,13 +170,15 @@ const Form = ({userBackground, setUserBackground}) => {
                  <button type='submit'>Update Background</button> */}
             </form>
 
+        </section>
 
 
 
 
 
+        <section className="textForm">
 
-
+        <Link to="/" className='routerLink'>Back to Home</Link>
 
             <form className='sideBar' action="">
                 <label htmlFor="">Name</label>
@@ -217,9 +221,9 @@ const Form = ({userBackground, setUserBackground}) => {
                 linkedinUrl={linkedinUrl}
                 githubUrl={githubUrl}
             />
-        </div>
+        </section>
 
-
+        </Fragment>
 
 
 
