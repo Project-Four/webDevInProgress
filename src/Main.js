@@ -12,7 +12,8 @@ const Main = () => {
 
 
     return (
-        <Fragment> 
+        <main> 
+
             <Form 
                 userBackground={userBackground}
                 setUserBackground={setUserBackground}
@@ -20,7 +21,7 @@ const Main = () => {
             <Preview
                 userBackground={userBackground}
             />
-        </Fragment>
+        </main>
     )
     
 }
