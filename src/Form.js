@@ -1,25 +1,12 @@
 import axios from 'axios';
 import { Fragment, useState } from 'react';
-import Preview from './Preview';
 import { Link } from 'react-router-dom';
 
-const Form = ({userBackground, setUserBackground}) => {
+const Form = ({setUserBackground, userText, setUserText}) => {
 
     
     const [userSearch, setUserSearch] = useState('')
     const [userSearchResults, setUserSearchResults] = useState( [] )
-    // const [userBackgroundSelect, setUserBackgroundSelect] = useState( [] )
-
-    const [titlePreview, setTitlePreview] = useState('')
-    const [subtitlePreview, setSubtitlePreview] = useState('')
-    const [linkedinUrl, setLinkedinUrl] = useState('')
-    const [githubUrl, setGithubUrl] = useState('')
-
-    // const [inputPreview, setInputPreview] = useState({
-    //     title: '',
-    //     subtitle: ''
-    // })
-
 
 
     const getImages = () => {
@@ -55,45 +42,25 @@ const Form = ({userBackground, setUserBackground}) => {
     }
 
     const backgroundHandleChange = (e) => {
+ 
         const backgroundSplit = e.target.value.split(",")
-        setUserBackground(backgroundSplit)
-        // setUserBackgroundSelect(backgroundSplit)
+        const image = backgroundSplit[0]
+        const alt = backgroundSplit[1]
         
-        // const backgroundObject = {}
+        setUserBackground({
+            image: image,
+            alt: alt
+        })
+    }
         
-        // backgroundSplit.forEach((elem, i) => {
-            //     backgroundObject[i] = elem
-            // });
-            
-            // console.log(backgroundObject)
-            // setUserBackground(backgroundObject)
-        }
-        
-    // const backgroundHandleSubmit = (e) => {
-    //     e.preventDefault();
-    //     setUserBackground(userBackgroundSelect)
-    // }
 
+    const userTextHandleChange = (e) => {
+        const {name, value} = e.target
 
-
-    // Title preview function
-    const titlePreviewHandleChange = (e) => {
-        setTitlePreview(e.target.value)
+        setUserText((prev) => {
+            return {...prev, [name]: value}
+        })
     }
-
-    // Subtitle preview function
-    const subtitlePreviewHandleChange = (e) => {
-        setSubtitlePreview(e.target.value)
-    }
-
-    const linkedinUrlHandleChange = (e) => {
-        setLinkedinUrl(e.target.value)
-    }
-
-    const githubUrlHandleChange = (e) => {
-        setGithubUrl(e.target.value)
-    }
-
 
     return (
         <Fragment>
@@ -111,20 +78,10 @@ const Form = ({userBackground, setUserBackground}) => {
                 <button type='submit'>Submit</button>
             </form>
 
-            <form 
-            // onSubmit={backgroundHandleSubmit}
-            >
+            <form>
                 {userSearchResults.map((result) => {
                     return (
                         <Fragment key={result.id}>
-                            
-                            {/* <input
-                                onChange={backgroundHandleChange}
-                                name='url'
-                                type= 'radio'
-                                // value='{"url": "result.urls.full", "alt": "result.alt_description"}'
-                                value={`${result.urls.full}, ${result.alt_description}`}
-                            ></input> */}
 
                             <label 
                                 className='searchImage'
@@ -139,7 +96,6 @@ const Form = ({userBackground, setUserBackground}) => {
                                 // value='{"url": "result.urls.full", "alt": "result.alt_description"}'
                                 value={`${result.urls.full}, ${result.alt_description}`}
                             />
-
                                 <img src={result.urls.thumb} alt={result.alt_description}></img>
                             </label>
 
@@ -176,14 +132,10 @@ const Form = ({userBackground, setUserBackground}) => {
                     value='https://www.colorbook.io/imagecreator.php?hex=0000FF&width=1920&height=1080, blue'
                  />
                  <label htmlFor="blue"><img src="https://i.imgur.com/Hx1Qo6e.png" alt="a blue square" /></label>
-{/* 
-                 <button type='submit'>Update Background</button> */}
+
             </form>
 
         </section>
-
-
-
 
 
         <section className="textForm">
@@ -195,42 +147,20 @@ const Form = ({userBackground, setUserBackground}) => {
                 <input 
                 type="text" 
                 name="name"
-                value={titlePreview}
-                onChange={titlePreviewHandleChange}
+                value={userText.name}
+                onChange={userTextHandleChange}
                 />
 
                 <label htmlFor="">Subtitle</label>
                 <input 
                 type="text" 
                 name="subtitle"
-                value={subtitlePreview}
-                onChange={subtitlePreviewHandleChange}
+                value={userText.subtitle}
+                onChange={userTextHandleChange}
                 />
-
-                <label htmlFor="">Linkedin</label>
-                <input 
-                type="text" 
-                name="linkedin"
-                value={linkedinUrl}
-                onChange={linkedinUrlHandleChange}
-                />
-
-                <label htmlFor="">Github</label>
-                <input 
-                type="text" 
-                name="github"
-                value={githubUrl}
-                onChange={githubUrlHandleChange}
-                />
-
             </form>
 
-            {/* <Preview 
-                titlePreview={titlePreview}
-                subtitlePreview={subtitlePreview}
-                linkedinUrl={linkedinUrl}
-                githubUrl={githubUrl}
-            /> */}
+
         </section>
 
         </Fragment>

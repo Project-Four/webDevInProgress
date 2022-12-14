@@ -1,25 +1,29 @@
-import { Fragment } from 'react'
 import Form from './Form.js'
 import Preview from './Preview.js'
 import { useState } from 'react'
 
 const Main = () => {
 
-    const [userBackground, setUserBackground] = useState ([]);
-
-    
-
-
+    const [userBackground, setUserBackground] = useState ({
+        image: '',
+        alt: ''
+    });
+    const [userText, setUserText] = useState ({
+        name: '',
+        subtitle: '',
+    })
 
     return (
         <main> 
 
             <Form 
-                userBackground={userBackground}
                 setUserBackground={setUserBackground}
+                userText={userText}
+                setUserText={setUserText}
             />
             <Preview
                 userBackground={userBackground}
+                userText={userText}
             />
         </main>
     )
