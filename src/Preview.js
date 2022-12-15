@@ -1,7 +1,5 @@
 const Preview = ({userBackground, userText, inputFields}) => {
 
-    console.log(userBackground)
-
     return (
         
         
