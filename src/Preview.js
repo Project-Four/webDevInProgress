@@ -1,4 +1,4 @@
-const Preview = ({userBackground, userText}) => {
+const Preview = ({userBackground, userText, inputFields}) => {
 
     console.log(userBackground)
 
@@ -9,6 +9,14 @@ const Preview = ({userBackground, userText}) => {
             <div className="wrapper">
 
                 <div className="preview">
+                    {inputFields.map((field, index) => {
+                                return (
+                                    <div key={index}>
+                                        <a target="_blank" href={field.link}>{field.websiteName}</a>
+                                    </div>
+                                )
+                    })}
+
                     <h1>{userText.name}</h1>
                     <h2>{userText.subtitle}</h2>
                     <div className="backgroundContainer">

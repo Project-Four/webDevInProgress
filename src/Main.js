@@ -13,6 +13,9 @@ const Main = () => {
         subtitle: '',
     })
 
+        // Links State Variables
+    const [inputFields, setInputFields] = useState([ {websiteName: '', link: ''} ])
+
     return (
         <main> 
 
@@ -20,10 +23,13 @@ const Main = () => {
                 setUserBackground={setUserBackground}
                 userText={userText}
                 setUserText={setUserText}
+                setInputFields={setInputFields}
+                inputFields={inputFields}
             />
             <Preview
                 userBackground={userBackground}
                 userText={userText}
+                inputFields={inputFields}
             />
         </main>
     )
