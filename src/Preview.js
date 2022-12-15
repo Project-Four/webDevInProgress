@@ -1,6 +1,8 @@
-const Preview = ({userBackground, inputFields}) => {
+const Preview = ({userBackground, inputFields, userText}) => {
 
     return (
+        
+        
         <section className="previewSection">
             <div className="wrapper">
 
@@ -16,8 +18,11 @@ const Preview = ({userBackground, inputFields}) => {
                         })}
                     </div>
 
+                    <h1>{userText.name}</h1>
+                    <h2>{userText.subtitle}</h2>
+
                     <div className="backgroundContainer">
-                        <img src="" alt="" />   
+                        <img src={userBackground.image} alt={userBackground.alt} />
                     </div>
 
                 </div>
