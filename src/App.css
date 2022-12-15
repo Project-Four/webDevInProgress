@@ -41,13 +41,24 @@ p {
     font-size: 20px;
 }
 
-.routerLink {
+.routerLink, 
+button {
     font-family: 'Fjalla One', sans-serif;
     font-size: 30px;
     border: none;
     padding: 10px;
     background-color: #E7605C;
     cursor: pointer;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 0px 5px 0px;
 }
 
 a:link,
@@ -61,6 +72,7 @@ a:active {
 /* Preview Styling */
 
 .backgroundContainer {
+    width: 100%;
     overflow: hidden;
     
 }
@@ -83,28 +95,25 @@ a:active {
 .sideBar {
     display: flex;
     flex-direction: column;
-    width: 40%;
-    margin-top: 100px;
+    gap: 10px;
+    margin-top: 10%;
+    width: 90%;
+    align-self: center;
 }
 
 .sideBar input {
-    margin-bottom: 10px;
     border: 3px solid black;
 }
 
-.textForm {
-    order: 1;
-    width: 20%;
-    height: 100%;
-    position: fixed;
+.sideBar label {
+    color: #7672F7;
+    font-weight: bold;
 }
 
-.fontForm {
-    margin-top: 20px;
-}
-
-.routerLink {
-    font-size: 15px;
+main {
+    height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
     
 }
 
@@ -115,56 +124,78 @@ a:active {
     height: 20%;
     margin-left: 20%;
     text-align: center;
+    display: flex;
 }
 
-.searchImage img {
-    width: 80px;
+.searchBar {
+    display: flex;
 }
 
-input[type=radio] {
+.searchBar input {
+    width: 100%;
+
+}
+
+.searchForm {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 6px;
+}
+
+.colourForm {
+    width: 30%;
+}
+
+.optionContainer {
+    border: 2px solid red;
+    width: 150px;
+    height: 100px;
+    overflow: hidden;
+    object-fit: none;
+    position: relative;
+}
+
+.searchResults{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+
+[type=radio] {
     position: fixed;
     opacity: 0;
-    width: 80px;
-    height: 55px;
-    cursor: pointer;
-    
-}
-
-input {
-    margin-bottom: 10px;
-    margin-right: 10px;
-    padding: 10px;
-    border: 3px solid black;
-    width: 250px;
-}
-
-input::placeholder {
-    font-family: 'Barlow', sans-serif;
-    text-align: center;
-}
-
-button {
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 20px;
-    border: none;
-    padding: 5px;
-    background-color: #E7605C;
+    width: 8.9%;
+    height: 8%;
     cursor: pointer;
 }
 
-label {
-    font-family: 'Barlow', sans-serif;
-    font-size: 18px;
+[type=radio]+label {
+    cursor: pointer;
 }
 
+[type=radio]:checked+label {
+    outline: 2px solid black;
+}
 
-
-/* Main Styling */
-
-main {
-    height: 100vh;
+.homeLink {
     display: flex;
-    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 0px 5px 0px;
+}
+
+.textForm {
+    order: 1;
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
     
 }
 
