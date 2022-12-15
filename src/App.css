@@ -19,6 +19,9 @@ html { box-sizing: border-box;}
     max-width: 1920px;
 }
 
+
+/* Header Styling */
+
 .header {
     text-align: center;
     background-color: #7672F7;
@@ -38,7 +41,7 @@ p {
     font-size: 20px;
 }
 
-.routerLink, button {
+.routerLink {
     font-family: 'Fjalla One', sans-serif;
     font-size: 30px;
     border: none;
@@ -55,20 +58,33 @@ a:active {
   color: black;
 }
 
-
+/* Preview Styling */
 
 .backgroundContainer {
     overflow: hidden;
+    
 }
 
 .backgroundContainer img {
-    height: 200px;
+    height: 80%;
+    width: 80%;
 }
+
+.previewSection {
+    border: 2px solid black;
+    order: 3;
+    width: 80%;
+    height: 80%;
+    margin-left: 20%;
+}
+
+/* Form Styling */
 
 .sideBar {
     display: flex;
     flex-direction: column;
     width: 40%;
+    margin-top: 100px;
 }
 
 .sideBar input {
@@ -76,12 +92,22 @@ a:active {
     border: 3px solid black;
 }
 
-main {
-    height: 100vh;
-    display: flex;
-    flex-flow: row wrap;
+.textForm {
+    order: 1;
+    width: 20%;
+    height: 100%;
+    position: fixed;
+}
+
+.fontForm {
+    margin-top: 20px;
+}
+
+.routerLink {
+    font-size: 15px;
     
 }
+
 
 .backgroundForm {
     order: 2;
@@ -104,20 +130,47 @@ input[type=radio] {
     
 }
 
+input {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    border: 3px solid black;
+    width: 250px;
+}
 
-.textForm {
-    order: 1;
-    width: 20%;
-    height: 100%;
-    position: fixed;
+input::placeholder {
+    font-family: 'Barlow', sans-serif;
+    text-align: center;
+}
+
+button {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 20px;
+    border: none;
+    padding: 5px;
+    background-color: #E7605C;
+    cursor: pointer;
+}
+
+label {
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+}
+
+
+
+/* Main Styling */
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
     
 }
 
-.previewSection {
-    border: 2px solid black;
-    order: 3;
-    width: 80%;
-    height: 80%;
-    margin-left: 20%;
-}
+
+
+
+
+
 

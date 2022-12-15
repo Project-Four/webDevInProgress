@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import Preview from './Preview';
 import { Link } from 'react-router-dom';
 
@@ -74,6 +74,31 @@ const Form = ({userBackground, setUserBackground}) => {
     //     setUserBackground(userBackgroundSelect)
     // }
 
+    // GOOGLE FONT API ******
+
+    const [fontList, setFontList] = useState([])
+
+    const fontHandleChange = (e) => {
+        e.preventDefault();
+        setFontList(e.target.value)
+    }
+ 
+    
+        axios({
+            url: `https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyAEdKHHdWZzg-L8cSU35OvR4u-Mp88mB8w`,
+            method: 'GET',
+            responseType: 'json',
+            params: {
+                sort: 'popularity',
+                
+            }
+        }).then((res) => {
+            console.log(res.data.items);
+            // setFontList(res.data.items);
+            
+        })
+    
+   
 
 
     // Title preview function
@@ -157,7 +182,7 @@ const Form = ({userBackground, setUserBackground}) => {
                     name="url" 
                     value='https://www.colorbook.io/imagecreator.php?hex=FFFFFF&width=1920&height=1080, white'
                  />
-                 <label htmlFor="red"><img src="https://i.imgur.com/tpJaVIY.png" alt="a white square" /></label>
+                 <label htmlFor="white"><img src="https://i.imgur.com/tpJaVIY.png" alt="a white square" /></label>
                 
                  <input 
                     onChange={backgroundHandleChange}
@@ -225,6 +250,24 @@ const Form = ({userBackground, setUserBackground}) => {
 
             </form>
 
+            <div>
+                <form className='fontForm'>
+                    <label htmlFor="font">Choose a font:</label>
+
+                    <select 
+                    name="font" 
+                    id="font"
+                    onChange={fontHandleChange}
+                    >
+                        <option value="" disabled>-Please choose a font-</option>
+                        <option value="Roboto">Roboto</option>
+                        <option value="Open Sans">Open Sans</option>
+                        <option value="Noto Sans JP">Noto Sans JP</option>
+                        <option value="Montserrat">Montserrat</option>
+                    </select>
+                </form>
+            </div>
+
             {/* <Preview 
                 titlePreview={titlePreview}
                 subtitlePreview={subtitlePreview}
@@ -232,6 +275,7 @@ const Form = ({userBackground, setUserBackground}) => {
                 githubUrl={githubUrl}
             /> */}
         </section>
+
 
         </Fragment>
 
