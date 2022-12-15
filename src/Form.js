@@ -4,22 +4,43 @@ import Preview from './Preview';
 
 const Form = ({userBackground, setUserBackground}) => {
 
-    
+    // ************ State Variables ************ //
     const [userSearch, setUserSearch] = useState('')
     const [userSearchResults, setUserSearchResults] = useState( [] )
 
-    const [titlePreview, setTitlePreview] = useState('')
-    const [subtitlePreview, setSubtitlePreview] = useState('')
-    const [linkedinUrl, setLinkedinUrl] = useState('')
-    const [githubUrl, setGithubUrl] = useState('')
-
-    // const [inputPreview, setInputPreview] = useState({
-    //     title: '',
-    //     subtitle: ''
-    // })
+    // create a piece of state to hold the URL input entered by the user
+    const [inputFields, setInputFields] = useState([ {websiteName: '', link: ''} ])
 
 
+    // ************ Functions for user social media urls form ************ //
+    // pass the index number and event parameters from the onChange function.
+    const handleUrlFormChange = (index , event) => {
+    // store inputFields into userData variable.
+    const userData = [...inputFields];
+    // access the userData index number and userData name of the property (through bracket notation) and set it to the value of the user's input.
+    userData[index][event.target.name] = event.target.value
+    // store this new userData back into the inputFields array with state.
+    setInputFields(userData);
+}
 
+    // allow the user to add more fields.
+    const addFields = () => {
+    const newField = {websiteName: '', link: ''}
+    // set newField into state with the existing values in inputFields.
+    setInputFields([...inputFields, newField])
+  }
+
+  // create a button to remove fields if the user no longer needs them.
+    const removeFields = (index, event) => {
+    event.preventDefault();
+    const userData = [...inputFields];
+    userData.splice(index, 1)
+    setInputFields(userData)
+   }
+
+
+    // ************ Functions for Unsplash API images ************ //
+   // declare a function to retrieve image data from Unsplash
     const getImages = () => {
         const apiKey = 'hBNNU3fausksBX8Iir21vcSOZhnQmtoEut-59TPJj7Q'
         
@@ -37,39 +58,19 @@ const Form = ({userBackground, setUserBackground}) => {
             
         })
         .then((res) => {
-            console.log(res.data.results)
             setUserSearchResults(res.data.results)
         })
     }
     
-    // Background image search functions
-    const handleChange = (e) => {
-        setUserSearch(e.target.value)
+    // declare a function to set the userSearch state variable to the value the user has entered in the input field
+    const handleImageFormChange = (event) => {
+        setUserSearch(event.target.value)
     }
     
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    // declare a function to call the getImages function when the user submits the search form
+    const handleSubmit = (event) => {
+        event.preventDefault();
         getImages();
-    }
-
-
-
-    // Title preview function
-    const titlePreviewHandleChange = (e) => {
-        setTitlePreview(e.target.value)
-    }
-
-    // Subtitle preview function
-    const subtitlePreviewHandleChange = (e) => {
-        setSubtitlePreview(e.target.value)
-    }
-
-    const linkedinUrlHandleChange = (e) => {
-        setLinkedinUrl(e.target.value)
-    }
-
-    const githubUrlHandleChange = (e) => {
-        setGithubUrl(e.target.value)
     }
 
 
@@ -83,7 +84,7 @@ const Form = ({userBackground, setUserBackground}) => {
                     placeholder='Search for a background image!'
                     type="text" 
                     name="userAPISearch"
-                    onChange={handleChange}
+                    onChange={handleImageFormChange}
                 />
                 <button type='submit'>Submit</button>
             </form>
@@ -94,7 +95,6 @@ const Form = ({userBackground, setUserBackground}) => {
                         <Fragment key={result.id}>
                             
                             <input
-                                // onChange={handleChange}
                                 name='backgroundSelection'
                                 type= 'radio'
                                 value={`${result.urls.full}, ${result.blur_hash}`}
@@ -112,109 +112,42 @@ const Form = ({userBackground, setUserBackground}) => {
                 })}
             </form>
 
-            <form className='sideBar' action="">
-                <label htmlFor="">Name</label>
-                <input 
-                type="text" 
-                name="name"
-                value={titlePreview}
-                onChange={titlePreviewHandleChange}
-                />
+            {/* Form to add/remove input fields for the user's social media profiles */}
+            <form>
+                {inputFields.map((field, index) => {
+                return (
+                    
+                    <div key = {index}>
+                        <input 
+                        type="text"
+                        name='websiteName'
+                        value={field.websiteName}
+                        placeholder='Website'
+                        onChange = {event => handleUrlFormChange(index, event)}
+                         />
 
-                <label htmlFor="">Subtitle</label>
-                <input 
-                type="text" 
-                name="subtitle"
-                value={subtitlePreview}
-                onChange={subtitlePreviewHandleChange}
-                />
-
-                <label htmlFor="">Linkedin</label>
-                <input 
-                type="text" 
-                name="linkedin"
-                value={linkedinUrl}
-                onChange={linkedinUrlHandleChange}
-                />
-
-                <label htmlFor="">Github</label>
-                <input 
-                type="text" 
-                name="github"
-                value={githubUrl}
-                onChange={githubUrlHandleChange}
-                />
-
+                        <input 
+                        type="text"
+                        name ='link'
+                        value={field.link}
+                        placeholder='Enter URL'
+                        onChange = {event => handleUrlFormChange(index, event)}
+                        />
+                        <button onClick={(event) => removeFields(index, event)}>Delete</button>
+                    </div>
+                )
+            } )}
             </form>
 
+            <button onClick = {addFields}>Add</button>
+
+
             <Preview 
-                titlePreview={titlePreview}
-                subtitlePreview={subtitlePreview}
-                linkedinUrl={linkedinUrl}
-                githubUrl={githubUrl}
+                inputFields={inputFields}
             />
         </div>
 
-
-                // {/* Background Images */}
-                // {/* <label htmlFor="backgroundSelection">Background Image</label>
-                // <select 
-                //     onChange={handleChange}
-                //     name="backgroundSelection"
-                //     id="backgroundSelection"
-                //     value={background}
-                //     > */}
-                //         {/* <option value="" disabled>Select One</option> */}
-                //         {/* Mapping through background images from unsplash to create select options */}
-                //         {/* {data.map((img) => {
-                //             return (
-                //                 <option 
-                //                     value={img.urls.full}
-                //                     key={img.blur_hash}    
-                //                 >                            
-                //                     {img.alt_description} Background
-                //                 </option>
-                //             )
-                //         })}
-                // </select> */}
-
-
-                // {/* Background Colours */}
-                // {/* <label htmlFor="backgroundSelection">Background Colour</label>
-                
-                // <input 
-                //     onChange={handleChange}
-                //     type="radio" id='white' 
-                //     name="backgroundSelection" 
-                //     value='https://www.colorbook.io/imagecreator.php?hex=FFFFFF&width=1920&height=1080'
-                // />
-                // <label htmlFor="red"><img src="https://i.imgur.com/tpJaVIY.png" alt="a white square" /></label>
-
-                // <input 
-                //     onChange={handleChange}
-                //     type="radio" id='red' 
-                //     name="backgroundSelection" 
-                //     value='https://www.colorbook.io/imagecreator.php?hex=FF0000&width=1920&height=1080'
-                // />
-                // <label htmlFor="red"><img src="https://i.imgur.com/7QOkRzF.png" alt="a red square" /></label>
-                
-                // <input 
-                //     onChange={handleChange}
-                //     type="radio" 
-                //     id='blue' 
-                //     name="backgroundSelection" 
-                //     value='https://www.colorbook.io/imagecreator.php?hex=0000FF&width=1920&height=1080'
-                // />
-                // <label htmlFor="blue"><img src="https://i.imgur.com/Hx1Qo6e.png" alt="a blue square" /></label> */}
-
-
-
-
     )
-
-
-    
-
 }
 
 export default Form
