@@ -1,4 +1,6 @@
-const Preview = ({userBackground, inputFields, userText}) => {
+const Preview = ({userBackground, userText, inputFields}) => {
+
+    console.log(userBackground)
 
     return (
         
@@ -7,24 +9,19 @@ const Preview = ({userBackground, inputFields, userText}) => {
             <div className="wrapper">
 
                 <div className="preview">
-
-                    <div>
-                        {inputFields.map((field, index) => {
-                            return (
-                                <div key={index}>
-                                    <a target="_blank" href={field.link}>{field.websiteName}</a>
-                                </div>
-                            )
-                        })}
-                    </div>
+                    {inputFields.map((field, index) => {
+                                return (
+                                    <div key={index}>
+                                        <a target="_blank" href={field.link}>{field.websiteName}</a>
+                                    </div>
+                                )
+                    })}
 
                     <h1>{userText.name}</h1>
                     <h2>{userText.subtitle}</h2>
-
                     <div className="backgroundContainer">
-                        <img src={userBackground.image} alt={userBackground.alt} />
+                    <img src={userBackground.image} alt={userBackground.alt} />
                     </div>
-
                 </div>
             </div>
         </section>

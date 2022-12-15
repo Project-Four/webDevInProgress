@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import Form from './Form.js'
 import Preview from './Preview.js'
 import { useState } from 'react'
@@ -6,24 +5,33 @@ import { useState } from 'react'
 const Main = () => {
 
     const [userBackground, setUserBackground] = useState ({
-        backgroundSelection: '',
+        image: '',
         alt: ''
     });
+    const [userText, setUserText] = useState ({
+        name: '',
+        subtitle: '',
+    })
 
-    
-
-
+        // Links State Variables
+    const [inputFields, setInputFields] = useState([ {websiteName: '', link: ''} ])
 
     return (
-        <Fragment> 
+        <main> 
+
             <Form 
-                userBackground={userBackground}
                 setUserBackground={setUserBackground}
+                userText={userText}
+                setUserText={setUserText}
+                setInputFields={setInputFields}
+                inputFields={inputFields}
             />
-            {/* <Preview
+            <Preview
                 userBackground={userBackground}
-            /> */}
-        </Fragment>
+                userText={userText}
+                inputFields={inputFields}
+            />
+        </main>
     )
     
 }

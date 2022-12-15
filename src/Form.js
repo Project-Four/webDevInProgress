@@ -2,45 +2,39 @@ import axios from 'axios';
 import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Form = ({setUserBackground, userText, setUserText}) => {
+const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFields}) => {
 
-    // ************ State Variables ************ //
+    // Unsplash Search State Variables
     const [userSearch, setUserSearch] = useState('')
     const [userSearchResults, setUserSearchResults] = useState( [] )
-
-    // create a piece of state to hold the URL input entered by the user
-    const [inputFields, setInputFields] = useState([ {websiteName: '', link: ''} ])
-
-
+    
     // ************ Functions for user social media urls form ************ //
-    // pass the index number and event parameters from the onChange function.
     const handleUrlFormChange = (index , event) => {
-    // store inputFields into userData variable.
-    const userData = [...inputFields];
-    // access the userData index number and userData name of the property (through bracket notation) and set it to the value of the user's input.
-    userData[index][event.target.name] = event.target.value
-    // store this new userData back into the inputFields array with state.
-    setInputFields(userData);
-}
+        // store inputFields into userData variable.
+        const userData = [...inputFields];
+        // access the userData index number and userData name of the property (through bracket notation) and set it to the value of the user's input.
+        userData[index][event.target.name] = event.target.value
+        // store this new userData back into the inputFields array with state.
+        setInputFields(userData);
+    }
 
     // allow the user to add more fields.
-    const addFields = () => {
-    const newField = {websiteName: '', link: ''}
-    // set newField into state with the existing values in inputFields.
-    setInputFields([...inputFields, newField])
-  }
+    const addFields = (e) => {
+        e.preventDefault();
+        const newField = {websiteName: '', link: ''}
+        // set newField into state with the existing values in inputFields.
+        setInputFields([...inputFields, newField])
+    } 
 
-  // create a button to remove fields if the user no longer needs them.
+    // create a button to remove fields if the user no longer needs them.
     const removeFields = (index, event) => {
-    event.preventDefault();
-    const userData = [...inputFields];
-    userData.splice(index, 1)
-    setInputFields(userData)
-   }
+        event.preventDefault();
+        const userData = [...inputFields];
+        userData.splice(index, 1)
+        setInputFields(userData)
+    }
 
-
-    // ************ Functions for Unsplash API images ************ //
-   // declare a function to retrieve image data from Unsplash
+    // API call to Unsplash
     const getImages = () => {
         const apiKey = 'hBNNU3fausksBX8Iir21vcSOZhnQmtoEut-59TPJj7Q'
         
@@ -58,18 +52,18 @@ const Form = ({setUserBackground, userText, setUserText}) => {
             
         })
         .then((res) => {
+            console.log(res.data.results)
             setUserSearchResults(res.data.results)
         })
     }
-    
-    // declare a function to set the userSearch state variable to the value the user has entered in the input field
-    const handleImageFormChange = (event) => {
-        setUserSearch(event.target.value)
+
+    // Background image search functions (CHANGE NAME)
+    const handleChange = (e) => {
+        setUserSearch(e.target.value)
     }
     
-    // declare a function to call the getImages function when the user submits the search form
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
         getImages();
     }
 
@@ -98,42 +92,47 @@ const Form = ({setUserBackground, userText, setUserText}) => {
         <Fragment>
         <section className='backgroundForm'>
             {/* Form to search Unsplash API for photos */}
-            <form onSubmit={handleSubmit}>
+            <form 
+                className='searchForm'
+                onSubmit={handleSubmit}
+            >
+                <div className="searchBar">
+                    <label htmlFor="userAPISearch"></label>
+                    <input 
+                        placeholder='Search for a background image!'
+                        type="text" 
+                        name="userAPISearch"
+                        onChange={handleChange}
+                    />
+                    <button type='submit' className='submit'>Search</button>
+                </div>
+                <div className="searchResults">
+                    {userSearchResults.map((result) => {
+                        return (
+                            <div key={result.id} className="optionContainer">
 
-                <label htmlFor="userAPISearch"></label>
-                <input 
-                    placeholder='Search for a background image!'
-                    type="text" 
-                    name="userAPISearch"
-                    onChange={handleImageFormChange}
-                />
-                <button type='submit'>Submit</button>
+                                <label 
+                                    className='searchImage'
+                                    htmlFor="url"
+                                    key={result.blur_hash} 
+                                >
+                                <input
+                                    onChange={backgroundHandleChange}
+                                    name='url'
+                                    type= 'radio'
+                                    // value='{"url": "result.urls.full", "alt": "result.alt_description"}'
+                                    value={`${result.urls.full}, ${result.alt_description}`}
+                                />
+                                    <img src={result.urls.thumb} alt={result.alt_description}></img>
+                                </label>
+
+                            </div>
+                        )
+                    })}
+                </div>
             </form>
 
-            <form>
-                {userSearchResults.map((result) => {
-                    return (
-                        <Fragment key={result.id}>
-
-                            <label 
-                                className='searchImage'
-                                htmlFor="url"
-                                key={result.blur_hash} 
-                            >
-
-                            <input
-                                onChange={backgroundHandleChange}
-                                name='url'
-                                type= 'radio'
-                                // value='{"url": "result.urls.full", "alt": "result.alt_description"}'
-                                value={`${result.urls.full}, ${result.alt_description}`}
-                            />
-                                <img src={result.urls.thumb} alt={result.alt_description}></img>
-                            </label>
-
-                        </Fragment>
-                    )
-                })}
+            <form className='colourForm'>
 
                  {/* Background Colours */}
                  <label htmlFor="url">Background Colour</label>
@@ -166,7 +165,9 @@ const Form = ({setUserBackground, userText, setUserText}) => {
                  <label htmlFor="blue"><img src="https://i.imgur.com/Hx1Qo6e.png" alt="a blue square" /></label>
 
             </form>
+
         </section>
+
 
         <section className="textForm">
 
@@ -188,9 +189,8 @@ const Form = ({setUserBackground, userText, setUserText}) => {
                 value={userText.subtitle}
                 onChange={userTextHandleChange}
                 />
-
-                {/* Form to add/remove input fields for the user's social media profiles */}
-
+            </form>
+            <form>
                 {inputFields.map((field, index) => {
                 return (
                     
@@ -213,21 +213,24 @@ const Form = ({setUserBackground, userText, setUserText}) => {
                         <button onClick={(event) => removeFields(index, event)}>Delete</button>
                     </div>
                 )
-                } )}
-
+            } )}
 
                 <button onClick = {addFields}>Add</button>
-
             </form>
-
-            <Preview 
-                inputFields={inputFields}
-            />
 
         </section>
 
         </Fragment>
+
+
+
+
     )
+
+
+
+    
+  
 }
 
-export default Form;
+export default Form
