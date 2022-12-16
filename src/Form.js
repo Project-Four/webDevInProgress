@@ -79,39 +79,14 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
         })
     }
         
-
-    // GOOGLE FONT API ******
-
-    const [fontList, setFontList] = useState([])
-
-    const fontHandleChange = (e) => {
-        e.preventDefault();
-        setFontList(e.target.value)
-    }
- 
-    
-        axios({
-            url: `https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyAEdKHHdWZzg-L8cSU35OvR4u-Mp88mB8w`,
-            method: 'GET',
-            responseType: 'json',
-            params: {
-                sort: 'popularity',
-                
-            }
-        }).then((res) => {
-            console.log(res.data.items);
-            // setFontList(res.data.items);
-            
-        })
-    
-   
     const userTextHandleChange = (e) => {
         const {name, value} = e.target
-
+        
         setUserText((prev) => {
             return {...prev, [name]: value}
         })
     }
+    
 
     return (
         <Fragment>
@@ -242,25 +217,6 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
                 <button onClick = {addFields}>Add</button>
             </form>
-
-            <div>
-                <form className='fontForm'>
-                    <label htmlFor="font">Choose a font:</label>
-
-                    <select 
-                    name="font" 
-                    id="font"
-                    onChange={fontHandleChange}
-                    >
-                        <option value="" disabled>-Please choose a font-</option>
-                        <option value="Roboto">Roboto</option>
-                        <option value="Open Sans">Open Sans</option>
-                        <option value="Noto Sans JP">Noto Sans JP</option>
-                        <option value="Montserrat">Montserrat</option>
-                    </select>
-                </form>
-            </div>
-
         </section>
 
 

@@ -199,6 +199,25 @@ main {
     
 }
 
+#downloadButton {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
+
+.copy p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+pre {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.tab {
+    margin-left: 40px;
+}
 
 
 
