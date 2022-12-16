@@ -1,6 +1,9 @@
 import Form from './Form.js'
 import Preview from './Preview.js'
+import Download from './Download.js'
+
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Main = () => {
 
@@ -14,7 +17,10 @@ const Main = () => {
     })
 
         // Links State Variables
-    const [inputFields, setInputFields] = useState([ {websiteName: '', link: ''} ])
+    const [inputFields, setInputFields] = useState([{
+        websiteName: '',
+        link: ''
+    }])
 
     return (
         <main> 
@@ -27,6 +33,11 @@ const Main = () => {
                 inputFields={inputFields}
             />
             <Preview
+                userBackground={userBackground}
+                userText={userText}
+                inputFields={inputFields}
+            />
+            <Download
                 userBackground={userBackground}
                 userText={userText}
                 inputFields={inputFields}

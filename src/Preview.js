@@ -1,7 +1,5 @@
 const Preview = ({userBackground, userText, inputFields}) => {
 
-    console.log(userBackground)
-
     return (
         
         
@@ -25,6 +23,7 @@ const Preview = ({userBackground, userText, inputFields}) => {
                     <img src={userBackground.image} alt={userBackground.alt} />
                     </div>
                 </div>
+
             </div>
         </section>
     )

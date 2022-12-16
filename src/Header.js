@@ -10,7 +10,7 @@ const Header = () => {
                 <div className="bblob">
                     <h1>Web Dev in Progress</h1>
                 </div>
-                
+
                     <h2>If you are in the midst of creating or upgrading your Web Developer portfolio, but need a placeholder - this is just what you need. Here you can easily create a quick, but stylish, landing page for your up and coming portfolio:</h2>
                 
                 <ul>
@@ -23,8 +23,8 @@ const Header = () => {
 
                 <p>Click the button below to get started!</p>
 
-                <Link to="main" className='routerLink'>Get Started</Link>
-        
+                <Link to="/main" className='routerLink'>Get Started</Link>
+
             </div>
         </div>
             

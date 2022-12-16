@@ -85,13 +85,15 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
     
    
+        
     const userTextHandleChange = (e) => {
         const {name, value} = e.target
-
+        
         setUserText((prev) => {
             return {...prev, [name]: value}
         })
     }
+    
 
     return (
         <Fragment>
@@ -238,7 +240,6 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
                 <button onClick = {addFields} className='add'>+</button>
             </form>
-
         </section>
 
         </Fragment>  
