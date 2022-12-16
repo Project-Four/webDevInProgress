@@ -312,10 +312,14 @@ main {
     order: 1;
     width: 20%;
     height: 100%;
-    position: fixed;
+    position: absolute;
     display: flex;
     flex-direction: column;
-    
+}
+
+.downloadSection {
+    order: 4;
+    width: 100%;
 }
 
 #downloadButton {

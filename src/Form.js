@@ -9,8 +9,6 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
     const [userSearch, setUserSearch] = useState('')
     const [userSearchResults, setUserSearchResults] = useState( [] )
 
-    // Color Picker State Variables
-    const [colour, setColour] = useState('#fffff')
     
     // ************ Functions for user social media urls form ************ //
     const handleUrlFormChange = (index , event) => {
@@ -83,8 +81,6 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
         })
     }
 
-    
-   
         
     const userTextHandleChange = (e) => {
         const {name, value} = e.target
@@ -173,12 +169,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
             </form> */}
 
-            <div className='colourForm'>
-                <HuePicker
-                    color={colour}
-                    onHandleChange={(colour) => {setColour(colour.hex)}}
-                />
-            </div>
+            
 
         </section>
 
@@ -204,12 +195,12 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                 onChange={userTextHandleChange}
                 />
 
-                <div className='colourPicker'>
+                {/* <div className='colourPicker'>
                     <GithubPicker
                         color={colour}
                         onChangeComplete={(colour) => {setColour(colour.hex)}}
                     />
-                </div>
+                </div> */}
             </form>
 
             <form>
