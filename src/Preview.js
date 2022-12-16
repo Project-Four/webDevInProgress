@@ -7,16 +7,18 @@ const Preview = ({userBackground, userText, inputFields}) => {
             <div className="wrapper">
 
                 <div className="preview">
-                    <h1>{userText.name}</h1>
-                    <h2>{userText.subtitle}</h2>
-                    {inputFields.map((field, index) => {
-                                return (
-                                    <div key={index}>
-                                        <a target="_blank" href={field.link}>{field.websiteName}</a>
-                                    </div>
-                                )
-                    })}
-
+                    <div className="previewText">
+                        <h1 className="name">{userText.name}</h1>
+                        <h2 className="subtitle">{userText.subtitle}</h2>
+                        {inputFields.map((field, index) => {
+                                    return (
+                                        <div key={index}>
+                                            <a className="link" target="_blank" href={field.link}>{field.websiteName}</a>
+                                        </div>
+                                    )
+                        })}
+                    </div>
+        
                     <div className="backgroundContainer">
                     <img src={userBackground.image} alt={userBackground.alt} />
                     </div>
