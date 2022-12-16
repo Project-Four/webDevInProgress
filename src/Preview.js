@@ -12,13 +12,13 @@ const Preview = ({userBackground, userText, inputFields}) => {
                     {inputFields.map((field, index) => {
                                 return (
                                     <div key={index}>
-                                        <a target="_blank" href={field.link}>{field.websiteName}</a>
+                                        <a className="link" target="_blank" href={field.link}>{field.websiteName}</a>
                                     </div>
                                 )
                     })}
 
-                    <h1>{userText.name}</h1>
-                    <h2>{userText.subtitle}</h2>
+                    <h1 className="name">{userText.name}</h1>
+                    <h2 className="subtitle">{userText.subtitle}</h2>
                     <div className="backgroundContainer">
                     <img src={userBackground.image} alt={userBackground.alt} />
                     </div>

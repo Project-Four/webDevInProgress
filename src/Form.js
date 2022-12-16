@@ -82,27 +82,27 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
     // GOOGLE FONT API ******
 
-    const [fontList, setFontList] = useState([])
+    // const [fontList, setFontList] = useState([])
 
-    const fontHandleChange = (e) => {
-        e.preventDefault();
-        setFontList(e.target.value)
-    }
+    // const fontHandleChange = (e) => {
+    //     e.preventDefault();
+    //     setFontList(e.target.value)
+    // }
  
     
-        axios({
-            url: `https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyAEdKHHdWZzg-L8cSU35OvR4u-Mp88mB8w`,
-            method: 'GET',
-            responseType: 'json',
-            params: {
-                sort: 'popularity',
+    //     axios({
+    //         url: `https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyAEdKHHdWZzg-L8cSU35OvR4u-Mp88mB8w`,
+    //         method: 'GET',
+    //         responseType: 'json',
+    //         params: {
+    //             sort: 'popularity',
                 
-            }
-        }).then((res) => {
-            console.log(res.data.items);
-            // setFontList(res.data.items);
+    //         }
+    //     }).then((res) => {
+    //         console.log(res.data.items);
+    //         // setFontList(res.data.items);
             
-        })
+    //     })
     
    
     const userTextHandleChange = (e) => {
@@ -250,7 +250,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                     <select 
                     name="font" 
                     id="font"
-                    onChange={fontHandleChange}
+                    // onChange={fontHandleChange}
                     >
                         <option value="" disabled>-Please choose a font-</option>
                         <option value="Roboto">Roboto</option>
