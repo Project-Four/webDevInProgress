@@ -36,7 +36,7 @@ const [inputFields, setInputFields] = useState([ {name: '', age:''} ])
 // pass the values of index and event from the onChange function.
 const handleFormChange = (index , event) => {
 
-    // store inoutFields into userData variable.
+    // store inputFields into userData variable.
     let userData = [...inputFields];
 
     // target the userData index and userData name of the property.
@@ -67,6 +67,7 @@ const removeFields = (index) => {
 
  }
 
+
 return(
     <div>
       <form onSubmit= {submit}>
@@ -77,7 +78,7 @@ return(
                   name ='name'
                   placeholder='Name'
                   value = {input.name}
-                  onChange = {event => handleFormChange=(index, event)}
+                  onChange = {event => handleFormChange(index, event)}
                 />
                 <input
                   name = 'age'
