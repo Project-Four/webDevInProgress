@@ -73,8 +73,7 @@ p {
 }
 
 
-.routerLink, 
-button {
+.routerLink {
     font-family: 'Fjalla One', sans-serif;
     font-size: 30px;
     background-color: #E7605C;
@@ -94,16 +93,6 @@ button {
       border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
     }
   }
-
-.submit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    text-align: center;
-    cursor: pointer;
-    padding: 5px 0px 5px 0px;
-}
 
 a:link,
 a:visited,
@@ -133,25 +122,32 @@ a:active {
     width: 80%;
     height: 80%;
     margin-left: 20%;
+    display: flex;
+    align-items: center;
+    
 }
 
-.name {
+.previewText {
     position: absolute;
     z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
 }
 
-.subtitle {
-    position: absolute;
-    z-index: 1;
-}
-
-.link {
-    position: absolute;
-    z-index: 1;
-}
 
 
 /* Form Styling */
+
+.homeLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    cursor: pointer;
+}
 
 .sideBar {
     display: flex;
@@ -164,11 +160,60 @@ a:active {
 
 .sideBar input {
     border: 3px solid black;
+    padding: 10px;
 }
 
 .sideBar label {
-    color: #7672F7;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    color: #161B25;
     font-weight: bold;
+
+}
+
+.colourPicker {
+    margin-left: 20%;
+    margin-top: 20px;
+}
+
+.linkInput {
+    display: flex;
+    flex-direction: column;
+    margin-left: 33px;
+
+}
+
+.linkInput input {
+    border: 3px solid black;
+    padding: 10px;
+    gap: 10px;
+    margin-top: 10%;
+    width: 90%;
+}
+
+.delete {
+    color: white;
+    background-color: red;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    margin-top: 15px;
+}
+
+.add {
+    color: white;
+    background-color: green;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    margin-left: 33px;
+    margin-top: 10px;
 }
 
 main {
@@ -186,6 +231,8 @@ main {
     margin-left: 20%;
     text-align: center;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .searchBar {
@@ -194,7 +241,24 @@ main {
 
 .searchBar input {
     width: 100%;
+    margin: 10px;
+    padding: 10px;
+}
 
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 10px 5px 10px;
+    margin: 10px;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #E7605C;
+    border: none;
 }
 
 .searchForm {
@@ -205,7 +269,9 @@ main {
 }
 
 .colourForm {
-    width: 30%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
 }
 
 .optionContainer {
@@ -221,6 +287,7 @@ main {
     display: flex;
     justify-content: space-between;
     gap: 5px;
+    z-index: 2;
 }
 
 
@@ -240,15 +307,6 @@ main {
     outline: 2px solid black;
 }
 
-.homeLink {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    text-align: center;
-    cursor: pointer;
-    padding: 5px 0px 5px 0px;
-}
 
 .textForm {
     order: 1;

@@ -1,12 +1,16 @@
 import axios from 'axios';
 import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { GithubPicker, HuePicker } from 'react-color';
 
 const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFields}) => {
 
     // Unsplash Search State Variables
     const [userSearch, setUserSearch] = useState('')
     const [userSearchResults, setUserSearchResults] = useState( [] )
+
+    // Color Picker State Variables
+    const [colour, setColour] = useState('#fffff')
     
     // ************ Functions for user social media urls form ************ //
     const handleUrlFormChange = (index , event) => {
@@ -78,31 +82,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
             alt: alt
         })
     }
-        
 
-    // GOOGLE FONT API ******
-
-    // const [fontList, setFontList] = useState([])
-
-    // const fontHandleChange = (e) => {
-    //     e.preventDefault();
-    //     setFontList(e.target.value)
-    // }
- 
-    
-    //     axios({
-    //         url: `https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyAEdKHHdWZzg-L8cSU35OvR4u-Mp88mB8w`,
-    //         method: 'GET',
-    //         responseType: 'json',
-    //         params: {
-    //             sort: 'popularity',
-                
-    //         }
-    //     }).then((res) => {
-    //         console.log(res.data.items);
-    //         // setFontList(res.data.items);
-            
-    //     })
     
    
     const userTextHandleChange = (e) => {
@@ -157,10 +137,10 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                 </div>
             </form>
 
-            <form className='colourForm'>
+            {/* <form className='colourForm'> */}
 
                  {/* Background Colours */}
-                 <label htmlFor="url">Background Colour</label>
+                 {/* <label htmlFor="url">Background Colour</label>
                 
                  <input 
                     onChange={backgroundHandleChange}
@@ -189,7 +169,14 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                  />
                  <label htmlFor="blue"><img src="https://i.imgur.com/Hx1Qo6e.png" alt="a blue square" /></label>
 
-            </form>
+            </form> */}
+
+            <div className='colourForm'>
+                <HuePicker
+                    color={colour}
+                    onHandleChange={(colour) => {setColour(colour.hex)}}
+                />
+            </div>
 
         </section>
 
@@ -214,12 +201,20 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                 value={userText.subtitle}
                 onChange={userTextHandleChange}
                 />
+
+                <div className='colourPicker'>
+                    <GithubPicker
+                        color={colour}
+                        onChangeComplete={(colour) => {setColour(colour.hex)}}
+                    />
+                </div>
             </form>
+
             <form>
                 {inputFields.map((field, index) => {
                 return (
                     
-                    <div key = {index}>
+                    <div key = {index} className='linkInput'>
                         <input 
                         type="text"
                         name='websiteName'
@@ -235,46 +230,27 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                         placeholder='Enter URL'
                         onChange = {event => handleUrlFormChange(index, event)}
                         />
-                        <button onClick={(event) => removeFields(index, event)}>Delete</button>
+                        <button onClick={(event) => removeFields(index, event)} className='delete'>-</button>
                     </div>
                 )
+                
             } )}
 
-                <button onClick = {addFields}>Add</button>
+                <button onClick = {addFields} className='add'>+</button>
             </form>
-
-            <div>
-                <form className='fontForm'>
-                    <label htmlFor="font">Choose a font:</label>
-
-                    <select 
-                    name="font" 
-                    id="font"
-                    // onChange={fontHandleChange}
-                    >
-                        <option value="" disabled>-Please choose a font-</option>
-                        <option value="Roboto">Roboto</option>
-                        <option value="Open Sans">Open Sans</option>
-                        <option value="Noto Sans JP">Noto Sans JP</option>
-                        <option value="Montserrat">Montserrat</option>
-                    </select>
-                </form>
-            </div>
 
         </section>
 
-
-        </Fragment>
-
-
+        </Fragment>  
 
 
     )
-
-
-
     
   
 }
+
+ 
+    
+
 
 export default Form
