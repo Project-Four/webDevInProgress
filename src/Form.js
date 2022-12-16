@@ -217,7 +217,29 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
         <Link to="/" className='routerLink homeLink'>Back to Home</Link>
 
+
             <form className='sideBar' action="">
+
+                <div className='fontOptions'>
+                    <button className='barlow' onClick={() => handleFontChange('barlow')}>A</button>
+                    <button className='anton' onClick={() => handleFontChange('anton')}>A</button>
+                    <button className='comfortaa' onClick={() => handleFontChange('comfortaa')}>A</button>
+                    <button className='lobster' onClick={() => handleFontChange('lobster')}>A</button>
+                    <button className='fade' onClick={() => handleFontChange('fade')}>A</button>
+                    <button className='spraypaint' onClick={() => handleFontChange('spraypaint')}>A</button>
+                    <button className='storm' onClick={() => handleFontChange('storm')}>A</button>
+                    <button className='vinyl' onClick={() => handleFontChange('vinyl')}>A</button>
+                    <button className='unbounded' onClick={() => handleFontChange('unbounded')}>A</button>
+                    <button className='zendots' onClick={() => handleFontChange('zendots')}>A</button>
+                </div>
+
+                <div className='colourPicker'>
+                    <GithubPicker
+                        color={colour}
+                        onChangeComplete={(colour) => {setColour(colour.hex)}}
+                    />
+                </div>
+
                 <label htmlFor="">Name</label>
                 <input 
                 type="text" 
@@ -234,12 +256,6 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                 onChange={userTextHandleChange}
                 />
 
-                <div className='colourPicker'>
-                    <GithubPicker
-                        color={colour}
-                        onChangeComplete={(colour) => {setColour(colour.hex)}}
-                    />
-                </div>
             </form>
 
             <form>
@@ -271,18 +287,6 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                 <button onClick = {addFields} className='add'>+</button>
             </form>
 
-            <div className='fontOptions'>
-                <button className='barlow' onClick={() => handleFontChange('barlow')}>A</button>
-                <button className='anton' onClick={() => handleFontChange('anton')}>A</button>
-                <button className='comfortaa' onClick={() => handleFontChange('comfortaa')}>A</button>
-                <button className='lobster' onClick={() => handleFontChange('lobster')}>A</button>
-                <button className='fade' onClick={() => handleFontChange('fade')}>A</button>
-                <button className='spraypaint' onClick={() => handleFontChange('spraypaint')}>A</button>
-                <button className='storm' onClick={() => handleFontChange('storm')}>A</button>
-                <button className='vinyl' onClick={() => handleFontChange('vinyl')}>A</button>
-                <button className='unbounded' onClick={() => handleFontChange('unbounded')}>A</button>
-                <button className='zendots' onClick={() => handleFontChange('zendots')}>A</button>
-            </div>
         </section>
 
         </Fragment>  
