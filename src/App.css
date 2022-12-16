@@ -9,6 +9,57 @@ html { box-sizing: border-box;}
 /* Font Imports */
 @import url('https://fonts.googleapis.com/css2?family=Barlow&family=Fjalla+One&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Comfortaa&family=Lobster&family=Rubik+80s+Fade&family=Rubik+Spray+Paint&family=Rubik+Storm&family=Rubik+Vinyl&family=Unbounded&family=Zen+Dots&display=swap');
+
+.barlow {
+    font-family: 'Barlow', sans-serif;
+}
+
+.anton {
+    font-family: 'Anton', sans-serif;
+}
+
+.comfortaa {
+    font-family: 'Comfortaa', cursive;
+}
+
+.lobster {
+    font-family: 'Lobster', cursive;
+}
+
+.fade {
+    font-family: 'Rubik 80s Fade', cursive;
+}
+
+.spraypaint {
+    font-family: 'Rubik Spray Paint', cursive;
+}
+
+.storm {
+    font-family: 'Rubik Storm', cursive;
+}
+
+.vinyl {
+    font-family: 'Rubik Vinyl', cursive;
+}
+
+.unbounded {
+    font-family: 'Unbounded', cursive;
+}
+
+.zendots {
+    font-family: 'Zen Dots', cursive;
+}
+
+.fontOptions {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fontOptions button {
+    width: 20%;
+}
+
 .App {
   text-align: center;
 }
@@ -28,7 +79,6 @@ html { box-sizing: border-box;}
 }
 
 h1 {
-    font-family: 'Fjalla One', sans-serif;
     font-weight: bold;
     font-size: 80px;
 }
@@ -188,6 +238,7 @@ main {
 }
 
 .previewSection {
+    font-family: 'Barlow', sans-serif;
     border: 2px solid black;
     order: 3;
     width: 80%;
