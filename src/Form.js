@@ -3,7 +3,7 @@ import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { GithubPicker, HuePicker } from 'react-color';
 
-const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFields}) => {
+const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFields, setFont}) => {
 
     // Unsplash Search State Variables
     const [userSearch, setUserSearch] = useState('')
@@ -36,6 +36,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
         setInputFields(userData)
     }
 
+    // ************ Functions for background images form ************ //
     // API call to Unsplash
     const getImages = () => {
         const apiKey = 'hBNNU3fausksBX8Iir21vcSOZhnQmtoEut-59TPJj7Q'
@@ -90,6 +91,12 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
         })
     }
     
+
+    // ************ Function for font changes ************ //
+    const handleFontChange = (selectedFont) => {
+        setFont(selectedFont);
+    }
+
 
     return (
         <Fragment>
@@ -231,6 +238,19 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
                 <button onClick = {addFields} className='add'>+</button>
             </form>
+
+            <div className='fontOptions'>
+                <button className='barlow' onClick={() => handleFontChange('barlow')}>A</button>
+                <button className='anton' onClick={() => handleFontChange('anton')}>A</button>
+                <button className='comfortaa' onClick={() => handleFontChange('comfortaa')}>A</button>
+                <button className='lobster' onClick={() => handleFontChange('lobster')}>A</button>
+                <button className='fade' onClick={() => handleFontChange('fade')}>A</button>
+                <button className='spraypaint' onClick={() => handleFontChange('spraypaint')}>A</button>
+                <button className='storm' onClick={() => handleFontChange('storm')}>A</button>
+                <button className='vinyl' onClick={() => handleFontChange('vinyl')}>A</button>
+                <button className='unbounded' onClick={() => handleFontChange('unbounded')}>A</button>
+                <button className='zendots' onClick={() => handleFontChange('zendots')}>A</button>
+            </div>
         </section>
 
         </Fragment>  

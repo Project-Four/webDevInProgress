@@ -16,11 +16,12 @@ const Main = () => {
         subtitle: '',
     })
 
-        // Links State Variables
-    const [inputFields, setInputFields] = useState([{
-        websiteName: '',
-        link: ''
-    }])
+    // Links State Variables
+    const [inputFields, setInputFields] = useState([ {websiteName: '', link: ''} ])
+
+    // State variable for selected font option
+    const [font, setFont] = useState();
+
 
     return (
         <main> 
@@ -31,11 +32,13 @@ const Main = () => {
                 setUserText={setUserText}
                 setInputFields={setInputFields}
                 inputFields={inputFields}
+                setFont={setFont}
             />
             <Preview
                 userBackground={userBackground}
                 userText={userText}
                 inputFields={inputFields}
+                font={font}
             />
             <Download
                 userBackground={userBackground}
