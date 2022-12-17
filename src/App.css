@@ -404,6 +404,29 @@ pre {
     width: 100%;
 }
 
+.userCopy {
+    display: flex;
+}
+
+.copyHtml {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 50vh;
+}
+
+.copyCss {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 50vh;
+}
+
+textarea {
+    resize: none;
+    height: 100%;
+}
+
 
 
 

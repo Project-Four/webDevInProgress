@@ -217,9 +217,6 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
         <Link to="/" className='routerLink homeLink'>Back to Home</Link>
 
-
-            <form className='sideBar' action="">
-
                 <div className='fontOptions'>
                     <button className='barlow' onClick={() => handleFontChange('barlow')}>A</button>
                     <button className='anton' onClick={() => handleFontChange('anton')}>A</button>
@@ -232,6 +229,9 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                     <button className='unbounded' onClick={() => handleFontChange('unbounded')}>A</button>
                     <button className='zendots' onClick={() => handleFontChange('zendots')}>A</button>
                 </div>
+
+            <form className='sideBar' action="">
+
 
                 <div className='colourPicker'>
                     <GithubPicker
