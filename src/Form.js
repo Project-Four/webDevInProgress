@@ -84,31 +84,6 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
         })
     }
         
-
-    // GOOGLE FONT API ******
-
-    const [fontList, setFontList] = useState([])
-
-    const fontHandleChange = (e) => {
-        e.preventDefault();
-        setFontList(e.target.value)
-    }
- 
-    
-        axios({
-            url: `https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyAEdKHHdWZzg-L8cSU35OvR4u-Mp88mB8w`,
-            method: 'GET',
-            responseType: 'json',
-            params: {
-                sort: 'popularity',
-                
-            }
-        }).then((res) => {
-            console.log(res.data.items);
-            // setFontList(res.data.items);
-            
-        })
-    
    
     const userTextHandleChange = (e) => {
         const {name, value} = e.target
@@ -157,7 +132,6 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                                     onChange={backgroundHandleChange}
                                     name='url'
                                     type= 'radio'
-                                    // value='{"url": "result.urls.full", "alt": "result.alt_description"}'
                                     value={`${result.urls.full}, ${result.alt_description}`}
                                 />
                                     <img src={result.urls.thumb} alt={result.alt_description}></img>
@@ -169,40 +143,6 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                 </div>
             </form>
 
-            {/* <form className='colourForm'> */}
-
-                 {/* Background Colours */}
-                 {/* <label htmlFor="url">Background Colour</label>
-                
-                 <input 
-                    onChange={backgroundHandleChange}
-                    type="radio" 
-                    id='white' 
-                    name="url" 
-                    value='https://www.colorbook.io/imagecreator.php?hex=FFFFFF&width=1920&height=1080, white'
-                 />
-                 <label htmlFor="white"><img src="https://i.imgur.com/tpJaVIY.png" alt="a white square" /></label>
-                
-                 <input 
-                    onChange={backgroundHandleChange}
-                    type="radio" 
-                    id='red' 
-                    name="url" 
-                    value='https://www.colorbook.io/imagecreator.php?hex=FF0000&width=1920&height=1080, red'
-                 />
-                 <label htmlFor="red"><img src="https://i.imgur.com/7QOkRzF.png" alt="a red square" /></label>
-                
-                 <input 
-                    onChange={backgroundHandleChange}
-                    type="radio" 
-                    id='blue' 
-                    name="url" 
-                    value='https://www.colorbook.io/imagecreator.php?hex=0000FF&width=1920&height=1080, blue'
-                 />
-                 <label htmlFor="blue"><img src="https://i.imgur.com/Hx1Qo6e.png" alt="a blue square" /></label>
-
-            </form> */}
-
             <div className='colourForm'>
                 <HuePicker
                     color={colour}
@@ -213,9 +153,9 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
         </section>
 
 
-        <section className="textForm">
+        <section className="sideBarSection">
 
-        <Link to="/" className='routerLink homeLink'>Back to Home</Link>
+            <Link to="/" className='routerLink homeLink'>Back to Home</Link>
 
                 <div className='fontOptions'>
                     <button className='barlow' onClick={() => handleFontChange('barlow')}>A</button>
@@ -230,7 +170,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                     <button className='zendots' onClick={() => handleFontChange('zendots')}>A</button>
                 </div>
 
-            <form className='sideBar' action="">
+            <div className='sideBar'>
 
 
                 <div className='colourPicker'>
@@ -240,52 +180,57 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                     />
                 </div>
 
-                <label htmlFor="">Name</label>
-                <input 
-                type="text" 
-                name="name"
-                value={userText.name}
-                onChange={userTextHandleChange}
-                />
+                <form action="" className='textForm'>
+                    <label htmlFor="">Name</label>
+                    <input 
+                    type="text" 
+                    name="name"
+                    value={userText.name}
+                    onChange={userTextHandleChange}
+                    />
 
-                <label htmlFor="">Subtitle</label>
-                <input 
-                type="text" 
-                name="subtitle"
-                value={userText.subtitle}
-                onChange={userTextHandleChange}
-                />
+                    <label htmlFor="">Subtitle</label>
+                    <input 
+                    type="text" 
+                    name="subtitle"
+                    value={userText.subtitle}
+                    onChange={userTextHandleChange}
+                    />
 
-            </form>
-
-            <form>
-                {inputFields.map((field, index) => {
-                return (
                     
-                    <div key = {index} className='linkInput'>
-                        <input 
-                        type="text"
-                        name='websiteName'
-                        value={field.websiteName}
-                        placeholder='Website'
-                        onChange = {event => handleUrlFormChange(index, event)}
-                         />
+                    {inputFields.map((field, index) => {
+                    return (
+                        <Fragment>
+                            <div key = {index} className='linkInput'>
+                                <label htmlFor="websiteName">Website Name</label>
+                                <input 
+                                type="text"
+                                name='websiteName'
+                                value={field.websiteName}
+                                placeholder='Website Name'
+                                onChange = {event => handleUrlFormChange(index, event)}
+                                />
 
-                        <input 
-                        type="text"
-                        name ='link'
-                        value={field.link}
-                        placeholder='Enter URL'
-                        onChange = {event => handleUrlFormChange(index, event)}
-                        />
-                        <button onClick={(event) => removeFields(index, event)} className='delete'>-</button>
-                    </div>
-                )
-                
-            } )}
+                                <label htmlFor="link">Link</label>
+                                <input 
+                                type="text"
+                                name ='link'
+                                value={field.link}
+                                placeholder='Enter URL'
+                                onChange = {event => handleUrlFormChange(index, event)}
+                                />
+                                <button onClick={(event) => removeFields(index, event)} className='delete'>Remove Link</button>
+                            </div>
+                        </Fragment>
+                    )
+                    
+                } )}
+                    <button onClick = {addFields} className='add'>Add Link</button>
+                </form>
 
-                <button onClick = {addFields} className='add'>+</button>
-            </form>
+            </div>
+
+
 
         </section>
 
