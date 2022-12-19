@@ -1,7 +1,8 @@
 import classNames from 'classnames'
-const Preview = ({userBackground, userText, inputFields, font}) => {
+const Preview = ({userBackground, userText, inputFields, font, color, setColor, fontColor}) => {
 
-    const previewClasses = classNames("wrapper", font)
+    const previewClasses = classNames("wrapper", font, fontColor)
+
 
     return (
 
@@ -12,10 +13,10 @@ const Preview = ({userBackground, userText, inputFields, font}) => {
                     <h1>{userText.name}</h1>
                     <h2>{userText.subtitle}</h2>
 
-                    <div className="preview">
+                    <div>
                         {inputFields.map((field, index) => {
                             return (
-                                <div key={index}>
+                                <div className={fontColor} key={index}>
                                     <a target="_blank" href={field.link}>{field.websiteName}</a>
                                 </div>
                             )

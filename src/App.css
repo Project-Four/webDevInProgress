@@ -11,6 +11,8 @@ html { box-sizing: border-box;}
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Comfortaa&family=Lobster&family=Rubik+80s+Fade&family=Rubik+Spray+Paint&family=Rubik+Storm&family=Rubik+Vinyl&family=Unbounded&family=Zen+Dots&display=swap');
 
+/* Font Families */
+
 .barlow {
     font-family: 'Barlow', sans-serif;
 }
@@ -49,6 +51,143 @@ html { box-sizing: border-box;}
 
 .zendots {
     font-family: 'Zen Dots', cursive;
+}
+
+/* Font Buttons and Colors */
+
+.colorButtons {
+    background-color: grey;
+    height: 90px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    border-radius: 5px;
+}
+
+.colorButton {
+    height: 30px;
+    width: 30px;
+}
+
+.pacificBlueButton {
+    background: #33A8C7;
+    border: none;
+    cursor: pointer;
+}
+
+.pacificBlue {
+    color: #33A8C7;
+}
+
+.fluorescentBlueButton {
+    background: #52E3E1;
+    border: none;
+    cursor: pointer;
+}
+
+.fluorescentBlue {
+    color: #A0E426;
+}
+
+.greenLizardButton {
+    background: #A0E426;
+    border: none;
+    cursor: pointer;
+}
+
+.greenLizard {
+    color: #A0E426;
+}
+
+.lemonYellowButton {
+    background: #FDF148;
+    border: none;
+    cursor: pointer;
+}
+
+.lemonYellow {
+    color: #FDF148;
+}
+
+.sunglowButton {
+    background: #FECE24;
+    border: none;
+    cursor: pointer;
+}
+
+.sunglow {
+    color: #FECE24;
+}
+
+.chromeYellowButton {
+    background: #FFAB00;
+    border: none;
+    cursor: pointer;
+}
+
+.chromeYellow {
+    color: #FFAB00;
+}
+
+.lightCoralButton {
+    background: #F77976;
+    border: none;
+    cursor: pointer;
+}
+
+.lightCoral {
+    color: #F77976;
+}
+
+.magentaCrayolaButton {
+    background: #F050AE;
+    border: none;
+    cursor: pointer;
+}
+
+.magentaCrayola {
+    color: #F050AE;
+}
+
+.heliotropeButton {
+    background: #D883FF;
+    border: none;
+    cursor: pointer;
+}
+
+.heliotrope {
+    color: #D883FF;
+}
+
+.purpleButton {
+    background: #9336FD;
+    border: none;
+    cursor: pointer;
+}
+
+.purple {
+    color: #9336FD;
+}
+
+.blackButton {
+    background: #000;
+    border: none;
+    cursor: pointer;
+}
+
+.black {
+    color: #000;
+}
+
+.whiteButton {
+    background: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.white {
+    color: #fff;
 }
 
 .fontOptions {
@@ -148,7 +287,7 @@ a:visited,
 a:hover,
 a:active { 
   text-decoration: none; 
-  color: black;
+  color: inherit;
 }
 
 /* Preview Styling */
