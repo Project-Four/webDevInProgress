@@ -47,6 +47,7 @@ const Main = () => {
                 userBackground={userBackground}
                 userText={userText}
                 inputFields={inputFields}
+                font={font}
             />
         </main>
     )

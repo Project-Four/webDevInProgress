@@ -71,7 +71,6 @@ html { box-sizing: border-box;}
    
 }
 
-
 /* Header Styling */
 
 .header {
@@ -397,33 +396,32 @@ pre {
 }
 
 .downloadSection {
-    display: block;
+    display: flex;
     order: 4;
     width: 100%;
     background-color: #7672F7;
-    height: 100vh;
 }
 
 .userCopy {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
 }
 
 .copyHtml {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    height: 50vh;
+    width: 100%;
 }
 
 .copyCss {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    height: 50vh;
+    width: 100%;
 }
 
 pre {
     white-space: pre-wrap;
+    font-size: 1.2rem;
 }
-
-

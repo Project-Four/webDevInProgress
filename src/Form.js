@@ -9,8 +9,6 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
     const [userSearch, setUserSearch] = useState('')
     const [userSearchResults, setUserSearchResults] = useState( [] )
 
-    // Color Picker State Variables
-    const [colour, setColour] = useState('#fffff')
     
     // ************ Functions for user social media urls form ************ //
     const handleUrlFormChange = (index , event) => {
@@ -143,13 +141,6 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                 </div>
             </form>
 
-            <div className='colourForm'>
-                <HuePicker
-                    color={colour}
-                    onHandleChange={(colour) => {setColour(colour.hex)}}
-                />
-            </div>
-
         </section>
 
 
@@ -157,28 +148,21 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
             <Link to="/" className='routerLink homeLink'>Back to Home</Link>
 
-                <div className='fontOptions'>
-                    <button className='barlow' onClick={() => handleFontChange('barlow')}>A</button>
-                    <button className='anton' onClick={() => handleFontChange('anton')}>A</button>
-                    <button className='comfortaa' onClick={() => handleFontChange('comfortaa')}>A</button>
-                    <button className='lobster' onClick={() => handleFontChange('lobster')}>A</button>
-                    <button className='fade' onClick={() => handleFontChange('fade')}>A</button>
-                    <button className='spraypaint' onClick={() => handleFontChange('spraypaint')}>A</button>
-                    <button className='storm' onClick={() => handleFontChange('storm')}>A</button>
-                    <button className='vinyl' onClick={() => handleFontChange('vinyl')}>A</button>
-                    <button className='unbounded' onClick={() => handleFontChange('unbounded')}>A</button>
-                    <button className='zendots' onClick={() => handleFontChange('zendots')}>A</button>
-                </div>
+            <div className='fontOptions'>
+                <button className='barlow' onClick={() => handleFontChange('barlow')}>A</button>
+                <button className='anton' onClick={() => handleFontChange('anton')}>A</button>
+                <button className='comfortaa' onClick={() => handleFontChange('comfortaa')}>A</button>
+                <button className='lobster' onClick={() => handleFontChange('lobster')}>A</button>
+                <button className='fade' onClick={() => handleFontChange('fade')}>A</button>
+                <button className='spraypaint' onClick={() => handleFontChange('spraypaint')}>A</button>
+                <button className='storm' onClick={() => handleFontChange('storm')}>A</button>
+                <button className='vinyl' onClick={() => handleFontChange('vinyl')}>A</button>
+                <button className='unbounded' onClick={() => handleFontChange('unbounded')}>A</button>
+                <button className='zendots' onClick={() => handleFontChange('zendots')}>A</button>
+            </div>
 
             <div className='sideBar'>
 
-
-                <div className='colourPicker'>
-                    <GithubPicker
-                        color={colour}
-                        onChangeComplete={(colour) => {setColour(colour.hex)}}
-                    />
-                </div>
 
                 <form action="" className='textForm'>
                     <label htmlFor="">Name</label>
