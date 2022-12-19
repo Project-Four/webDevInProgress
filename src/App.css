@@ -415,10 +415,6 @@ pre {
     height: 50vh;
 }
 
-.copyHtml p {
-    margin: 0;
-}
-
 .copyCss {
     display: flex;
     flex-direction: column;
@@ -426,10 +422,8 @@ pre {
     height: 50vh;
 }
 
-
-
-
-
-
+pre {
+    white-space: pre-wrap;
+}
 
 
