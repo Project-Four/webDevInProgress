@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFields, setFont}) => {
 
-    // Unsplash Search State Variables
+    // ************ Unsplash Search State Variables ************ //
     const [userSearch, setUserSearch] = useState('')
     const [userSearchResults, setUserSearchResults] = useState( [] )
 
@@ -59,7 +59,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
         })
     }
 
-    // Background image search functions (CHANGE NAME)
+    // Background image search functions
     const searchHandleChange = (e) => {
         setUserSearch(e.target.value)
     }
@@ -69,8 +69,8 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
         getImages();
     }
 
+    // Background changing functions
     const backgroundHandleChange = (e) => {
- 
         const backgroundSplit = e.target.value.split(",")
         const image = backgroundSplit[0]
         const alt = backgroundSplit[1]
@@ -81,7 +81,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
         })
     }
         
-   
+    // Text changing functions
     const userTextHandleChange = (e) => {
         const {name, value} = e.target
         
@@ -99,134 +99,125 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
     return (
         <Fragment>
-        <section className='backgroundForm'>
-            {/* Form to search Unsplash API for photos */}
-            <form 
-                className='searchForm'
-                onSubmit={searchHandleSubmit}
-            >
-                <div className="searchBar">
-                    <label htmlFor="userAPISearch"></label>
-                    <input 
-                        placeholder='Search for a background image!'
-                        type="text" 
-                        name="userAPISearch"
-                        onChange={searchHandleChange}
-                    />
-                    <button type='submit' className='submit'>Search</button>
-                </div>
-                <div className="searchResults">
-                    {userSearchResults.map((result) => {
-                        return (
-                            <div key={result.id} className="optionContainer">
+            <section className='backgroundForm'>
+                {/* Form to search Unsplash API for photos */}
+                <form 
+                    className='searchForm'
+                    onSubmit={searchHandleSubmit}
+                >
+                    <div className="searchBar">
+                        <label htmlFor="userAPISearch"></label>
+                        <input 
+                            placeholder='Search for a background image!'
+                            type="text" 
+                            name="userAPISearch"
+                            onChange={searchHandleChange}
+                        />
+                        <button type='submit' className='submit'>Search</button>
+                    </div>{/* END searchBar */}
+                    <div className="searchResults">
+                        {userSearchResults.map((result) => {
+                            return (
+                                <div key={result.id} className="optionContainer">
 
-                                <label 
-                                    className='searchImage'
-                                    htmlFor="url"
-                                    key={result.blur_hash} 
-                                >
-                                <input
-                                    onChange={backgroundHandleChange}
-                                    name='url'
-                                    type= 'radio'
-                                    value={`${result.urls.full}, ${result.alt_description}`}
-                                />
-                                    <img src={result.urls.thumb} alt={result.alt_description}></img>
-                                </label>
+                                    <label 
+                                        className='searchImage'
+                                        htmlFor="url"
+                                        key={result.blur_hash} 
+                                    >
+                                    <input
+                                        onChange={backgroundHandleChange}
+                                        name='url'
+                                        type= 'radio'
+                                        value={`${result.urls.full}, ${result.alt_description}`}
+                                    />
+                                        <img src={result.urls.thumb} alt={result.alt_description}></img>
+                                    </label>
 
-                            </div>
-                        )
-                    })}
-                </div>
-            </form>
-
-        </section>
-
-
-        <section className="sideBarSection">
-
-            <Link to="/" className='routerLink homeLink'>Back to Home</Link>
-
-            <div className='fontOptions'>
-                <button className='barlow' onClick={() => handleFontChange('barlow')}>A</button>
-                <button className='anton' onClick={() => handleFontChange('anton')}>A</button>
-                <button className='comfortaa' onClick={() => handleFontChange('comfortaa')}>A</button>
-                <button className='lobster' onClick={() => handleFontChange('lobster')}>A</button>
-                <button className='fade' onClick={() => handleFontChange('fade')}>A</button>
-                <button className='spraypaint' onClick={() => handleFontChange('spraypaint')}>A</button>
-                <button className='storm' onClick={() => handleFontChange('storm')}>A</button>
-                <button className='vinyl' onClick={() => handleFontChange('vinyl')}>A</button>
-                <button className='unbounded' onClick={() => handleFontChange('unbounded')}>A</button>
-                <button className='zendots' onClick={() => handleFontChange('zendots')}>A</button>
-            </div>
-
-            <div className='sideBar'>
-
-
-                <form action="" className='textForm'>
-                    <label htmlFor="">Name</label>
-                    <input 
-                    type="text" 
-                    name="name"
-                    value={userText.name}
-                    onChange={userTextHandleChange}
-                    />
-
-                    <label htmlFor="">Subtitle</label>
-                    <input 
-                    type="text" 
-                    name="subtitle"
-                    value={userText.subtitle}
-                    onChange={userTextHandleChange}
-                    />
-
-                    
-                    {inputFields.map((field, index) => {
-                    return (
-                        <Fragment>
-                            <div key = {index} className='linkInput'>
-                                <label htmlFor="websiteName">Website Name</label>
-                                <input 
-                                type="text"
-                                name='websiteName'
-                                value={field.websiteName}
-                                placeholder='Website Name'
-                                onChange = {event => handleUrlFormChange(index, event)}
-                                />
-
-                                <label htmlFor="link">Link</label>
-                                <input 
-                                type="text"
-                                name ='link'
-                                value={field.link}
-                                placeholder='Enter URL'
-                                onChange = {event => handleUrlFormChange(index, event)}
-                                />
-                                <button onClick={(event) => removeFields(index, event)} className='delete'>Remove Link</button>
-                            </div>
-                        </Fragment>
-                    )
-                    
-                } )}
-                    <button onClick = {addFields} className='add'>Add Link</button>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </form>
 
-            </div>
+            </section>
+
+
+            <section className="sideBarSection">
+
+                <Link to="/" className='routerLink homeLink'>Back to Home</Link>
+
+                <div className='fontOptions'>
+                    <button className='barlow' onClick={() => handleFontChange('barlow')}>A</button>
+                    <button className='anton' onClick={() => handleFontChange('anton')}>A</button>
+                    <button className='comfortaa' onClick={() => handleFontChange('comfortaa')}>A</button>
+                    <button className='lobster' onClick={() => handleFontChange('lobster')}>A</button>
+                    <button className='fade' onClick={() => handleFontChange('fade')}>A</button>
+                    <button className='spraypaint' onClick={() => handleFontChange('spraypaint')}>A</button>
+                    <button className='storm' onClick={() => handleFontChange('storm')}>A</button>
+                    <button className='vinyl' onClick={() => handleFontChange('vinyl')}>A</button>
+                    <button className='unbounded' onClick={() => handleFontChange('unbounded')}>A</button>
+                    <button className='zendots' onClick={() => handleFontChange('zendots')}>A</button>
+                </div>
+
+                <div className='sideBar'>
+
+
+                    <form action="" className='textForm'>
+                        <label htmlFor="">Name</label>
+                        <input 
+                        type="text" 
+                        name="name"
+                        value={userText.name}
+                        onChange={userTextHandleChange}
+                        />
+
+                        <label htmlFor="">Subtitle</label>
+                        <input 
+                        type="text" 
+                        name="subtitle"
+                        value={userText.subtitle}
+                        onChange={userTextHandleChange}
+                        />
+
+                        
+                        {inputFields.map((field, index) => {
+                        return (
+                            <Fragment>
+                                <div key = {index} className='linkInput'>
+                                    <label htmlFor="websiteName">Website Name</label>
+                                    <input 
+                                    type="text"
+                                    name='websiteName'
+                                    value={field.websiteName}
+                                    placeholder='Website Name'
+                                    onChange = {event => handleUrlFormChange(index, event)}
+                                    />
+
+                                    <label htmlFor="link">Link</label>
+                                    <input 
+                                    type="text"
+                                    name ='link'
+                                    value={field.link}
+                                    placeholder='Enter URL'
+                                    onChange = {event => handleUrlFormChange(index, event)}
+                                    />
+                                    <button onClick={(event) => removeFields(index, event)} className='delete'>Remove Link</button>
+                                </div>
+                            </Fragment>
+                        )
+                        
+                    } )}
+                        <button onClick = {addFields} className='add'>Add Link</button>
+                    </form>
+
+                </div>
 
 
 
-        </section>
-
+            </section>
         </Fragment>  
-
-
     )
-    
-  
 }
-
- 
-    
-
 
 export default Form

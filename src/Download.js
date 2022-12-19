@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
 const Download = ({userBackground, userText, inputFields, font}) => {
-
+    
     // https://bobbyhadz.com/blog/react-capitalize-first-letter
     const capitalize = (string) => {
         return (
@@ -12,6 +12,7 @@ const Download = ({userBackground, userText, inputFields, font}) => {
     return (
         <section className="downloadSection">
             <div className="wrapper">
+
                 <Link to="/main" className='routerLink homeLink'>Back</Link>
 
                 <div className="userCopy">
@@ -22,8 +23,8 @@ const Download = ({userBackground, userText, inputFields, font}) => {
                         
                         
                         &lt;/head&gt;<br/>&lt;body&gt;<br/>    &lt;header class="backgroundContainer"&gt;<br/>        &lt;div class="flexContainer"&gt;<br/>            &lt;div class="wrapper"&gt;<br/>                &lt;div class="textContainer"&gt;<br/>                    &lt;h1 class="title"&gt;{userText.name}&lt;/h1&gt;<br/>                    &lt;h2 class="subtitle"&gt;{userText.subtitle}&lt;/h2&gt;<br/>
-                        {inputFields.map((field) => { return (
-                            <>                    &lt;a href="{field.link}"&gt;{field.websiteName}&lt;/a&gt;<br/></>        
+                        {inputFields.map((field, index) => { return (
+                            <div key={index}>                    &lt;a href="{field.link}"&gt;{field.websiteName}&lt;/a&gt;<br/></div>        
                             )
                         })}                &lt;/div&gt;<br/>            &lt;/div&gt;<br/>        &lt;/div&gt;<br/>    &lt;/header&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;<br/>
                         </code></pre>
@@ -40,7 +41,6 @@ const Download = ({userBackground, userText, inputFields, font}) => {
                         
                         <br/>.sr-only &#123; position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;&#125;<br/>
 
-
                         <br/>html &#123;<br/>    font-size: 125%;<br/>    font-family: {capitalize(font)};<br/>
                         &#125;<br/>
                         <br/>.wrapper &#123;<br/>    width: 90%;<br/>    margin: 0 auto;<br/>    max-width: 1260px;<br/>   
@@ -49,12 +49,8 @@ const Download = ({userBackground, userText, inputFields, font}) => {
                         &#125;<br/>
                         <br/>.backgroundContainer &#123;<br/>    background-image: url({userBackground.image});<br/>    height: 100vh;<br/>    background-size: cover;<br/>    background-position: center;<br/>
                         &#125;<br/>
-
                         <br/>.textContainer &#123;<br/>    display: flex;<br/>    flex-direction: column;<br/>    align-items: center;<br/>    justify-content: space-between;<br/>    height: 50vh;<br/>
                         &#125;<br/>    
-
-
-                        
                         <br/>.title &#123;<br/>    font-size: 3rem;<br/>
                         &#125;<br/>
                         <br/>.subtitle &#123;<br/>    font-size: 2.5rem;<br/>
@@ -64,7 +60,7 @@ const Download = ({userBackground, userText, inputFields, font}) => {
                         </code></pre>
                     </div>{/* END copyCss */}
                 </div>{/* END userCopy */}
-            </div>
+            </div>{/* END wrapper */}
         </section>
     )
 }

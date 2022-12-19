@@ -21,7 +21,7 @@ const Main = () => {
     }])
 
     // State variable for selected font option
-    const [font, setFont] = useState();
+    const [font, setFont] = useState('barlow');
 
 
     return (
