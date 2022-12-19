@@ -3,7 +3,7 @@ const Header = () => {
   
 
     return(
-        <div className="header">
+        <header>
             
             <div className="wrapper">
 
@@ -26,10 +26,8 @@ const Header = () => {
                 <Link to="/main" className='routerLink'>Get Started</Link>
 
             </div>
-        </div>
+        </header>
             
-    
-        
     )
 }
 
