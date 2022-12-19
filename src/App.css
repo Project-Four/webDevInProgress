@@ -104,7 +104,6 @@ h1 {
 }
 
 h2 {
-    font-family: 'Barlow', sans-serif;
     font-size: 25px;
     line-height: 40px;
     
@@ -359,8 +358,7 @@ main {
     position: absolute;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll
-    
+    overflow-y: scroll;
 }
 
 .textForm {
