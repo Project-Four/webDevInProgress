@@ -1,9 +1,7 @@
 import Form from './Form.js'
 import Preview from './Preview.js'
 import Download from './Download.js'
-
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 
 const Main = () => {
 

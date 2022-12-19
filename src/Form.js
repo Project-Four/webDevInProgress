@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { GithubPicker, HuePicker } from 'react-color';
 
 const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFields, setFont}) => {
 
@@ -61,11 +60,11 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
     }
 
     // Background image search functions (CHANGE NAME)
-    const handleChange = (e) => {
+    const searchHandleChange = (e) => {
         setUserSearch(e.target.value)
     }
     
-    const handleSubmit = (e) => {
+    const searchHandleSubmit = (e) => {
         e.preventDefault();
         getImages();
     }
@@ -104,7 +103,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
             {/* Form to search Unsplash API for photos */}
             <form 
                 className='searchForm'
-                onSubmit={handleSubmit}
+                onSubmit={searchHandleSubmit}
             >
                 <div className="searchBar">
                     <label htmlFor="userAPISearch"></label>
@@ -112,7 +111,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                         placeholder='Search for a background image!'
                         type="text" 
                         name="userAPISearch"
-                        onChange={handleChange}
+                        onChange={searchHandleChange}
                     />
                     <button type='submit' className='submit'>Search</button>
                 </div>
