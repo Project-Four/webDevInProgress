@@ -407,7 +407,8 @@ main {
 .copyHtml {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: fit-content;
+    
 }
 
 .copyCss {
@@ -423,7 +424,7 @@ pre {
     margin-bottom: 0px;
 }
 
-/* media queries */
+/* media queries - Header*/
 
 @media(max-width:1330px){
     .bblob{
