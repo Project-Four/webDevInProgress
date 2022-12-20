@@ -1,11 +1,12 @@
 import classNames from 'classnames'
-const Preview = ({userBackground, userText, inputFields, font}) => {
+const Preview = ({userBackground, userText, inputFields, font, fontColor, backgroundColor}) => {
 
     const previewClasses = classNames("wrapper", "flexContainer", font)
+    const previewSectionClasses = classNames("previewSection", backgroundColor)
 
     return (
 
-            <section className="previewSection">
+            <section className={previewSectionClasses}>
                 
                 <div className={previewClasses}>
  

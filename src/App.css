@@ -16,6 +16,8 @@ html {
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Comfortaa&family=Lobster&family=Rubik+80s+Fade&family=Rubik+Spray+Paint&family=Rubik+Storm&family=Rubik+Vinyl&family=Unbounded&family=Zen+Dots&display=swap');
 
+/* Font Families */
+
 .barlow {
     font-family: 'Barlow', sans-serif;
 }
@@ -56,6 +58,253 @@ html {
     font-family: 'Zen Dots', cursive;
 }
 
+/* Button Colors */
+
+.colorButtons {
+    background-color: grey;
+    height: 90px;
+    width: 270px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.colorButton {
+    height: 30px;
+    width: 12.5%;
+}
+
+.redButton {
+    background: #B80000;
+    border: none;
+    cursor: pointer;
+}
+
+.orangeButton {
+    background: #DB3E00;
+    border: none;
+    cursor: pointer;
+}
+
+.greenButton {
+    background: #008B02;
+    border: none;
+    cursor: pointer;
+}
+
+.blueButton {
+    background: #004DCF;
+    border: none;
+    cursor: pointer;
+}
+
+.pacificBlueButton {
+    background: #33A8C7;
+    border: none;
+    cursor: pointer;
+}
+
+.fluorescentBlueButton {
+    background: #52E3E1;
+    border: none;
+    cursor: pointer;
+}
+
+.greenLizardButton {
+    background: #A0E426;
+    border: none;
+    cursor: pointer;
+}
+
+.lemonYellowButton {
+    background: #FDF148;
+    border: none;
+    cursor: pointer;
+}
+
+.sunglowButton {
+    background: #FECE24;
+    border: none;
+    cursor: pointer;
+}
+
+.chromeYellowButton {
+    background: #FFAB00;
+    border: none;
+    cursor: pointer;
+}
+
+.lightCoralButton {
+    background: #F77976;
+    border: none;
+    cursor: pointer;
+}
+
+.magentaCrayolaButton {
+    background: #F050AE;
+    border: none;
+    cursor: pointer;
+}
+
+.heliotropeButton {
+    background: #D883FF;
+    border: none;
+    cursor: pointer;
+}
+
+.purpleButton {
+    background: #9336FD;
+    border: none;
+    cursor: pointer;
+}
+
+.blackButton {
+    background: #000;
+    border: none;
+    cursor: pointer;
+}
+
+.whiteButton {
+    background: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Font Colours */
+
+.redFont {
+    color: #B80000;
+}
+
+.orangeFont {
+    color: #DB3E00;
+}
+
+.greenFont {
+    color: #008B02;
+}
+
+.blueFont {
+    color: #004DCF;
+}
+
+.pacificBlueFont {
+    color: #33A8C7;
+}
+
+.fluorescentBlueFont {
+    color: #A0E426;
+}
+
+.greenLizardFont {
+    color: #A0E426;
+}
+
+.lemonYellowFont {
+    color: #FDF148;
+}
+
+.sunglowFont {
+    color: #FECE24;
+}
+
+.chromeYellowFont {
+    color: #FFAB00;
+}
+
+.lightCoralFont {
+    color: #F77976;
+}
+
+.magentaCrayolaFont {
+    color: #F050AE;
+}
+
+.heliotropeFont {
+    color: #D883FF;
+}
+
+.purpleFont {
+    color: #9336FD;
+}
+
+.blackFont {
+    color: #000;
+}
+
+.whiteFont {
+    color: #fff;
+}
+
+/* Background Colours */
+
+.redBackground {
+    background: #B80000;
+}
+
+.orangeBackground {
+    background: #DB3E00;
+}
+
+.greenBackground {
+    background: #008B02;
+}
+
+.blueBackground {
+    background: #004DCF;
+}
+
+.pacificBlueBackground {
+    background: #33A8C7;
+}
+
+.fluorescentBlueBackground {
+    background: #A0E426;
+}
+
+.greenLizardBackground {
+    background: #A0E426;
+}
+
+.lemonYellowBackground {
+    background: #FDF148;
+}
+
+.sunglowBackground {
+    background: #FECE24;
+}
+
+.chromeYellowBackground {
+    background: #FFAB00;
+}
+
+.lightCoralBackground {
+    background: #F77976;
+}
+
+.magentaCrayolaBackground {
+    background: #F050AE;
+}
+
+.heliotropeBackground {
+    background: #D883FF;
+}
+
+.purpleBackground {
+    background: #9336FD;
+}
+
+.blackBackground {
+    background: #000;
+}
+
+.whiteBackground {
+    background: #fff;
+}
+
 .fontOptions {
     display: flex;
     flex-wrap: wrap;
@@ -73,7 +322,6 @@ html {
     width: 80%;
     margin: 0 auto;
     max-width: 1920px;
-   
 }
 
 /* Header Styling */
@@ -155,7 +403,7 @@ a:visited,
 a:hover,
 a:active { 
   text-decoration: none; 
-  color: black;
+  color: inherit;
 }
 
 /* Preview Styling */
