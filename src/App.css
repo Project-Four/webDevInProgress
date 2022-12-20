@@ -425,8 +425,6 @@ a:active {
 
 .backgroundContainer img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 .link {
@@ -450,14 +448,15 @@ a:active {
     text-align: center;
     align-self: center;
     z-index: 1;
-    position: absolute;
     width: fit-content;
+    position: absolute;
 }
 
 .flexContainer {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
 }
 
 
@@ -653,15 +652,6 @@ main {
     position: fixed;
     bottom: 0px;
     right: 0px;
-}
-
-.previewSection {
-    font-family: 'Barlow', sans-serif;
-    border: 2px solid black;
-    order: 3;
-    width: 80%;
-    height: 80%;
-    margin-left: 20%;
 }
 
 .downloadSection {
