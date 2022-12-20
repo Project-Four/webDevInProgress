@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-const Download = ({userBackground, userText, inputFields, font}) => {
+const Download = ({userBackground, userText, inputFields, font, fontColor, backgroundColor}) => {
     
     // https://bobbyhadz.com/blog/react-capitalize-first-letter
     const capitalize = (string) => {
@@ -41,13 +41,23 @@ const Download = ({userBackground, userText, inputFields, font}) => {
                         
                         <br/>.sr-only &#123; position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;&#125;<br/>
 
-                        <br/>html &#123;<br/>    font-size: 125%;<br/>    font-family: {capitalize(font)};<br/>
+                        <br/>html &#123;<br/>    font-size: 125%;<br/>    font-family: {capitalize(font)};<br/>    color: red;<br/>
                         &#125;<br/>
                         <br/>.wrapper &#123;<br/>    width: 90%;<br/>    margin: 0 auto;<br/>    max-width: 1260px;<br/>   
                         &#125;<br/>
                         <br/>.flexContainer &#123;<br/>    height: 100vh;<br/>    display: flex;<br/>    align-items: center;<br/>    justify-content: center;<br/>
                         &#125;<br/>
-                        <br/>.backgroundContainer &#123;<br/>    background-image: url({userBackground.image});<br/>    height: 100vh;<br/>    background-size: cover;<br/>    background-position: center;<br/>
+                        <br/>.backgroundContainer &#123;<br/>    
+                        
+                        {
+                            userBackground.image ? `    background-image: url(${userBackground.image});` : null
+                        }
+
+                        {
+                            backgroundColor ? `    background-color: red;` : null
+                        } 
+                        
+                        <br/>    height: 100vh;<br/>    background-size: cover;<br/>    background-position: center;<br/>
                         &#125;<br/>
                         <br/>.textContainer &#123;<br/>    display: flex;<br/>    flex-direction: column;<br/>    align-items: center;<br/>    justify-content: space-between;<br/>    height: 50vh;<br/>
                         &#125;<br/>    
@@ -66,3 +76,4 @@ const Download = ({userBackground, userText, inputFields, font}) => {
 }
 
 export default Download
+

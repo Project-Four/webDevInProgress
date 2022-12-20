@@ -55,6 +55,8 @@ const Main = () => {
                 userText={userText}
                 inputFields={inputFields}
                 font={font}
+                fontColor={fontColor}
+                backgroundColor={backgroundColor}
             />
         </main>
     )
