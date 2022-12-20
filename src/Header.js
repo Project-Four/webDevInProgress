@@ -18,7 +18,7 @@ const Header = () => {
                         <li>Enter your name, your position title or a mini blurb about yourself</li>
                         <li>Add or remove important links like GitHub, LinkedIn and Twitter.</li>
                         <li>Customize your information with a few font options</li>
-                        <li>Download the HTML and CSS directly to your computer and your personalized landing page is ready to go</li>
+                        <li>Copy the HTML and CSS directly to your computer and your personalized landing page is ready to go!</li>
                     </ul>
 
                     <p>Click the button below to get started!</p>
