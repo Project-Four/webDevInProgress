@@ -427,10 +427,9 @@ a:active {
 }
 
 .backgroundContainer img {
-    height: 80%;
-    width: 80%;
-    position: relative;
-    
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .link {
@@ -439,6 +438,7 @@ a:active {
 }
 
 .previewSection {
+    position: relative;
     border: 2px solid black;
     order: 3;
     width: 80%;
@@ -446,6 +446,7 @@ a:active {
     margin-left: 20%;
     display: flex;
     align-items: center;
+    overflow: hidden;
     
 }
 

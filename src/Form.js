@@ -103,7 +103,9 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
     // ************ Function for background changes ************ //
     const handleBackgroundColorChange = (selectedBackgroundColor) => {
+
         setBackgroundColor(selectedBackgroundColor)
+        
         setUserBackground({
             image:'',
             alt: ''
