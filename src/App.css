@@ -276,7 +276,7 @@ html {
     background: #52E3E1;
 }
 
-.bcA0E426 {
+.A0E426 {
     background: #A0E426;
 }
 
@@ -381,12 +381,12 @@ li {
     font-size: 1rem;
     line-height: 40px;
 }
+
 p {
     font-family: 'Barlow', sans-serif;
     font-size: 1.25rem;
     font-weight: bold;
 }
-
 
 .routerLink {
     font-family: 'Fjalla One', sans-serif;
@@ -395,6 +395,18 @@ p {
     border: none;
     padding: 10px;
     cursor: pointer;
+}
+
+.footer {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: black;
+}
+
+footer { 
+    position: absolute;
+    bottom: 0;
 }
 
 @keyframes morph{
@@ -703,6 +715,7 @@ pre {
     padding: 20px;
     overflow: scroll;
 }
+
 
 @media(max-width: 1330px) {
     .bblob {

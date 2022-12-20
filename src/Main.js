@@ -1,6 +1,7 @@
 import Form from './Form.js'
 import Preview from './Preview.js'
 import Download from './Download.js'
+import Footer from './Footer.js'
 import { useState } from 'react'
 
 const Main = () => {
@@ -58,6 +59,8 @@ const Main = () => {
                 fontColor={fontColor}
                 backgroundColor={backgroundColor}
             />
+        
+            <Footer />
         </main>
     )
     

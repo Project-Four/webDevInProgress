@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
 const Header = () => {
   
 
@@ -16,15 +17,18 @@ const Header = () => {
                     <ul>
                         <li>Customize your background by searching up any image or choosing a colour</li>
                         <li>Enter your name, your position title or a mini blurb about yourself</li>
-                        <li>Add or remove important links like GitHub, LinkedIn and Twitter.</li>
-                        <li>Customize your information with a few font options</li>
-                        <li>Copy the HTML and CSS directly to your computer and your personalized landing page is ready to go!</li>
+                        <li>Add or remove important links like GitHub, LinkedIn and Twitter</li>
+                        <li>Customize your information with a few font and colour options</li>
+                        <li>Copy and paste the HTML and CSS directly to your code to use your personalized landing page</li>
                     </ul>
 
                     <p>Click the button below to get started!</p>
 
                 <Link to="/main" className='routerLink'>Get Started</Link>
+
+                <Footer />
                 </div>
+                
         </header>  
     )
 }
