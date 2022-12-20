@@ -689,7 +689,8 @@ main {
 .copyHtml {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: fit-content;
+    
 }
 
 .copyCss {
@@ -708,9 +709,18 @@ pre {
     overflow: scroll;
 }
 
+<<<<<<< HEAD
 @media(max-width: 1330px) {
     .bblob {
         width: 100%;
+=======
+/* media queries - Header*/
+
+@media(max-width:1330px){
+    .bblob{
+        width:100%;
+
+>>>>>>> 2362fc1 (media queries)
     }
 }
 
