@@ -1,10 +1,8 @@
 import classNames from 'classnames'
 const Preview = ({userBackground, userText, inputFields, font, fontColor, backgroundColor}) => {
-    console.log(backgroundColor)
-
-    const previewClasses = classNames("wrapper", "flexContainer", font, fontColor)
-    const previewSectionClasses = classNames("previewSection")
-    const backgroundColors = classNames("backgroundContainer", backgroundColor)
+console.log(backgroundColor)
+    const previewClasses = classNames("flexContainer", font, fontColor)
+    const previewSectionClasses = classNames("previewSection", backgroundColor)
 
     return (
 
@@ -27,7 +25,7 @@ const Preview = ({userBackground, userText, inputFields, font, fontColor, backgr
                         </div>
                     </div>
 
-                    <div className={backgroundColors}>
+                    <div className='backgroundContainer'>
                         <img src={userBackground.image} alt={userBackground.alt} />
                     </div>
                 </div>
