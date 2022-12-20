@@ -79,6 +79,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
             image: image,
             alt: alt
         })
+        setBackgroundColor('')
     }
         
     // Text changing functions
@@ -103,6 +104,10 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
     // ************ Function for background changes ************ //
     const handleBackgroundColorChange = (selectedBackgroundColor) => {
         setBackgroundColor(selectedBackgroundColor)
+        setUserBackground({
+            image:'',
+            alt: ''
+        })
     }
 
     return (
@@ -125,6 +130,8 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                     <button type='submit' className='submit'>Search</button>
                 </div>
 
+
+                <div className="searchResults">
                 <div className='colorButtons'>
                     <button className='redButton colorButton' onClick={() => handleBackgroundColorChange('redBackground')}></button>
                     <button className='orangeButton colorButton' onClick={() => handleBackgroundColorChange('orangeBackground')}></button>
@@ -143,8 +150,6 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                     <button className='blackButton colorButton' onClick={() => handleBackgroundColorChange('blackBackground')}></button>
                     <button className='whiteButton colorButton' onClick={() => handleBackgroundColorChange('whiteBackground')}></button>
                 </div>
-
-                <div className="searchResults">
                     {userSearchResults.map((result) => {
                         return (
                             <div key={result.id} className="optionContainer">
@@ -189,27 +194,27 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                     <button className='zendots' onClick={() => handleFontChange('zendots')}>A</button>
                 </div>{/* END fontOptions */}
 
+                <div className='colorButtons'>
+                    <button className='redButton colorButton' onClick={() => handleFontColorChange('fcB80000')}></button>
+                    <button className='orangeButton colorButton' onClick={() => handleFontColorChange('fcDB3E00')}></button>
+                    <button className='greenButton colorButton' onClick={() => handleFontColorChange('fc008B02')}></button>
+                    <button className='blueButton colorButton' onClick={() => handleFontColorChange('fc004DCF')}></button>
+                    <button className='pacificBlueButton colorButton' onClick={() => handleFontColorChange('fc33A8C7')}></button>
+                    <button className='fluorescentBlueButton colorButton' onClick={() => handleFontColorChange('fc52E3E1')}></button>
+                    <button className='greenLizardButton colorButton' onClick={() => handleFontColorChange('fcA0E426')}></button>
+                    <button className='lemonYellowButton colorButton' onClick={() => handleFontColorChange('fcFDF148')}></button>
+                    <button className='sunglowButton colorButton' onClick={() => handleFontColorChange('fcFECE24')}></button>
+                    <button className='chromeYellowButton colorButton' onClick={() => handleFontColorChange('fcFFAB00')}></button>
+                    <button className='lightCoralButton colorButton' onClick={() => handleFontColorChange('fcF77976')}></button>
+                    <button className='magentaCrayolaButton colorButton' onClick={() => handleFontColorChange('fcF050AE')}></button>
+                    <button className='heliotropeButton colorButton' onClick={() => handleFontColorChange('fcD883FF')}></button>
+                    <button className='purpleButton colorButton' onClick={() => handleFontColorChange('fc9336FD')}></button>
+                    <button className='blackButton colorButton' onClick={() => handleFontColorChange('fc000')}></button>
+                    <button className='whiteButton colorButton' onClick={() => handleFontColorChange('fcfff')}></button>
+                </div>
+
                 <div className='sideBar'>
 
-                    <div className='colorButtons'>
-                        <button className='redButton colorButton' onClick={() => handleFontColorChange('redFont')}></button>
-                        <button className='orangeButton colorButton' onClick={() => handleFontColorChange('orangeFont')}></button>
-                        <button className='greenButton colorButton' onClick={() => handleFontColorChange('greenFont')}></button>
-                        <button className='blueButton colorButton' onClick={() => handleFontColorChange('blueFont')}></button>
-                        <button className='pacificBlueButton colorButton' onClick={() => handleFontColorChange('pacificBlueFont')}></button>
-                        <button className='fluorescentBlueButton colorButton' onClick={() => handleFontColorChange('fluorescentBlueFont')}></button>
-                        <button className='greenLizardButton colorButton' onClick={() => handleFontColorChange('greenLizardFont')}></button>
-                        <button className='lemonYellowButton colorButton' onClick={() => handleFontColorChange('lemonYellowFont')}></button>
-                        <button className='sunglowButton colorButton' onClick={() => handleFontColorChange('sunglowFont')}></button>
-                        <button className='chromeYellowButton colorButton' onClick={() => handleFontColorChange('chromeYellowFont')}></button>
-                        <button className='lightCoralButton colorButton' onClick={() => handleFontColorChange('lightCoralFont')}></button>
-                        <button className='magentaCrayolaButton colorButton' onClick={() => handleFontColorChange('magentaCrayolaFont')}></button>
-                        <button className='heliotropeButton colorButton' onClick={() => handleFontColorChange('heliotropeFont')}></button>
-                        <button className='purpleButton colorButton' onClick={() => handleFontColorChange('purpleFont')}></button>
-                        <button className='blackButton colorButton' onClick={() => handleFontColorChange('blackFont')}></button>
-                        <button className='whiteButton colorButton' onClick={() => handleFontColorChange('whiteFont')}></button>
-                    </div>
-                    
                     <form action="" className='textForm'>
                         <label htmlFor="">Name</label>
                         <input 
@@ -226,6 +231,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                         value={userText.subtitle}
                         onChange={userTextHandleChange}
                         />
+
                         
                         {inputFields.map((field, index) => {
                         return (

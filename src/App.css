@@ -175,67 +175,67 @@ html {
 
 /* Font Colours */
 
-.redFont {
+.fcB80000 {
     color: #B80000;
 }
 
-.orangeFont {
+.fcDB3E00 {
     color: #DB3E00;
 }
 
-.greenFont {
+.fc008B02 {
     color: #008B02;
 }
 
-.blueFont {
+.fc004DCF {
     color: #004DCF;
 }
 
-.pacificBlueFont {
+.fc33A8C7 {
     color: #33A8C7;
 }
 
-.fluorescentBlueFont {
+.fc52E3E1 {
+    color: #52E3E1;
+}
+
+.fcA0E426 {
     color: #A0E426;
 }
 
-.greenLizardFont {
-    color: #A0E426;
-}
-
-.lemonYellowFont {
+.fcFDF148 {
     color: #FDF148;
 }
 
-.sunglowFont {
+.fcFECE24 {
     color: #FECE24;
 }
 
-.chromeYellowFont {
+.fcFFAB00 {
     color: #FFAB00;
 }
 
-.lightCoralFont {
+.fcF77976 {
     color: #F77976;
 }
 
-.magentaCrayolaFont {
+.fcF050AE {
     color: #F050AE;
 }
 
-.heliotropeFont {
+.fcD883FF {
     color: #D883FF;
 }
 
-.purpleFont {
+.fc9336FD {
     color: #9336FD;
 }
 
-.blackFont {
+.fc000 {
     color: #000;
 }
 
-.whiteFont {
+.fcfff {
     color: #fff;
 }
 
