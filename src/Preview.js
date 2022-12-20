@@ -25,7 +25,7 @@ console.log(backgroundColor)
                         </div>
                     </div>
 
-                    <div className="backgroundContainer">
+                    <div className='backgroundContainer'>
                         <img src={userBackground.image} alt={userBackground.alt} />
                     </div>
                 </div>

@@ -432,6 +432,7 @@ a:active {
 }
 
 .previewSection {
+    position: relative;
     border: 2px solid black;
     order: 3;
     width: 80%;
@@ -447,14 +448,15 @@ a:active {
     text-align: center;
     align-self: center;
     z-index: 1;
+    width: 100%;
     position: absolute;
-    width: fit-content;
 }
 
 .flexContainer {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
 }
 
 
@@ -467,6 +469,7 @@ a:active {
     align-items: center;
     height: 50px;
     cursor: pointer;
+    text-align: center;
 }
 
 .sideBar {
@@ -545,7 +548,6 @@ main {
     margin-left: 20%;
     text-align: center;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -652,15 +654,6 @@ main {
     right: 0px;
 }
 
-.previewSection {
-    font-family: 'Barlow', sans-serif;
-    border: 2px solid black;
-    order: 3;
-    width: 80%;
-    height: 80%;
-    margin-left: 20%;
-}
-
 .downloadSection {
     display: flex;
     order: 4;
@@ -726,5 +719,71 @@ pre {
     }
     .intro, li, p {
         font-size: 0.8rem;
+    }
+}
+
+/* media queries - preview section */
+
+@media(max-width: 1200px) {
+    .homeLink {
+        font-size: 1rem;
+    }
+    
+    .backgroundForm {
+        height: 25%;
+    }
+    .backgroundOptions {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .previewSection {
+        height: 75%;
+    }
+
+}
+
+@media(max-width: 960px) {
+    .optionContainer {
+        width: 105px;
+        height: 55px;
+        min-width: 105px;
+        min-height: 55px;
+    }
+    [type="radio"] {
+        width: 105px;
+        height: 55px;
+        min-width: 105px;
+        min-height: 55px;
+        border: 2px solid red;
+    }
+
+    main {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .backgroundForm,
+    .sideBarSection,
+    .previewSection {
+        width: 100%;
+        position: static;
+        margin: 0 auto;
+    }
+
+    .previewSection {
+        min-height: 30rem;
+    }
+
+    .sideBarSection {
+        overflow-y: auto;
+    }
+}
+
+@media(max-width: 650px) {
+    .searchResults {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
 }

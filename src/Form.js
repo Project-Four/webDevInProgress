@@ -103,7 +103,9 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
     // ************ Function for background changes ************ //
     const handleBackgroundColorChange = (selectedBackgroundColor) => {
+
         setBackgroundColor(selectedBackgroundColor)
+
         setUserBackground({
             image:'',
             alt: ''
@@ -183,7 +185,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
             <section className="sideBarSection">
 
                 <Link to="/" className='routerLink homeLink'>Back to Home</Link>
-
+                        <h3>Choose a Font style and Colour</h3>
                 <div className='fontOptions'>
                     <button className='barlow' onClick={() => handleFontChange('barlow')}>A</button>
                     <button className='anton' onClick={() => handleFontChange('anton')}>A</button>
