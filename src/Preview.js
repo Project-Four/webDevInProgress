@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 const Preview = ({userBackground, userText, inputFields, font, fontColor, backgroundColor}) => {
 
-    const previewClasses = classNames("wrapper", "flexContainer", font)
+    const previewClasses = classNames("wrapper", "flexContainer", font, fontColor)
     const previewSectionClasses = classNames("previewSection", backgroundColor)
 
     return (
