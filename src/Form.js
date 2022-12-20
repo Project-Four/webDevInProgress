@@ -137,7 +137,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                                 </div>
                             )
                         })}
-                    </div>
+                    </div>{/* END searchResults */}
                 </form>
 
             </section>
@@ -158,10 +158,9 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                     <button className='vinyl' onClick={() => handleFontChange('vinyl')}>A</button>
                     <button className='unbounded' onClick={() => handleFontChange('unbounded')}>A</button>
                     <button className='zendots' onClick={() => handleFontChange('zendots')}>A</button>
-                </div>
+                </div>{/* END fontOptions */}
 
                 <div className='sideBar'>
-
 
                     <form action="" className='textForm'>
                         <label htmlFor="">Name</label>
@@ -211,10 +210,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                         <button onClick = {addFields} className='add'>Add Link</button>
                     </form>
 
-                </div>
-
-
-
+                </div>{/* END sideBar */}
             </section>
         </Fragment>  
     )

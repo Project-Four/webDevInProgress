@@ -19,7 +19,7 @@ const Download = ({userBackground, userText, inputFields, font}) => {
                     <div className="copyHtml">
                         <h2>Your HTML</h2>
                         <pre><code className="language-markup">
-                        &lt;!DOCTYPE html&gt;<br/>&lt;html lang="en"&gt;<br/>&lt;head&gt;<br/>    &lt;meta charset="UTF-8" /&gt;<br/>    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge" /&gt;<br/>    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;<br/>    &lt;title&gt;Document&lt;/title&gt;<br/>    &lt;link rel="stylesheet" href="./styles.css"&gt;&lt;/link&gt;<br/>    &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;<br/>    &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;<br/>    &lt;link href="https://fonts.googleapis.com/css2?family={capitalize(font)}&display=swap" rel="stylesheet"&gt; 
+                        &lt;!DOCTYPE html&gt;<br/>&lt;html lang="en"&gt;<br/>&lt;head&gt;<br/>    &lt;meta charset="UTF-8" /&gt;<br/>    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge" /&gt;<br/>    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;<br/>    &lt;title&gt;Document&lt;/title&gt;<br/>    &lt;link rel="stylesheet" href="./styles.css"&gt;&lt;/link&gt;<br/>    &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;<br/>    &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;<br/>    &lt;link href="https://fonts.googleapis.com/css2?family={capitalize(font)}&display=swap" rel="stylesheet"&gt;<br/> 
                         
                         
                         &lt;/head&gt;<br/>&lt;body&gt;<br/>    &lt;header class="backgroundContainer"&gt;<br/>        &lt;div class="flexContainer"&gt;<br/>            &lt;div class="wrapper"&gt;<br/>                &lt;div class="textContainer"&gt;<br/>                    &lt;h1 class="title"&gt;{userText.name}&lt;/h1&gt;<br/>                    &lt;h2 class="subtitle"&gt;{userText.subtitle}&lt;/h2&gt;<br/>
@@ -28,7 +28,7 @@ const Download = ({userBackground, userText, inputFields, font}) => {
                             )
                         })}                &lt;/div&gt;<br/>            &lt;/div&gt;<br/>        &lt;/div&gt;<br/>    &lt;/header&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;<br/>
                         </code></pre>
-                    </div>
+                    </div>{/* END copyHtml */}
 
                     <div className="copyCss">
                         <h2>Your CSS</h2>
