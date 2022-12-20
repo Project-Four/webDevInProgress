@@ -6,6 +6,11 @@ html { box-sizing: border-box;}
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
+html {
+    /* 1rem = 20px */
+    font-size: 125%;
+}
+
 /* Font Imports */
 @import url('https://fonts.googleapis.com/css2?family=Barlow&family=Fjalla+One&display=swap');
 
@@ -71,21 +76,21 @@ html { box-sizing: border-box;}
    
 }
 
-
 /* Header Styling */
 
-.header {
+header {
     text-align: center;
     background-color: #7672F7;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
+    padding: 100px 0px 100px 0px;
     
 }
 
 h1 {
     font-weight: bold;
-    font-size: 90px;
+    font-size: 4.5rem;
     letter-spacing: 10px;
 }
 
@@ -96,16 +101,13 @@ h1 {
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
     overflow: hidden;
     animation: morph 3s linear infinite;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    margin-left: 15%;
+    margin: 0 auto;
     -webkit-box-shadow: 8px 9px 0px 2px #000000; 
     box-shadow: 8px 9px 0px 2px #000000;
 }
 
 h2 {
-    font-family: 'Barlow', sans-serif;
-    font-size: 25px;
+    font-size: 1.25rem;
     line-height: 40px;
     
 }
@@ -113,19 +115,19 @@ h2 {
 li {
     list-style-type: circle;
     font-family: 'Barlow', sans-serif;
-    font-size: 20px;
+    font-size: 1rem;
     line-height: 40px;
 }
 p {
     font-family: 'Barlow', sans-serif;
-    font-size: 25px;
+    font-size: 1.25rem;
     font-weight: bold;
 }
 
 
 .routerLink {
     font-family: 'Fjalla One', sans-serif;
-    font-size: 30px;
+    font-size: 1.5rem;
     background-color: #E7605C;
     border: none;
     padding: 10px;
@@ -215,55 +217,49 @@ a:active {
 
 .sideBar label {
     font-family: 'Barlow', sans-serif;
-    font-size: 20px;
+    font-size: 1rem;
     color: #161B25;
     font-weight: bold;
 
 }
 
-.colourPicker {
-    margin-left: 20%;
-    margin-top: 20px;
+.sideBarForms {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
+
+
+.colourPicker {
+    align-self: center;
+}
+
 
 .linkInput {
     display: flex;
     flex-direction: column;
-    margin-left: 33px;
-
-}
-
-.linkInput input {
-    border: 3px solid black;
-    padding: 10px;
     gap: 10px;
-    margin-top: 10%;
-    width: 90%;
 }
+
 
 .delete {
     color: white;
     background-color: red;
     font-family: 'Fjalla One', sans-serif;
-    font-size: 20px;
+    font-size: 1rem;
     border: none;
     cursor: pointer;
-    height: 30px;
-    width: 30px;
-    margin-top: 15px;
+    padding: 5px 0px 5px 0px;
 }
 
 .add {
     color: white;
     background-color: green;
     font-family: 'Fjalla One', sans-serif;
-    font-size: 20px;
+    font-size: 1rem;
     border: none;
     cursor: pointer;
-    height: 30px;
-    width: 30px;
-    margin-left: 33px;
-    margin-top: 10px;
+    padding: 5px 0px 5px 0px;
 }
 
 main {
@@ -305,7 +301,7 @@ main {
     padding: 5px 10px 5px 10px;
     margin: 10px;
     font-family: 'Fjalla One', sans-serif;
-    font-size: 20px;
+    font-size: 1rem;
     text-transform: uppercase;
     background-color: #E7605C;
     border: none;
@@ -358,19 +354,26 @@ main {
 }
 
 
-.textForm {
+.sideBarSection {
     order: 1;
     width: 20%;
     height: 100%;
     position: absolute;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
 }
 
-.downloadSection {
-    order: 4;
-    width: 100%;
+.textForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
+#downloadButton {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
 }
 
 .previewSection {
@@ -382,28 +385,51 @@ main {
     margin-left: 20%;
 }
 
-#downloadButton {
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
+.downloadSection {
+    display: flex;
+    order: 4;
+    width: 100%;
+    background-color: #7672F7;
 }
 
-.copy p {
-    margin-top: 0px;
-    margin-bottom: 0px;
+.userCopy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 100px 0px 100px 0px;
+}
+
+.copyHtml {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.copyCss {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 pre {
+    white-space: pre-wrap;
+    font-size: 1rem;
     margin-top: 0px;
     margin-bottom: 0px;
 }
 
-.tab {
-    margin-left: 40px;
+/* media queries */
+
+@media(max-width:1330px){
+    .bblob{
+        width:100%;
+
+    }
 }
 
+@media(max-width:990px){
+    .bblob h1 {
 
-
-
-
-
+    }
+}

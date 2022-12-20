@@ -1,9 +1,7 @@
 import Form from './Form.js'
 import Preview from './Preview.js'
 import Download from './Download.js'
-
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 
 const Main = () => {
 
@@ -16,11 +14,14 @@ const Main = () => {
         subtitle: '',
     })
 
-    // Links State Variables
-    const [inputFields, setInputFields] = useState([ {websiteName: '', link: ''} ])
+        // Links State Variables
+    const [inputFields, setInputFields] = useState([{
+        websiteName: '',
+        link: ''
+    }])
 
     // State variable for selected font option
-    const [font, setFont] = useState();
+    const [font, setFont] = useState('barlow');
 
 
     return (
@@ -44,6 +45,7 @@ const Main = () => {
                 userBackground={userBackground}
                 userText={userText}
                 inputFields={inputFields}
+                font={font}
             />
         </main>
     )
