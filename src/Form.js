@@ -1,9 +1,8 @@
 import axios from 'axios';
 import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { GithubPicker, HuePicker, SketchPicker } from 'react-color';
 
-const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFields, setFont, color, setColor, fontColor, setFontColor}) => {
+const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFields, setFont, setFontColor, setBackgroundColor}) => {
 
     // Unsplash Search State Variables
     const [userSearch, setUserSearch] = useState('')
@@ -101,6 +100,10 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
         setFontColor(selectedFontColor)
     }
 
+    // ************ Function for background changes ************ //
+    const handleBackgroundColorChange = (selectedBackgroundColor) => {
+        setBackgroundColor(selectedBackgroundColor)
+    }
 
     return (
         <Fragment>
@@ -120,6 +123,26 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                     />
                     <button type='submit' className='submit'>Search</button>
                 </div>
+
+                <div className='colorButtons'>
+                    <button className='redButton colorButton' onClick={() => handleBackgroundColorChange('redBackground')}></button>
+                    <button className='orangeButton colorButton' onClick={() => handleBackgroundColorChange('orangeBackground')}></button>
+                    <button className='greenButton colorButton' onClick={() => handleBackgroundColorChange('greenBackground')}></button>
+                    <button className='blueButton colorButton' onClick={() => handleBackgroundColorChange('blueBackground')}></button>
+                    <button className='pacificBlueButton colorButton' onClick={() => handleBackgroundColorChange('pacificBlueBackground')}></button>
+                    <button className='fluorescentBlueButton colorButton' onClick={() => handleBackgroundColorChange('fluorescentBlueBackground')}></button>
+                    <button className='greenLizardButton colorButton' onClick={() => handleBackgroundColorChange('greenLizardBackground')}></button>
+                    <button className='lemonYellowButton colorButton' onClick={() => handleBackgroundColorChange('lemonYellowBackground')}></button>
+                    <button className='sunglowButton colorButton' onClick={() => handleBackgroundColorChange('sunglowBackground')}></button>
+                    <button className='chromeYellowButton colorButton' onClick={() => handleBackgroundColorChange('chromeYellowBackground')}></button>
+                    <button className='lightCoralButton colorButton' onClick={() => handleBackgroundColorChange('lightCoralBackground')}></button>
+                    <button className='magentaCrayolaButton colorButton' onClick={() => handleBackgroundColorChange('magentaCrayolaBackground')}></button>
+                    <button className='heliotropeButton colorButton' onClick={() => handleBackgroundColorChange('heliotropeBackground')}></button>
+                    <button className='purpleButton colorButton' onClick={() => handleBackgroundColorChange('purpleBackground')}></button>
+                    <button className='blackButton colorButton' onClick={() => handleBackgroundColorChange('blackBackground')}></button>
+                    <button className='whiteButton colorButton' onClick={() => handleBackgroundColorChange('whiteBackground')}></button>
+                </div>
+
                 <div className="searchResults">
                     {userSearchResults.map((result) => {
                         return (
@@ -167,27 +190,23 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
             <div className='sideBar'>
 
-
-                <div className='colorPicker'>
-                    <GithubPicker
-                        color={color}
-                        onChangeComplete={(color) => {setColor(color.hex)}}
-                    />
-                </div>
-
                 <div className='colorButtons'>
-                    <button className='pacificBlueButton colorButton' onClick={() => handleFontColorChange('pacificBlue')}></button>
-                    <button className='fluorescentBlueButton colorButton' onClick={() => handleFontColorChange('fluorescentBlue')}></button>
-                    <button className='greenLizardButton colorButton' onClick={() => handleFontColorChange('greenLizard')}></button>
-                    <button className='lemonYellowButton colorButton' onClick={() => handleFontColorChange('lemonYellow')}></button>
-                    <button className='sunglowButton colorButton' onClick={() => handleFontColorChange('sunglow')}></button>
-                    <button className='chromeYellowButton colorButton' onClick={() => handleFontColorChange('chromeYellow')}></button>
-                    <button className='lightCoralButton colorButton' onClick={() => handleFontColorChange('lightCoral')}></button>
-                    <button className='magentaCrayolaButton colorButton' onClick={() => handleFontColorChange('magentaCrayola')}></button>
-                    <button className='heliotropeButton colorButton' onClick={() => handleFontColorChange('heliotrope')}></button>
-                    <button className='purpleButton colorButton' onClick={() => handleFontColorChange('purple')}></button>
-                    <button className='blackButton colorButton' onClick={() => handleFontColorChange('black')}></button>
-                    <button className='whiteButton colorButton' onClick={() => handleFontColorChange('white')}></button>
+                    <button className='redButton colorButton' onClick={() => handleFontColorChange('redFont')}></button>
+                    <button className='orangeButton colorButton' onClick={() => handleFontColorChange('orangeFont')}></button>
+                    <button className='greenButton colorButton' onClick={() => handleFontColorChange('greenFont')}></button>
+                    <button className='blueButton colorButton' onClick={() => handleFontColorChange('blueFont')}></button>
+                    <button className='pacificBlueButton colorButton' onClick={() => handleFontColorChange('pacificBlueFont')}></button>
+                    <button className='fluorescentBlueButton colorButton' onClick={() => handleFontColorChange('fluorescentBlueFont')}></button>
+                    <button className='greenLizardButton colorButton' onClick={() => handleFontColorChange('greenLizardFont')}></button>
+                    <button className='lemonYellowButton colorButton' onClick={() => handleFontColorChange('lemonYellowFont')}></button>
+                    <button className='sunglowButton colorButton' onClick={() => handleFontColorChange('sunglowFont')}></button>
+                    <button className='chromeYellowButton colorButton' onClick={() => handleFontColorChange('chromeYellowFont')}></button>
+                    <button className='lightCoralButton colorButton' onClick={() => handleFontColorChange('lightCoralFont')}></button>
+                    <button className='magentaCrayolaButton colorButton' onClick={() => handleFontColorChange('magentaCrayolaFont')}></button>
+                    <button className='heliotropeButton colorButton' onClick={() => handleFontColorChange('heliotropeFont')}></button>
+                    <button className='purpleButton colorButton' onClick={() => handleFontColorChange('purpleFont')}></button>
+                    <button className='blackButton colorButton' onClick={() => handleFontColorChange('blackFont')}></button>
+                    <button className='whiteButton colorButton' onClick={() => handleFontColorChange('whiteFont')}></button>
                 </div>
 
                 <form action="" className='textForm'>

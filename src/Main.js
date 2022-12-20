@@ -25,10 +25,11 @@ const Main = () => {
     // State variable for selected font option
     const [font, setFont] = useState();
 
-    // Color Picker State Variables
-    const [color, setColor] = useState('#fffff')
-
+    // Font color picker state variable
     const [fontColor, setFontColor] = useState()
+
+    // Background color picker state variable
+    const [backgroundColor, setBackgroundColor] = useState()
 
     return (
         <main> 
@@ -40,8 +41,8 @@ const Main = () => {
                 setInputFields={setInputFields}
                 inputFields={inputFields}
                 setFont={setFont}
-                fontColor={fontColor}
                 setFontColor={setFontColor}
+                setBackgroundColor={setBackgroundColor}
             />
             <Preview
                 userBackground={userBackground}
@@ -49,7 +50,7 @@ const Main = () => {
                 inputFields={inputFields}
                 font={font}
                 fontColor={fontColor}
-                setFontColor={setFontColor}
+                backgroundColor={backgroundColor}
             />
             <Download
                 userBackground={userBackground}

@@ -53,21 +53,47 @@ html { box-sizing: border-box;}
     font-family: 'Zen Dots', cursive;
 }
 
-/* Font Buttons and Colors */
+/* Button Colors */
 
 .colorButtons {
     background-color: grey;
     height: 90px;
+    width: 270px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
     border-radius: 5px;
+    padding: 15px;
 }
 
 .colorButton {
     height: 30px;
-    width: 30px;
+    width: 12.5%;
+}
+
+.redButton {
+    background: #B80000;
+    border: none;
+    cursor: pointer;
+}
+
+.orangeButton {
+    background: #DB3E00;
+    border: none;
+    cursor: pointer;
+}
+
+.greenButton {
+    background: #008B02;
+    border: none;
+    cursor: pointer;
+}
+
+.blueButton {
+    background: #004DCF;
+    border: none;
+    cursor: pointer;
 }
 
 .pacificBlueButton {
@@ -76,18 +102,10 @@ html { box-sizing: border-box;}
     cursor: pointer;
 }
 
-.pacificBlue {
-    color: #33A8C7;
-}
-
 .fluorescentBlueButton {
     background: #52E3E1;
     border: none;
     cursor: pointer;
-}
-
-.fluorescentBlue {
-    color: #A0E426;
 }
 
 .greenLizardButton {
@@ -96,18 +114,10 @@ html { box-sizing: border-box;}
     cursor: pointer;
 }
 
-.greenLizard {
-    color: #A0E426;
-}
-
 .lemonYellowButton {
     background: #FDF148;
     border: none;
     cursor: pointer;
-}
-
-.lemonYellow {
-    color: #FDF148;
 }
 
 .sunglowButton {
@@ -116,18 +126,10 @@ html { box-sizing: border-box;}
     cursor: pointer;
 }
 
-.sunglow {
-    color: #FECE24;
-}
-
 .chromeYellowButton {
     background: #FFAB00;
     border: none;
     cursor: pointer;
-}
-
-.chromeYellow {
-    color: #FFAB00;
 }
 
 .lightCoralButton {
@@ -136,18 +138,10 @@ html { box-sizing: border-box;}
     cursor: pointer;
 }
 
-.lightCoral {
-    color: #F77976;
-}
-
 .magentaCrayolaButton {
     background: #F050AE;
     border: none;
     cursor: pointer;
-}
-
-.magentaCrayola {
-    color: #F050AE;
 }
 
 .heliotropeButton {
@@ -156,18 +150,10 @@ html { box-sizing: border-box;}
     cursor: pointer;
 }
 
-.heliotrope {
-    color: #D883FF;
-}
-
 .purpleButton {
     background: #9336FD;
     border: none;
     cursor: pointer;
-}
-
-.purple {
-    color: #9336FD;
 }
 
 .blackButton {
@@ -176,18 +162,142 @@ html { box-sizing: border-box;}
     cursor: pointer;
 }
 
-.black {
-    color: #000;
-}
-
 .whiteButton {
     background: #fff;
     border: none;
     cursor: pointer;
 }
 
-.white {
+/* Font Colours */
+
+.redFont {
+    color: #B80000;
+}
+
+.orangeFont {
+    color: #DB3E00;
+}
+
+.greenFont {
+    color: #008B02;
+}
+
+.blueFont {
+    color: #004DCF;
+}
+
+.pacificBlueFont {
+    color: #33A8C7;
+}
+
+.fluorescentBlueFont {
+    color: #A0E426;
+}
+
+.greenLizardFont {
+    color: #A0E426;
+}
+
+.lemonYellowFont {
+    color: #FDF148;
+}
+
+.sunglowFont {
+    color: #FECE24;
+}
+
+.chromeYellowFont {
+    color: #FFAB00;
+}
+
+.lightCoralFont {
+    color: #F77976;
+}
+
+.magentaCrayolaFont {
+    color: #F050AE;
+}
+
+.heliotropeFont {
+    color: #D883FF;
+}
+
+.purpleFont {
+    color: #9336FD;
+}
+
+.blackFont {
+    color: #000;
+}
+
+.whiteFont {
     color: #fff;
+}
+
+/* Background Colours */
+
+.redBackground {
+    background: #B80000;
+}
+
+.orangeBackground {
+    background: #DB3E00;
+}
+
+.greenBackground {
+    background: #008B02;
+}
+
+.blueBackground {
+    background: #004DCF;
+}
+
+.pacificBlueBackground {
+    background: #33A8C7;
+}
+
+.fluorescentBlueBackground {
+    background: #A0E426;
+}
+
+.greenLizardBackground {
+    background: #A0E426;
+}
+
+.lemonYellowBackground {
+    background: #FDF148;
+}
+
+.sunglowBackground {
+    background: #FECE24;
+}
+
+.chromeYellowBackground {
+    background: #FFAB00;
+}
+
+.lightCoralBackground {
+    background: #F77976;
+}
+
+.magentaCrayolaBackground {
+    background: #F050AE;
+}
+
+.heliotropeBackground {
+    background: #D883FF;
+}
+
+.purpleBackground {
+    background: #9336FD;
+}
+
+.blackBackground {
+    background: #000;
+}
+
+.whiteBackground {
+    background: #fff;
 }
 
 .fontOptions {
@@ -207,7 +317,6 @@ html { box-sizing: border-box;}
     width: 80%;
     margin: 0 auto;
     max-width: 1920px;
-   
 }
 
 
