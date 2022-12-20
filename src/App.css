@@ -159,13 +159,20 @@ a:active {
 .backgroundContainer {
     width: 100%;
     overflow: hidden;
-    
+    display: flex;
+    justify-content: center;
 }
 
 .backgroundContainer img {
     height: 80%;
     width: 80%;
     position: relative;
+    
+}
+
+.link {
+    
+    text-align: center;
 }
 
 .previewSection {
@@ -183,9 +190,9 @@ a:active {
     position: absolute;
     z-index: 1;
     text-align: center;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; */
     width: 50%;
 }
 

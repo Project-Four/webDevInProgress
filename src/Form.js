@@ -7,6 +7,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
     // ************ Unsplash Search State Variables ************ //
     const [userSearch, setUserSearch] = useState('')
     const [userSearchResults, setUserSearchResults] = useState( [] )
+
     
     // ************ Functions for user social media urls form ************ //
     const handleUrlFormChange = (index , event) => {
