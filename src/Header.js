@@ -11,7 +11,7 @@ const Header = () => {
                     <h1>Web Dev in Progress</h1>
                 </div>
                 
-                    <h2>If you are in the midst of creating or upgrading your Web Developer portfolio, but need a placeholder - this is just what you need. Here you can easily create a quick, but stylish, landing page for your up and coming portfolio:</h2>
+                    <h2 className='intro'>If you are in the midst of creating or upgrading your Web Developer portfolio, but need a placeholder - this is just what you need. Here you can easily create a quick, but stylish, landing page for your up and coming portfolio:</h2>
                 
                 <ul>
                     <li>Customize your background by searching up any image or choosing a colour</li>
