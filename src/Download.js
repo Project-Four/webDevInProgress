@@ -13,8 +13,6 @@ const Download = ({userBackground, userText, inputFields, font, fontColor, backg
         <section className="downloadSection">
             <div className="wrapper">
 
-                <Link to="/main" className='routerLink homeLink'>Back</Link>
-
                 <div className="userCopy">
                     <div className="copyHtml">
                         <h2>Your HTML</h2>
