@@ -88,97 +88,97 @@ html {
     width: 12.5%;
 }
 
-.B80000 {
+.redButton {
     background: #B80000;
     border: none;
     cursor: pointer;
 }
 
-.DB3E00 {
+.orangeButton {
     background: #DB3E00;
     border: none;
     cursor: pointer;
 }
 
-.bc008B02 {
+.greenButton {
     background: #008B02;
     border: none;
     cursor: pointer;
 }
 
-.bc004DCF {
+.blueButton {
     background: #004DCF;
     border: none;
     cursor: pointer;
 }
 
-.bc33A8C7 {
+.pacificBlueButton {
     background: #33A8C7;
     border: none;
     cursor: pointer;
 }
 
-.bc52E3E1 {
+.fluorescentBlueButton {
     background: #52E3E1;
     border: none;
     cursor: pointer;
 }
 
-.A0E426 {
+.greenLizardButton {
     background: #A0E426;
     border: none;
     cursor: pointer;
 }
 
-.FDF148 {
+.lemonYellowButton {
     background: #FDF148;
     border: none;
     cursor: pointer;
 }
 
-.FECE24 {
+.sunglowButton {
     background: #FECE24;
     border: none;
     cursor: pointer;
 }
 
-.FFAB00 {
+.chromeYellowButton {
     background: #FFAB00;
     border: none;
     cursor: pointer;
 }
 
-.F77976 {
+.lightCoralButton {
     background: #F77976;
     border: none;
     cursor: pointer;
 }
 
-.F050AE {
+.magentaCrayolaButton {
     background: #F050AE;
     border: none;
     cursor: pointer;
 }
 
-.D883FF {
+.heliotropeButton {
     background: #D883FF;
     border: none;
     cursor: pointer;
 }
 
-.bc9336FD {
+.purpleButton {
     background: #9336FD;
     border: none;
     cursor: pointer;
 }
 
-.bc000 {
+.blackButton {
     background: #000;
     border: none;
     cursor: pointer;
 }
 
-.fff {
+.whiteButton {
     background: #fff;
     border: none;
     cursor: pointer;

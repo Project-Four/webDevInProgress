@@ -10,7 +10,7 @@ console.log(backgroundColor)
                 
                 <div className={previewClasses}>
  
-                    <div className="previewText">
+                    <div className="previewText wrapper">
                         <h1 className='name'>{userText.name}</h1>
                         <h2 className='subtitle'>{userText.subtitle}</h2>
 
