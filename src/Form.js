@@ -103,7 +103,9 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
     // ************ Function for background changes ************ //
     const handleBackgroundColorChange = (selectedBackgroundColor) => {
+
         setBackgroundColor(selectedBackgroundColor)
+
         setUserBackground({
             image:'',
             alt: ''
@@ -175,7 +177,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                         })}
 
                     </div>
-                    </div>{/* END backgroundOptions */}
+                </div>{/* END backgroundOptions */}
                 </form>
 
             </section>
@@ -187,6 +189,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
                 <HashLink smooth to="#download" className='codeLink'>See your Code</HashLink>
 
+                        <h3>Choose a Font style and Colour</h3>
                 <div className='fontOptions'>
                     <button className='barlow' onClick={() => handleFontChange('barlow')}>A</button>
                     <button className='anton' onClick={() => handleFontChange('anton')}>A</button>
