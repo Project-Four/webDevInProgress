@@ -1,12 +1,14 @@
 import axios from 'axios';
 import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link'
 
 const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFields, setFont, setFontColor, setBackgroundColor}) => {
 
     // ************ Unsplash Search State Variables ************ //
     const [userSearch, setUserSearch] = useState('')
     const [userSearchResults, setUserSearchResults] = useState( [] )
+    const [download, setDownload] = useState(false)
     
     // ************ Functions for user social media urls form ************ //
     const handleUrlFormChange = (index , event) => {
@@ -111,6 +113,9 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
         })
     }
 
+    // Button for HTML and CSS
+    const handleDownload = () => setDownload(!download)
+
     return (
         <Fragment>
             
@@ -185,6 +190,9 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
             <section className="sideBarSection">
 
                 <Link to="/" className='routerLink homeLink'>Back to Home</Link>
+
+                <HashLink smooth to="#download" className='codeLink'>See your Code</HashLink>
+
                         <h3>Choose a Font style and Colour</h3>
                 <div className='fontOptions'>
                     <button className='barlow' onClick={() => handleFontChange('barlow')}>A</button>
