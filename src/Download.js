@@ -9,6 +9,12 @@ const Download = ({userBackground, userText, inputFields, font, fontColor, backg
         )
     }
 
+    const slice = (string) => {
+        return (
+            string.slice(2)
+        )
+    }
+    
     return (
         <section className="downloadSection">
             <div className="wrapper">
@@ -52,7 +58,7 @@ const Download = ({userBackground, userText, inputFields, font, fontColor, backg
                         }
 
                         {
-                            backgroundColor ? `    background-color: red;` : null
+                            backgroundColor ? `    background-color: ${slice(backgroundColor)};` : null
                         } 
                         
                         <br/>    height: 100vh;<br/>    background-size: cover;<br/>    background-position: center;<br/>
