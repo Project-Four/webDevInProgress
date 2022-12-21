@@ -10,7 +10,7 @@ console.log(backgroundColor)
                 
                 <div className={previewClasses}>
  
-                    <div className="previewText">
+                    <div className="previewText wrapper">
                         <h1 className='name'>{userText.name}</h1>
                         <h2 className='subtitle'>{userText.subtitle}</h2>
 
@@ -18,14 +18,14 @@ console.log(backgroundColor)
                             {inputFields.map((field, index) => {
                                 return (
                                     <div key={index} className='link'>
-                                        <a target="_blank" href={field.link}>{field.websiteName}</a>
+                                        <a target="_blank" rel="noreferrer" href={field.link}>{field.websiteName}</a>
                                         </div>
                                     )
                                 })}
                         </div>
                     </div>
 
-                    <div className="backgroundContainer">
+                    <div className='backgroundContainer'>
                         <img src={userBackground.image} alt={userBackground.alt} />
                     </div>
                 </div>

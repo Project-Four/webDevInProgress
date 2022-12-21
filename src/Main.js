@@ -24,13 +24,13 @@ const Main = () => {
     const [font, setFont] = useState('barlow');
 
     // Font color picker state variable
-    const [fontColor, setFontColor] = useState()
+    const [fontColor, setFontColor] = useState('fc000')
 
     // Background color picker state variable
-    const [backgroundColor, setBackgroundColor] = useState()
+    const [backgroundColor, setBackgroundColor] = useState('bcfff')
 
     return (
-        <main> 
+        <main className='mainWrapper'> 
 
             <Form 
                 setUserBackground={setUserBackground}
@@ -50,6 +50,7 @@ const Main = () => {
                 fontColor={fontColor}
                 backgroundColor={backgroundColor}
             />
+
             <Download
                 userBackground={userBackground}
                 userText={userText}
@@ -58,6 +59,7 @@ const Main = () => {
                 fontColor={fontColor}
                 backgroundColor={backgroundColor}
             />
+        
         </main>
     )
     

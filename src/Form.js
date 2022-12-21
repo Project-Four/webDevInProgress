@@ -1,13 +1,13 @@
 import axios from 'axios';
 import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link'
 
 const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFields, setFont, setFontColor, setBackgroundColor}) => {
 
     // ************ Unsplash Search State Variables ************ //
     const [userSearch, setUserSearch] = useState('')
     const [userSearchResults, setUserSearchResults] = useState( [] )
-
     
     // ************ Functions for user social media urls form ************ //
     const handleUrlFormChange = (index , event) => {
@@ -103,7 +103,9 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
     // ************ Function for background changes ************ //
     const handleBackgroundColorChange = (selectedBackgroundColor) => {
+
         setBackgroundColor(selectedBackgroundColor)
+
         setUserBackground({
             image:'',
             alt: ''
@@ -132,24 +134,25 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
 
                 <div className="backgroundOptions">
-                    <div className='colorButtons'>
-                        <button className='redButton colorButton' onClick={() => handleBackgroundColorChange('redBackground')}></button>
-                        <button className='orangeButton colorButton' onClick={() => handleBackgroundColorChange('orangeBackground')}></button>
-                        <button className='greenButton colorButton' onClick={() => handleBackgroundColorChange('greenBackground')}></button>
-                        <button className='blueButton colorButton' onClick={() => handleBackgroundColorChange('blueBackground')}></button>
-                        <button className='pacificBlueButton colorButton' onClick={() => handleBackgroundColorChange('pacificBlueBackground')}></button>
-                        <button className='fluorescentBlueButton colorButton' onClick={() => handleBackgroundColorChange('fluorescentBlueBackground')}></button>
-                        <button className='greenLizardButton colorButton' onClick={() => handleBackgroundColorChange('greenLizardBackground')}></button>
-                        <button className='lemonYellowButton colorButton' onClick={() => handleBackgroundColorChange('lemonYellowBackground')}></button>
-                        <button className='sunglowButton colorButton' onClick={() => handleBackgroundColorChange('sunglowBackground')}></button>
-                        <button className='chromeYellowButton colorButton' onClick={() => handleBackgroundColorChange('chromeYellowBackground')}></button>
-                        <button className='lightCoralButton colorButton' onClick={() => handleBackgroundColorChange('lightCoralBackground')}></button>
-                        <button className='magentaCrayolaButton colorButton' onClick={() => handleBackgroundColorChange('magentaCrayolaBackground')}></button>
-                        <button className='heliotropeButton colorButton' onClick={() => handleBackgroundColorChange('heliotropeBackground')}></button>
-                        <button className='purpleButton colorButton' onClick={() => handleBackgroundColorChange('purpleBackground')}></button>
-                        <button className='blackButton colorButton' onClick={() => handleBackgroundColorChange('blackBackground')}></button>
-                        <button className='whiteButton colorButton' onClick={() => handleBackgroundColorChange('whiteBackground')}></button>
-                    </div>
+                <div className='colorButtons'>
+                    <button className='redButton colorButton' onClick={() => handleBackgroundColorChange('bcB80000')}></button>
+                    <button className='orangeButton colorButton' onClick={() => handleBackgroundColorChange('bcDB3E00')}></button>
+                    <button className='greenButton colorButton' onClick={() => handleBackgroundColorChange('bc008B02')}></button>
+                    <button className='blueButton colorButton' onClick={() => handleBackgroundColorChange('bc004DCF')}></button>
+                    <button className='pacificBlueButton colorButton' onClick={() => handleBackgroundColorChange('bc33A8C7')}></button>
+                    <button className='fluorescentBlueButton colorButton' onClick={() => handleBackgroundColorChange('bc52E3E1')}></button>
+                    <button className='greenLizardButton colorButton' onClick={() => handleBackgroundColorChange('bcA0E426')}></button>
+                    <button className='lemonYellowButton colorButton' onClick={() => handleBackgroundColorChange('bcFDF148')}></button>
+                    <button className='sunglowButton colorButton' onClick={() => handleBackgroundColorChange('bcFECE24')}></button>
+                    <button className='chromeYellowButton colorButton' onClick={() => handleBackgroundColorChange('bcFFAB00')}></button>
+                    <button className='lightCoralButton colorButton' onClick={() => handleBackgroundColorChange('bcF77976')}></button>
+                    <button className='magentaCrayolaButton colorButton' onClick={() => handleBackgroundColorChange('bcF050AE')}></button>
+                    <button className='heliotropeButton colorButton' onClick={() => handleBackgroundColorChange('bcD883FF')}></button>
+                    <button className='purpleButton colorButton' onClick={() => handleBackgroundColorChange('bc9336FD')}></button>
+                    <button className='blackButton colorButton' onClick={() => handleBackgroundColorChange('bc000')}></button>
+                    <button className='whiteButton colorButton' onClick={() => handleBackgroundColorChange('bcfff')}></button>
+                </div>
+                
                     <div className="searchResults">
                     {userSearchResults.map((result) => {
                         return (
@@ -184,6 +187,9 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
                 <Link to="/" className='routerLink homeLink'>Back to Home</Link>
 
+                <HashLink smooth to="#download" className='codeLink'>See your Code</HashLink>
+
+                        <h3>Choose a Font style and Colour</h3>
                 <div className='fontOptions'>
                     <button className='barlow' onClick={() => handleFontChange('barlow')}>A</button>
                     <button className='anton' onClick={() => handleFontChange('anton')}>A</button>
@@ -217,7 +223,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                 </div>
 
                 <div className='sideBar'>
-
+                    
                     <form action="" className='textForm'>
                         <label htmlFor="">Name</label>
                         <input 
