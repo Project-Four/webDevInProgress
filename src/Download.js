@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom"
-
 const Download = ({userBackground, userText, inputFields, font, fontColor, backgroundColor}) => {
     
     // https://bobbyhadz.com/blog/react-capitalize-first-letter
@@ -29,7 +27,7 @@ const Download = ({userBackground, userText, inputFields, font, fontColor, backg
                         
                         &lt;/head&gt;<br/>&lt;body&gt;<br/>    &lt;header class="backgroundContainer"&gt;<br/>        &lt;div class="flexContainer"&gt;<br/>            &lt;div class="wrapper"&gt;<br/>                &lt;div class="textContainer"&gt;<br/>                    &lt;h1 class="title"&gt;{userText.name}&lt;/h1&gt;<br/>                    &lt;h2 class="subtitle"&gt;{userText.subtitle}&lt;/h2&gt;<br/>
                         {inputFields.map((field, index) => { return (
-                            <div key={index}>                    &lt;a class="links" target="_blank" href="{field.link}"&gt;{field.websiteName}&lt;/a&gt;<br/></div>        
+                            <div key={index}>                    &lt;a class="links" target="_blank" rel="noreferrer" href="{field.link}"&gt;{field.websiteName}&lt;/a&gt;<br/></div>        
                             )
                         })}                &lt;/div&gt;<br/>            &lt;/div&gt;<br/>        &lt;/div&gt;<br/>    &lt;/header&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;<br/>
                         </code></pre>
