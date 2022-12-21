@@ -50,17 +50,14 @@ const Download = ({userBackground, userText, inputFields, font, fontColor, backg
                         &#125;<br/>
                         <br/>.flexContainer &#123;<br/>    height: 100vh;<br/>    display: flex;<br/>    align-items: center;<br/>    justify-content: center;<br/>
                         &#125;<br/>
-                        <br/>.backgroundContainer &#123;<br/>    
-                        
+                        <br/>.backgroundContainer &#123;<br/>    height: 100vh;<br/>
                         {
-                            userBackground.image ? <>    background-image: url({userBackground.image});<br/>    background-size: cover;<br/>    background-position: center;</> : null
+                            userBackground.image ? <>    background-image: url({userBackground.image});<br/>    background-size: cover;<br/>    background-position: center;<br/></> : null
                         }
 
                         {
-                            backgroundColor ? <>    background-color: #{slice(backgroundColor)};</> : null
+                            backgroundColor ? <>    background-color: #{slice(backgroundColor)};<br/></> : null
                         } 
-                        
-                        <br/>    height: 100vh;<br/>
                         &#125;<br/>
                         <br/>.textContainer &#123;<br/>    display: flex;<br/>    flex-direction: column;<br/>    align-items: center;<br/>    justify-content: space-between;<br/>    height: 50vh;<br/>
                         &#125;<br/>    

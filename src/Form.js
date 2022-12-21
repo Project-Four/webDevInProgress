@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link'
 import Swal from 'sweetalert2';
 
-const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFields, setFont, setFontColor, setBackgroundColor}) => {
+const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFields, setFont, setFontColor, setBackgroundColor, backgroundColor}) => {
 
     // ************ Unsplash Search State Variables ************ //
     const [userSearch, setUserSearch] = useState('')
@@ -55,11 +55,11 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
             
         })
         .then((res) => {
-            res.data.results.length > 0 ? setUserSearchResults(res.data.results) : Swal.fire({
+            res.data.results.length > 0 || backgroundColor ? setUserSearchResults(res.data.results) : Swal.fire({
                 icon: 'error',
                 title: 'No results found. Try another search!',
                 background: '#fff',
-                color: 'black',
+                color: '#161B25',
                 borderRadius: '1',
                 showConfirmButton: true,
             })
