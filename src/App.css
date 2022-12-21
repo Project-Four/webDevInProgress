@@ -422,20 +422,13 @@ a:active {
 
 .backgroundContainer {
     width: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
 }
 
 .backgroundContainer img {
-    height: 100%;
-    min-width: 100%;
-    
-    
+    width: 100%;
 }
 
 .link {
-    
     text-align: center;
 }
 
@@ -449,7 +442,6 @@ a:active {
     align-items: center;
     max-height: 100%;
     overflow: hidden;
-    
 }
 
 .previewText {
@@ -464,6 +456,7 @@ a:active {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
 }
 
 
@@ -476,6 +469,7 @@ a:active {
     align-items: center;
     height: 50px;
     cursor: pointer;
+    text-align: center;
 }
 
 .sideBar {
@@ -550,11 +544,10 @@ main {
 .backgroundForm {
     order: 2;
     width: 100%;
-    height: 20%;
+    height: 25%;
     margin-left: 20%;
     text-align: center;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -745,4 +738,69 @@ pre {
     }
 }
 
+/* media queries - preview section */
+
+@media(max-width:1200px){
+    .backgroundForm {
+        height: 25%;
+    }
+
+    .backgroundOptions {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .previewSection{
+        height:75%;
+    }
+
+    .homelink{
+        font-size: 1rem;
+    }
+}
+
+@media(max-width: 960px) {
+    .optionContainer {
+        width: 105px;
+        height: 55px;
+        min-width: 105px;
+        min-height: 55px;
+    }
+    [type="radio"] {
+        width: 105px;
+        height: 55px;
+        min-width: 105px;
+        min-height: 55px;
+    }
+
+    main {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .backgroundForm,
+    .sideBarSection,
+    .previewSection {
+        width: 100%;
+        position: static;
+        margin: 0 auto;
+    }
+
+    .sideBarSection {
+        overflow-y: auto;
+    }
+
+   .previewSection{
+    height: 30rem;
+   }
+}
+
+@media(max-width: 650px) {
+    .searchResults {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+}
 

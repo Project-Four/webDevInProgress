@@ -174,7 +174,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                         })}
 
                     </div>
-                    </div>{/* END backgroundOptions */}
+                </div>{/* END backgroundOptions */}
                 </form>
 
             </section>
