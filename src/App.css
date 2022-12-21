@@ -6,10 +6,21 @@ html { box-sizing: border-box;}
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
+/* base styles */
+
 html {
-    /* 1rem = 20px */
     font-size: 125%;
 }
+
+.App {
+    text-align: center;
+  }
+  
+  .wrapper {
+      width: 80%;
+      margin: 0 auto;
+      max-width: 1920px;
+  }
 
 /* Font Imports */
 @import url('https://fonts.googleapis.com/css2?family=Barlow&family=Fjalla+One&display=swap');
@@ -316,27 +327,6 @@ html {
     background: #fff;
 }
 
-.fontOptions {
-    display: flex;
-    flex-wrap: wrap;
-    width: 90%;
-    align-self: center;
-    margin-bottom: 10%;
-}
-
-.fontOptions button {
-    width: 20%;
-}
-
-.App {
-  text-align: center;
-}
-
-.wrapper {
-    width: 80%;
-    margin: 0 auto;
-    max-width: 1920px;
-}
 
 /* Header Styling */
 
@@ -381,7 +371,11 @@ h3 {
     margin: 10px auto;
 }
 
-ul {
+ul{
+    padding-left: 0px;
+}
+
+ul{
     padding-left: 0px;
 }
 
@@ -440,6 +434,22 @@ a:active {
   color: inherit;
 }
 
+/* footer styles */
+
+.footer {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: black;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+}
+
+
 /* Preview Styling */
 
 .backgroundContainer {
@@ -483,7 +493,19 @@ a:active {
 
 
 
-/* Form Styling */
+/* Form section Styling */
+
+.fontOptions {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    align-self: center;
+    margin-bottom: 10%;
+}
+
+.fontOptions button {
+    width: 20%;
+}
 
 .homeLink {
     display: flex;
@@ -568,13 +590,6 @@ a:active {
     padding: 5px 0px 5px 0px;
 }
 
-main {
-    height: 100vh;
-    display: flex;
-    flex-flow: row wrap;
-    
-}
-
 
 .backgroundForm {
     order: 2;
@@ -643,6 +658,7 @@ main {
 .backgroundOptions{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 5px;
     z-index: 2;
 }
@@ -684,11 +700,16 @@ main {
     gap: 10px;
 }
 
-#downloadButton {
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
+/* main section styles */
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
+    
 }
+
+/* download section styles */
 
 .downloadSection {
     display: flex;
@@ -713,7 +734,10 @@ main {
 .copyHtml {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: fit-content;
+    
+    width: fit-content;
+    
 }
 
 .copyCss {
@@ -732,6 +756,7 @@ pre {
     overflow: scroll;
 }
 
+/* media queries - header */
 
 @media(max-width: 1330px) {
     .bblob {
@@ -745,20 +770,21 @@ pre {
     }
 }
 
-@media(max-width: 650px) {
+@media(max-width:650px) {
     .bblob h1 {
         font-size: 2rem;
     }
-
+    
     .intro {
         font-size: 1rem;
     }
 }
 
-@media(max-width: 450px) {
+@media(max-width:450px) {
     .bblob h1 {
         font-size: 1rem;
     }
+
     .intro, li, p {
         font-size: 0.8rem;
     }
@@ -768,6 +794,10 @@ pre {
 
 @media(max-width: 1200px) {
     .homeLink {
+        font-size: 1rem;
+    }
+
+    .codeLink {
         font-size: 1rem;
     }
     
@@ -782,9 +812,22 @@ pre {
         height: 75%;
     }
 
+    .userCopy h1 {
+        font-size: 4rem;
+    }
+
 }
 
 @media(max-width: 960px) {
+
+    .previewText h1 {
+        font-size: 3.6rem;
+    }
+
+    .userCopy h1 {
+        font-size: 3.6rem;
+    }
+
     .optionContainer {
         width: 105px;
         height: 55px;
@@ -817,6 +860,15 @@ pre {
         min-height: 30rem;
     }
 
+    .backgroundContainer {
+        min-height: 30rem;
+    }
+
+    .backgroundContainer img {
+        min-height: 30rem;
+        object-fit: cover;
+    }
+
     .sideBarSection {
         overflow-y: auto;
     }
@@ -828,9 +880,18 @@ pre {
     .searchImage input {
         position: absolute;
     }
+
+    .copyHtml {
+        height: 800px;
+    }
+
+    .copyCss {
+        height: 1200px;
+    }
 }
 
 @media(max-width: 740px) {
+
     .searchResults {
         flex-wrap: wrap;
         justify-content: center;
@@ -838,13 +899,75 @@ pre {
     }
 
     .previewText h1 {
-        font-size: 3.8rem;
-        line-height: 3.6rem;
+        font-size: 3rem;
         margin-top: 0;
         margin-bottom: 25px;
     }
 
-    .previewText h2 {
-        margin: 0;
+    .userCopy h1 {
+        font-size: 3rem;
+    }
+
+    .copyHtml {
+        height: 600px;
+    }
+
+    .copyCss {
+        height: 1000px;
     }
 }
+
+@media(max-width: 580px) {
+
+    .previewText h1 {
+        font-size: 2.2rem;
+        margin-bottom: 0;
+    }
+
+    .previewText h2 {
+        font-size: 1.10rem;
+        margin: 10px 0;
+    }
+
+    .link a {
+        font-size: 0.85rem;
+    }
+
+
+    .copyHtml {
+        height: 500px;
+    }
+
+    .copyCss {
+        height: 800px;
+    }
+}
+
+@media(max-width: 480px) {
+
+    .previewText h1 {
+        font-size: 1.8rem;
+        line-height: 40px;
+    }
+
+    .userCopy h1 {
+        font-size: 2.6rem;
+    }
+
+    .previewText h2 {
+        font-size: 1.10rem;
+    }
+
+    .link a {
+        font-size: 0.8rem;
+    }
+
+    .copyHtml {
+        width: 100%;
+    }
+}
+
+
+
+
+

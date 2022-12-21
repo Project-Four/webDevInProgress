@@ -270,7 +270,6 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                                 placeholder='Enter URL'
                                 onChange = {event => handleUrlFormChange(index, event)}
                                 />
-                                {/* Removes link input field */}
                                 <button onClick={(event) => removeFields(index, event)} className='delete'>Remove Link</button>
                             </div>
                         )
