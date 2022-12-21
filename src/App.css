@@ -791,14 +791,6 @@ pre {
     .sideBarSection {
         overflow-y: auto;
     }
-}
-
-@media(max-width: 650px) {
-    .searchResults {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
 
     .optionContainer {
         position: relative;
@@ -806,5 +798,13 @@ pre {
 
     .searchImage input {
         position: absolute;
+    }
+}
+
+@media(max-width: 650px) {
+    .searchResults {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
 }
