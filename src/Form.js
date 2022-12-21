@@ -2,6 +2,7 @@ import axios from 'axios';
 import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link'
+import Swal from 'sweetalert2';
 
 const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFields, setFont, setFontColor, setBackgroundColor}) => {
 
@@ -54,8 +55,15 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
             
         })
         .then((res) => {
-            console.log(res.data.results)
-            setUserSearchResults(res.data.results)
+            res.data.results.length > 0 ? setUserSearchResults(res.data.results) : Swal.fire({
+                icon: 'error',
+                title: 'No results found. Try another search!',
+                background: '#fff',
+                color: 'black',
+                borderRadius: '1',
+                showConfirmButton: true,
+            })
+            
         })
     }
 
@@ -154,27 +162,27 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                 </div>
                 
                     <div className="searchResults">
-                    {userSearchResults.map((result) => {
-                        return (
-                            <div key={result.id} className="optionContainer">
+                        {userSearchResults.map((result) => {
+                            return (
+                                <div key={result.id} className="optionContainer">
 
-                                    <label 
-                                        className='searchImage'
-                                        htmlFor="url"
-                                        key={result.blur_hash} 
-                                    >
-                                    <input
-                                        onChange={backgroundHandleChange}
-                                        name='url'
-                                        type= 'radio'
-                                        value={`${result.urls.full}, ${result.alt_description}`}
-                                    />
-                                        <img src={result.urls.thumb} alt={result.alt_description}></img>
-                                    </label>
+                                        <label 
+                                            className='searchImage'
+                                            htmlFor="url"
+                                            key={result.blur_hash} 
+                                        >
+                                        <input
+                                            onChange={backgroundHandleChange}
+                                            name='url'
+                                            type= 'radio'
+                                            value={`${result.urls.full}, ${result.alt_description}`}
+                                        />
+                                            <img src={result.urls.thumb} alt={result.alt_description}></img>
+                                        </label>
 
-                                </div>
-                            )
-                        })}
+                                    </div>
+                                )
+                            })}
 
                     </div>
                 </div>{/* END backgroundOptions */}
