@@ -786,4 +786,12 @@ pre {
         justify-content: center;
         gap: 10px;
     }
+
+    .optionContainer {
+        position: relative;
+    }
+
+    .searchImage input {
+        position: absolute;
+    }
 }
