@@ -556,7 +556,7 @@ main {
 .backgroundForm {
     order: 2;
     width: 100%;
-    height: 20%;
+    height: 25%;
     margin-left: 20%;
     text-align: center;
     display: flex;
@@ -790,6 +790,14 @@ pre {
 
     .sideBarSection {
         overflow-y: auto;
+    }
+
+    .optionContainer {
+        position: relative;
+    }
+
+    .searchImage input {
+        position: absolute;
     }
 }
 
