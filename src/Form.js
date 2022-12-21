@@ -8,6 +8,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
     // ************ Unsplash Search State Variables ************ //
     const [userSearch, setUserSearch] = useState('')
     const [userSearchResults, setUserSearchResults] = useState( [] )
+    const [download, setDownload] = useState(false)
     
     // ************ Functions for user social media urls form ************ //
     const handleUrlFormChange = (index , event) => {
@@ -111,6 +112,9 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
             alt: ''
         })
     }
+
+    // Button for HTML and CSS
+    const handleDownload = () => setDownload(!download)
 
     return (
         <Fragment>
