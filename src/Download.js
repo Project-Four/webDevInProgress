@@ -1,12 +1,13 @@
 const Download = ({userBackground, userText, inputFields, font, fontColor, backgroundColor}) => {
     
-    // https://bobbyhadz.com/blog/react-capitalize-first-letter
+    // capitalizes font classname to be used in the url to get a google font https://bobbyhadz.com/blog/react-capitalize-first-letter
     const capitalize = (string) => {
         return (
             string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
         )
     }
 
+    // removes first two letters off our color class names to use it as a hex code
     const slice = (string) => {
         return (
             string.slice(2)
@@ -18,7 +19,9 @@ const Download = ({userBackground, userText, inputFields, font, fontColor, backg
             <div className="wrapper">
 
                 <div className="userCopy">
+
                     <h1>Copy Your Code Below!</h1>
+                    
                     <div className="copyHtml">
                         <h2>index.html</h2>
                         <pre><code className="language-markup">
@@ -51,6 +54,7 @@ const Download = ({userBackground, userText, inputFields, font, fontColor, backg
                         <br/>.flexContainer &#123;<br/>    height: 100vh;<br/>    display: flex;<br/>    align-items: center;<br/>    justify-content: center;<br/>
                         &#125;<br/>
                         <br/>.backgroundContainer &#123;<br/>    height: 100vh;<br/>
+                        {/* Checks if user has selected an image or a background color and displays css code accordingly */}
                         {
                             userBackground.image ? <>    background-image: url({userBackground.image});<br/>    background-size: cover;<br/>    background-position: center;<br/></> : null
                         }

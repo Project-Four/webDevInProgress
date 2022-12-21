@@ -5,16 +5,22 @@ import { useState } from 'react'
 
 const Main = () => {
 
+    // background image state variable
     const [userBackground, setUserBackground] = useState ({
         image: '',
         alt: ''
     });
+    
+    // Background color picker state variable
+    const [backgroundColor, setBackgroundColor] = useState('')
+
+    // Text input state variables
     const [userText, setUserText] = useState ({
         name: '',
         subtitle: '',
     })
 
-        // Links State Variables
+    // Links State Variables
     const [inputFields, setInputFields] = useState([{
         websiteName: '',
         link: ''
@@ -25,9 +31,6 @@ const Main = () => {
 
     // Font color picker state variable
     const [fontColor, setFontColor] = useState('fc000')
-
-    // Background color picker state variable
-    const [backgroundColor, setBackgroundColor] = useState('')
 
     return (
         <main className='mainWrapper'> 
