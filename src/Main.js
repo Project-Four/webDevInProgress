@@ -5,16 +5,22 @@ import { useState } from 'react'
 
 const Main = () => {
 
+    // background image state variable
     const [userBackground, setUserBackground] = useState ({
         image: '',
         alt: ''
     });
+    
+    // Background color picker state variable
+    const [backgroundColor, setBackgroundColor] = useState('')
+
+    // Text input state variables
     const [userText, setUserText] = useState ({
         name: '',
         subtitle: '',
     })
 
-        // Links State Variables
+    // Links State Variables
     const [inputFields, setInputFields] = useState([{
         websiteName: '',
         link: ''
@@ -23,9 +29,11 @@ const Main = () => {
     // State variable for selected font option
     const [font, setFont] = useState('barlow');
 
+    // Font color picker state variable
+    const [fontColor, setFontColor] = useState('fc000')
 
     return (
-        <main> 
+        <main className='mainWrapper'> 
 
             <Form 
                 setUserBackground={setUserBackground}
@@ -34,19 +42,28 @@ const Main = () => {
                 setInputFields={setInputFields}
                 inputFields={inputFields}
                 setFont={setFont}
+                setFontColor={setFontColor}
+                backgroundColor={backgroundColor}
+                setBackgroundColor={setBackgroundColor}
             />
             <Preview
                 userBackground={userBackground}
                 userText={userText}
                 inputFields={inputFields}
                 font={font}
+                fontColor={fontColor}
+                backgroundColor={backgroundColor}
             />
+
             <Download
                 userBackground={userBackground}
                 userText={userText}
                 inputFields={inputFields}
                 font={font}
+                fontColor={fontColor}
+                backgroundColor={backgroundColor}
             />
+        
         </main>
     )
     
