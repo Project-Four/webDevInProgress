@@ -30,7 +30,7 @@ const Main = () => {
     const [backgroundColor, setBackgroundColor] = useState('')
 
     return (
-        <main> 
+        <main className='mainWrapper'> 
 
             <Form 
                 setUserBackground={setUserBackground}
