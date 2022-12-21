@@ -681,6 +681,11 @@ main {
     padding: 100px 0px 100px 0px;
 }
 
+.userCopy h1 {
+    margin: 0px;
+    text-align: center;
+}
+
 .copyHtml {
     display: flex;
     flex-direction: column;

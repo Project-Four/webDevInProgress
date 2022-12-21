@@ -28,7 +28,7 @@ const Main = () => {
     const [fontColor, setFontColor] = useState('fc000')
 
     // Background color picker state variable
-    const [backgroundColor, setBackgroundColor] = useState('')
+    const [backgroundColor, setBackgroundColor] = useState('bcfff')
 
     return (
         <main> 
