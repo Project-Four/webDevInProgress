@@ -113,9 +113,6 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
         })
     }
 
-    // Button for HTML and CSS
-    const handleDownload = () => setDownload(!download)
-
     return (
         <Fragment>
             
