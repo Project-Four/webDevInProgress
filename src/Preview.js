@@ -18,7 +18,7 @@ console.log(backgroundColor)
                             {inputFields.map((field, index) => {
                                 return (
                                     <div key={index} className='link'>
-                                        <a target="_blank" href={field.link}>{field.websiteName}</a>
+                                        <a target="_blank" rel="noreferrer" href={field.link}>{field.websiteName}</a>
                                         </div>
                                     )
                                 })}
