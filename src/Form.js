@@ -250,32 +250,29 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                         value={userText.subtitle}
                         onChange={userTextHandleChange}
                         />
-
                         
                         {inputFields.map((field, index) => {
                         return (
-                            <Fragment>
-                                <div key = {index} className='linkInput'>
-                                    <label htmlFor="websiteName">Website Name</label>
-                                    <input 
-                                    type="text"
-                                    name='websiteName'
-                                    value={field.websiteName}
-                                    placeholder='Website Name'
-                                    onChange = {event => handleUrlFormChange(index, event)}
-                                    />
+                            <div key = {index} className='linkInput'>
+                                <label htmlFor="websiteName">Website Name</label>
+                                <input 
+                                type="text"
+                                name='websiteName'
+                                value={field.websiteName}
+                                placeholder='Website Name'
+                                onChange = {event => handleUrlFormChange(index, event)}
+                                />
 
-                                    <label htmlFor="link">Link</label>
-                                    <input 
-                                    type="text"
-                                    name ='link'
-                                    value={field.link}
-                                    placeholder='Enter URL'
-                                    onChange = {event => handleUrlFormChange(index, event)}
-                                    />
-                                    <button onClick={(event) => removeFields(index, event)} className='delete'>Remove Link</button>
-                                </div>
-                            </Fragment>
+                                <label htmlFor="link">Link</label>
+                                <input 
+                                type="text"
+                                name ='link'
+                                value={field.link}
+                                placeholder='Enter URL'
+                                onChange = {event => handleUrlFormChange(index, event)}
+                                />
+                                <button onClick={(event) => removeFields(index, event)} className='delete'>Remove Link</button>
+                            </div>
                         )
                         
                     } )}

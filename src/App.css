@@ -768,6 +768,10 @@ pre {
     .homeLink {
         font-size: 1rem;
     }
+
+    .codeLink {
+        font-size: 1rem;
+    }
     
     .backgroundForm {
         height: 25%;
@@ -780,9 +784,22 @@ pre {
         height: 75%;
     }
 
+    .userCopy h1 {
+        font-size: 4rem;
+    }
+
 }
 
 @media(max-width: 960px) {
+
+    .previewText h1 {
+        font-size: 3.6rem;
+    }
+
+    .userCopy h1 {
+        font-size: 3.6rem;
+    }
+
     .optionContainer {
         width: 105px;
         height: 55px;
@@ -815,6 +832,15 @@ pre {
         min-height: 30rem;
     }
 
+    .backgroundContainer {
+        min-height: 30rem;
+    }
+
+    .backgroundContainer img {
+        min-height: 30rem;
+        object-fit: cover;
+    }
+
     .sideBarSection {
         overflow-y: auto;
     }
@@ -826,9 +852,18 @@ pre {
     .searchImage input {
         position: absolute;
     }
+
+    .copyHtml {
+        height: 800px;
+    }
+
+    .copyCss {
+        height: 1200px;
+    }
 }
 
 @media(max-width: 740px) {
+
     .searchResults {
         flex-wrap: wrap;
         justify-content: center;
@@ -836,13 +871,65 @@ pre {
     }
 
     .previewText h1 {
-        font-size: 3.8rem;
-        line-height: 3.6rem;
+        font-size: 3rem;
         margin-top: 0;
         margin-bottom: 25px;
     }
 
+    .userCopy h1 {
+        font-size: 3rem;
+    }
+
+    .copyHtml {
+        height: 600px;
+    }
+
+    .copyCss {
+        height: 1000px;
+    }
+}
+
+@media(max-width: 580px) {
+
+    .previewText h1 {
+        font-size: 2.2rem;
+        margin-bottom: 0;
+    }
+
     .previewText h2 {
-        margin: 0;
+        font-size: 1.10rem;
+        margin: 10px 0;
+    }
+
+    .link a {
+        font-size: 0.85rem;
+    }
+
+    .copyHtml {
+        height: 500px;
+    }
+
+    .copyCss {
+        height: 800px;
+    }
+}
+
+@media(max-width: 480px) {
+
+    .previewText h1 {
+        font-size: 1.8rem;
+        line-height: 40px;
+    }
+
+    .userCopy h1 {
+        font-size: 2.6rem;
+    }
+
+    .previewText h2 {
+        font-size: 1.10rem;
+    }
+
+    .link a {
+        font-size: 0.8rem;
     }
 }
