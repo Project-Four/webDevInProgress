@@ -184,12 +184,14 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
 
             <section className="sideBarSection">
+                <div className="buttons">
+                    <Link to="/" className='routerLink homeLink'>Back to Home</Link>
 
-                <Link to="/" className='routerLink homeLink'>Back to Home</Link>
+                    <HashLink smooth to="#download" className='codeLink'>See your Code</HashLink>
+                </div>
 
-                <HashLink smooth to="#download" className='codeLink'>See your Code</HashLink>
-
-                        <h3>Choose a Font style and Colour</h3>
+                <h3>Choose a Font style and Colour</h3>
+                
                 <div className='fontOptions'>
                     <button className='barlow' onClick={() => handleFontChange('barlow')}>A</button>
                     <button className='anton' onClick={() => handleFontChange('anton')}>A</button>
