@@ -55,6 +55,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
             
         })
         .then((res) => {
+            // checks if API call returned anything, if yes, pushes to userSearchResults, if not, fires an error alert
             res.data.results.length > 0 || backgroundColor ? setUserSearchResults(res.data.results) : Swal.fire({
                 icon: 'error',
                 title: 'No results found. Try another search!',
@@ -122,75 +123,71 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
 
     return (
         <Fragment>
-            
-        <section className='backgroundForm'>
-            {/* Form to search Unsplash API for photos */}
-            <form 
-                className='searchForm'
-                onSubmit={searchHandleSubmit}
-            >
-                <div className="searchBar">
-                    <label htmlFor="userAPISearch"></label>
-                    <input 
-                        placeholder='Search for a background image!'
-                        type="text" 
-                        name="userAPISearch"
-                        onChange={searchHandleChange}
-                    />
-                    <button type='submit' className='submit'>Search</button>
-                </div>
+            {/* Background Form */}
+            <section className='backgroundForm'>
+                {/* Form to search Unsplash API for photos */}
+                <form 
+                    className='searchForm'
+                    onSubmit={searchHandleSubmit}
+                >
+                    <div className="searchBar">
+                        <label htmlFor="userAPISearch"></label>
+                        <input 
+                            placeholder='Search for a background image!'
+                            type="text" 
+                            name="userAPISearch"
+                            onChange={searchHandleChange}
+                        />
+                        <button type='submit' className='submit'>Search</button>
+                    </div>{/* END searchBar */}
 
 
-                <div className="backgroundOptions">
-                <div className='colorButtons'>
-                    <button className='redButton colorButton' onClick={() => handleBackgroundColorChange('bcB80000')}></button>
-                    <button className='orangeButton colorButton' onClick={() => handleBackgroundColorChange('bcDB3E00')}></button>
-                    <button className='greenButton colorButton' onClick={() => handleBackgroundColorChange('bc008B02')}></button>
-                    <button className='blueButton colorButton' onClick={() => handleBackgroundColorChange('bc004DCF')}></button>
-                    <button className='pacificBlueButton colorButton' onClick={() => handleBackgroundColorChange('bc33A8C7')}></button>
-                    <button className='fluorescentBlueButton colorButton' onClick={() => handleBackgroundColorChange('bc52E3E1')}></button>
-                    <button className='greenLizardButton colorButton' onClick={() => handleBackgroundColorChange('bcA0E426')}></button>
-                    <button className='lemonYellowButton colorButton' onClick={() => handleBackgroundColorChange('bcFDF148')}></button>
-                    <button className='sunglowButton colorButton' onClick={() => handleBackgroundColorChange('bcFECE24')}></button>
-                    <button className='chromeYellowButton colorButton' onClick={() => handleBackgroundColorChange('bcFFAB00')}></button>
-                    <button className='lightCoralButton colorButton' onClick={() => handleBackgroundColorChange('bcF77976')}></button>
-                    <button className='magentaCrayolaButton colorButton' onClick={() => handleBackgroundColorChange('bcF050AE')}></button>
-                    <button className='heliotropeButton colorButton' onClick={() => handleBackgroundColorChange('bcD883FF')}></button>
-                    <button className='purpleButton colorButton' onClick={() => handleBackgroundColorChange('bc9336FD')}></button>
-                    <button className='blackButton colorButton' onClick={() => handleBackgroundColorChange('bc000')}></button>
-                    <button className='whiteButton colorButton' onClick={() => handleBackgroundColorChange('bcfff')}></button>
-                </div>
-                
-                    <div className="searchResults">
-                        {userSearchResults.map((result) => {
-                            return (
-                                <div key={result.id} className="optionContainer">
-
-                                        <label 
-                                            className='searchImage'
-                                            htmlFor="url"
-                                            key={result.blur_hash} 
-                                        >
-                                        <input
-                                            onChange={backgroundHandleChange}
-                                            name='url'
-                                            type= 'radio'
-                                            value={`${result.urls.full}, ${result.alt_description}`}
-                                        />
-                                            <img src={result.urls.thumb} alt={result.alt_description}></img>
-                                        </label>
-
+                    <div className="backgroundOptions">
+                    <div className='colorButtons'>
+                        <button className='redButton colorButton' onClick={() => handleBackgroundColorChange('bcB80000')}></button>
+                        <button className='orangeButton colorButton' onClick={() => handleBackgroundColorChange('bcDB3E00')}></button>
+                        <button className='greenButton colorButton' onClick={() => handleBackgroundColorChange('bc008B02')}></button>
+                        <button className='blueButton colorButton' onClick={() => handleBackgroundColorChange('bc004DCF')}></button>
+                        <button className='pacificBlueButton colorButton' onClick={() => handleBackgroundColorChange('bc33A8C7')}></button>
+                        <button className='fluorescentBlueButton colorButton' onClick={() => handleBackgroundColorChange('bc52E3E1')}></button>
+                        <button className='greenLizardButton colorButton' onClick={() => handleBackgroundColorChange('bcA0E426')}></button>
+                        <button className='lemonYellowButton colorButton' onClick={() => handleBackgroundColorChange('bcFDF148')}></button>
+                        <button className='sunglowButton colorButton' onClick={() => handleBackgroundColorChange('bcFECE24')}></button>
+                        <button className='chromeYellowButton colorButton' onClick={() => handleBackgroundColorChange('bcFFAB00')}></button>
+                        <button className='lightCoralButton colorButton' onClick={() => handleBackgroundColorChange('bcF77976')}></button>
+                        <button className='magentaCrayolaButton colorButton' onClick={() => handleBackgroundColorChange('bcF050AE')}></button>
+                        <button className='heliotropeButton colorButton' onClick={() => handleBackgroundColorChange('bcD883FF')}></button>
+                        <button className='purpleButton colorButton' onClick={() => handleBackgroundColorChange('bc9336FD')}></button>
+                        <button className='blackButton colorButton' onClick={() => handleBackgroundColorChange('bc000')}></button>
+                        <button className='whiteButton colorButton' onClick={() => handleBackgroundColorChange('bcfff')}></button>
+                    </div>
+                    
+                        <div className="searchResults">
+                            {userSearchResults.map((result) => {
+                                return (
+                                    <div key={result.id} className="optionContainer">
+                                            <label 
+                                                className='searchImage'
+                                                htmlFor="url"
+                                                key={result.blur_hash} 
+                                            >
+                                            <input
+                                                onChange={backgroundHandleChange}
+                                                name='url'
+                                                type= 'radio'
+                                                value={`${result.urls.full}, ${result.alt_description}`}
+                                            />
+                                                <img src={result.urls.thumb} alt={result.alt_description}></img>
+                                            </label>
                                     </div>
                                 )
-                            })}
-
-                    </div>
-                </div>{/* END backgroundOptions */}
+                                })}
+                        </div>{/* END searchResults */}
+                    </div>{/* END backgroundOptions */}
                 </form>
-
             </section>
 
-
+            {/* Sidebar Form */}
             <section className="sideBarSection">
                 <div className="buttons">
                     <Link to="/" className='routerLink homeLink'>Back to Home</Link>
@@ -230,8 +227,9 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                     <button className='purpleButton colorButton' onClick={() => handleFontColorChange('fc9336FD')}></button>
                     <button className='blackButton colorButton' onClick={() => handleFontColorChange('fc000')}></button>
                     <button className='whiteButton colorButton' onClick={() => handleFontColorChange('fcfff')}></button>
-                </div>
+                </div>{/* END fontColorButtons */}
 
+                {/* Contains all user text input */}
                 <div className='sideBar'>
                     
                     <form action="" className='textForm'>
@@ -250,7 +248,8 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                         value={userText.subtitle}
                         onChange={userTextHandleChange}
                         />
-                        
+
+                        {/* Maps through inputFields to return multiple input fields for links on button click */}
                         {inputFields.map((field, index) => {
                         return (
                             <div key = {index} className='linkInput'>
@@ -276,6 +275,7 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
                         )
                         
                     } )}
+                        {/* Adds link input field */}
                         <button onClick = {addFields} className='add'>Add Link</button>
                     </form>
 
