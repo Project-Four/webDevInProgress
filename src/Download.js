@@ -69,7 +69,7 @@ const Download = ({userBackground, userText, inputFields, font, fontColor, backg
                         &#125;<br/>
                         <br/>.subtitle &#123;<br/>    font-size: 3rem;<br/>
                         &#125;<br/>
-                        <br/>.links &#123;<br/>    font-size: 1.5rem;<br/>    color: #{slice(fontColor)};<br/>
+                        <br/>.links &#123;<br/>    font-size: 1.5rem;<br/>    color: #{slice(fontColor)};<br/>    text-decoration: none;<br/>
                         &#125;<br/>
                         </code></pre>
                     </div>{/* END copyCss */}
