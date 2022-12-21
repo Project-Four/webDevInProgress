@@ -69,6 +69,7 @@ const Download = ({userBackground, userText, inputFields, font, fontColor, backg
                     </div>{/* END copyCss */}
                 </div>{/* END userCopy */}
             </div>{/* END wrapper */}
+
         </section>
     )
 }

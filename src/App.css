@@ -252,67 +252,67 @@ html {
 
 /* Background Colours */
 
-.redBackground {
+.B80000 {
     background: #B80000;
 }
 
-.orangeBackground {
+.DB3E00 {
     background: #DB3E00;
 }
 
-.greenBackground {
+.bc008B02 {
     background: #008B02;
 }
 
-.blueBackground {
+.bc004DCF {
     background: #004DCF;
 }
 
-.pacificBlueBackground {
+.bc33A8C7 {
     background: #33A8C7;
 }
 
-.fluorescentBlueBackground {
+.bc52E3E1 {
+    background: #52E3E1;
+}
+
+.A0E426 {
     background: #A0E426;
 }
 
-.greenLizardBackground {
-    background: #A0E426;
-}
-
-.lemonYellowBackground {
+.FDF148 {
     background: #FDF148;
 }
 
-.sunglowBackground {
+.FECE24 {
     background: #FECE24;
 }
 
-.chromeYellowBackground {
+.FFAB00 {
     background: #FFAB00;
 }
 
-.lightCoralBackground {
+.F77976 {
     background: #F77976;
 }
 
-.magentaCrayolaBackground {
+.F050AE {
     background: #F050AE;
 }
 
-.heliotropeBackground {
+.D883FF {
     background: #D883FF;
 }
 
-.purpleBackground {
+.bc9336FD {
     background: #9336FD;
 }
 
-.blackBackground {
+.bc000 {
     background: #000;
 }
 
-.whiteBackground {
+.fff {
     background: #fff;
 }
 
@@ -381,12 +381,12 @@ li {
     font-size: 1rem;
     line-height: 40px;
 }
+
 p {
     font-family: 'Barlow', sans-serif;
     font-size: 1.25rem;
     font-weight: bold;
 }
-
 
 .routerLink {
     font-family: 'Fjalla One', sans-serif;
@@ -395,6 +395,18 @@ p {
     border: none;
     padding: 10px;
     cursor: pointer;
+}
+
+.footer {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: black;
+}
+
+footer { 
+    position: absolute;
+    bottom: 0;
 }
 
 @keyframes morph{
@@ -690,6 +702,7 @@ pre {
     padding: 20px;
     overflow: scroll;
 }
+
 
 @media(max-width: 1330px) {
     .bblob {
