@@ -252,11 +252,11 @@ html {
 
 /* Background Colours */
 
-.B80000 {
+.bcB80000 {
     background: #B80000;
 }
 
-.DB3E00 {
+.bcDB3E00 {
     background: #DB3E00;
 }
 
@@ -276,31 +276,31 @@ html {
     background: #52E3E1;
 }
 
-.A0E426 {
+.bcA0E426 {
     background: #A0E426;
 }
 
-.FDF148 {
+.bcFDF148 {
     background: #FDF148;
 }
 
-.FECE24 {
+.bcFECE24 {
     background: #FECE24;
 }
 
-.FFAB00 {
+.bcFFAB00 {
     background: #FFAB00;
 }
 
-.F77976 {
+.bcF77976 {
     background: #F77976;
 }
 
-.F050AE {
+.bcF050AE {
     background: #F050AE;
 }
 
-.D883FF {
+.bcD883FF {
     background: #D883FF;
 }
 
@@ -312,7 +312,7 @@ html {
     background: #000;
 }
 
-.fff {
+.bcfff {
     background: #fff;
 }
 

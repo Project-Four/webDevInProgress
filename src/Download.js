@@ -45,7 +45,7 @@ const Download = ({userBackground, userText, inputFields, font, fontColor, backg
                         
                         <br/>.sr-only &#123; position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;&#125;<br/>
 
-                        <br/>html &#123;<br/>    font-size: 125%;<br/>    font-family: {capitalize(font)};<br/>    color: red;<br/>
+                        <br/>html &#123;<br/>    font-size: 125%;<br/>    font-family: {capitalize(font)};<br/>    color: #{slice(fontColor)};<br/>
                         &#125;<br/>
                         <br/>.wrapper &#123;<br/>    width: 90%;<br/>    margin: 0 auto;<br/>    max-width: 1260px;<br/>   
                         &#125;<br/>
@@ -58,7 +58,7 @@ const Download = ({userBackground, userText, inputFields, font, fontColor, backg
                         }
 
                         {
-                            backgroundColor ? `    background-color: ${slice(backgroundColor)};` : null
+                            backgroundColor ? `    background-color: #${slice(backgroundColor)};` : null
                         } 
                         
                         <br/>    height: 100vh;<br/>    background-size: cover;<br/>    background-position: center;<br/>
