@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link'
 
 const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFields, setFont, setFontColor, setBackgroundColor}) => {
 
@@ -185,6 +186,9 @@ const Form = ({setUserBackground, userText, setUserText, setInputFields, inputFi
             <section className="sideBarSection">
 
                 <Link to="/" className='routerLink homeLink'>Back to Home</Link>
+
+                <HashLink smooth to="#download" className='codeLink'>See your Code</HashLink>
+
                         <h3>Choose a Font style and Colour</h3>
                 <div className='fontOptions'>
                     <button className='barlow' onClick={() => handleFontChange('barlow')}>A</button>

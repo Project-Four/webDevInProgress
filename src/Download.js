@@ -14,7 +14,7 @@ const Download = ({userBackground, userText, inputFields, font, fontColor, backg
     }
     
     return (
-        <section className="downloadSection">
+        <section className="downloadSection" id="download">
             <div className="wrapper">
 
                 <div className="userCopy">
