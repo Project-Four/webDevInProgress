@@ -487,6 +487,20 @@ a:active {
     cursor: pointer;
 }
 
+.codeLink {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.5rem;
+    background-color: #E7605C;
+    border: none;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    cursor: pointer;
+    margin: 10px 0 10px 0;
+}
+
 .sideBar {
     display: flex;
     flex-direction: column;

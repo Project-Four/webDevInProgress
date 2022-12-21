@@ -3,6 +3,7 @@ import Preview from './Preview.js'
 import Download from './Download.js'
 import Footer from './Footer.js'
 import { useState } from 'react'
+import { HashLink } from 'react-router-hash-link'
 
 const Main = () => {
 
@@ -51,6 +52,9 @@ const Main = () => {
                 fontColor={fontColor}
                 backgroundColor={backgroundColor}
             />
+            
+            {/* <HashLink smooth to="#download" className='codeLink'>See your Code</HashLink> */}
+
             <Download
                 userBackground={userBackground}
                 userText={userText}

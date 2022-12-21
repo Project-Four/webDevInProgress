@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { HashLink } from "react-router-hash-link"
 
 const Download = ({userBackground, userText, inputFields, font, fontColor, backgroundColor}) => {
     
@@ -10,7 +11,7 @@ const Download = ({userBackground, userText, inputFields, font, fontColor, backg
     }
 
     return (
-        <section className="downloadSection">
+        <section className="downloadSection" id="download">
             <div className="wrapper">
 
                 <Link to="/main" className='routerLink homeLink'>Back</Link>
