@@ -25,7 +25,7 @@ const Header = () => {
                         <Link to="/main" className='routerLink'>Get Started</Link>
 
                 </div>{/* END wrapper */}
-            </div>
+            </div>{/* END headerContent */}
                 <Footer />
         </header>  
     )
