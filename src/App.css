@@ -79,7 +79,6 @@ html {
     justify-content: center;
     align-content: center;
     padding: 5px;
-    margin: 0 auto;
 }
 
 .fontColorButtons {
@@ -343,6 +342,7 @@ header {
 }
 
 h1 {
+    font-family: 'Fjalla One';
     font-weight: bold;
     font-size: 4.5rem;
     letter-spacing: 10px;
@@ -361,6 +361,7 @@ h1 {
 }
 
 h2 {
+    font-family: 'Fjalla One';
     font-size: 1.25rem;
     line-height: 40px;
 }
@@ -405,15 +406,6 @@ footer {
     width: 100%;
 }
 
-.footer {
-    font-family: 'Barlow', sans-serif;
-    font-size: 12px;
-    letter-spacing: 2px;
-    color: black;
-    width: 100%;
-    margin: 0px;
-}
-
 @keyframes morph{
     0%, 100% {
     border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
@@ -440,7 +432,9 @@ a:active {
     font-family: 'Barlow', sans-serif;
     font-size: 12px;
     letter-spacing: 2px;
-    color: black;
+    color: #161B25;
+    width: 100%;
+    margin: 0px;
 }
 
 footer {
@@ -539,7 +533,7 @@ footer {
 }
 
 .sideBar input {
-    border: 3px solid black;
+    border: 3px solid #161B25;
     padding: 10px;
 }
 
@@ -636,7 +630,6 @@ footer {
 
 .searchResults {
     display: flex;
-    margin: 0 auto;
 }
 
 .colourForm {
@@ -646,7 +639,7 @@ footer {
 }
 
 .optionContainer {
-    border: 2px solid black;
+    border: 2px solid #161B25;
     width: 125px;
     height: 75px;
     min-width: 125px;
@@ -658,10 +651,11 @@ footer {
 
 .backgroundOptions{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
     flex-wrap: wrap;
     gap: 5px;
-    z-index: 2;
 }
 
 
@@ -680,7 +674,7 @@ footer {
 }
 
 [type=radio]:checked+label {
-    outline: 2px solid black;
+    outline: 2px solid #161B25;
 }
 
 
@@ -805,10 +799,7 @@ pre {
     .backgroundForm {
         height: 25%;
     }
-    .backgroundOptions {
-        flex-direction: column-reverse;
-        align-items: center;
-    }
+
     .previewSection {
         height: 75%;
     }
