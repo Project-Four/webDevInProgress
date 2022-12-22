@@ -342,7 +342,6 @@ header {
 }
 
 h1 {
-    font-family: 'Fjalla One';
     font-weight: bold;
     font-size: 4.5rem;
     letter-spacing: 10px;
@@ -360,8 +359,11 @@ h1 {
     margin: 0 auto;
 }
 
+.bblob h1 {
+    font-family: Fjalla One;
+}
+
 h2 {
-    font-family: 'Fjalla One';
     font-size: 1.25rem;
     line-height: 40px;
 }
@@ -438,8 +440,6 @@ a:active {
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
     width: 80%;
 }
 
@@ -619,6 +619,7 @@ footer {
     text-transform: uppercase;
     background-color: #E7605C;
     border: none;
+    align-self: center;
 }
 
 .searchForm {
@@ -724,21 +725,21 @@ main {
 .userCopy h1 {
     margin: 0px;
     text-align: center;
+    font-family: Fjalla One;
 }
 
 .copyHtml {
     display: flex;
     flex-direction: column;
     width: fit-content;
-    
-    width: fit-content;
-    
+    font-family: Fjalla One;
 }
 
 .copyCss {
     display: flex;
     flex-direction: column;
     width: 100%;
+    font-family: Fjalla One;
 }
 
 pre {
@@ -808,9 +809,17 @@ pre {
         font-size: 4rem;
     }
 
+    li {
+        line-height: 30px;
+    }
+
 }
 
 @media(max-width: 960px) {
+
+    ul {
+        margin-top: 0;
+    }
 
     .previewText h1 {
         font-size: 3.6rem;
@@ -907,6 +916,10 @@ pre {
     .copyCss {
         height: 1000px;
     }
+
+    li {
+        line-height: 25px
+    }
 }
 
 @media(max-width: 580px) {
@@ -937,6 +950,10 @@ pre {
 
 @media(max-width: 480px) {
 
+    .searchBar input::placeholder {
+        font-size: 0.55rem;
+    }
+
     .previewText h1 {
         font-size: 1.8rem;
         line-height: 40px;
@@ -958,6 +975,7 @@ pre {
         width: 100%;
     }
 }
+
 
 
 
